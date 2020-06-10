@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+    "settings" : {
+        "TEXroot": "LinAl_2.tex"
+    }
+}

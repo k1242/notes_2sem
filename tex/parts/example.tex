@@ -1,0 +1,32 @@
+\section*{Example}
+\addcontentsline{toc}{section}{Example}
+
+В качестве примера рассмотрим уравнение Максвелла:
+\begin{equation}
+f(v) dv = 4 \pi v^2 \lr{\frac{m}{2 \pi kT}}^{3/2} \exp{\lr{\frac{-mv^2}{2kT}}} dv.
+\end{equation}
+Или, что более интересно, уравнений для разложения по Тейлору функции $n$ переменных:
+\begin{equation}
+\begin{aligned}
+    f(\vc{\xi}) = 
+        & \sum_{k_1 + \ldots + k_n < m} 
+            \frac{1}{k_1! \ldots k_n!}
+            \frac{\partial^{k_1 + \ldots + k_n} f(\vc{x})}
+            {\partial x_1^{k_1} \ldots \partial x_n^{k_n}} 
+            \cdot
+            (\xi_1 - x_1)^{k_1} \ldots (\xi_n - x_n)^{k_n} + \\
+        + & \sum_{k_1 + \ldots + k_n = m} 
+            \frac{1}{k_1! \ldots k_n!}
+            \frac{\partial^{m} f(\vc{x} + \vartheta(\vc{\xi} - \vc{x}))}
+            {\partial x_1^{k_1} \ldots \partial x_n^{k_n}} 
+            \cdot
+            (\xi_1 - x_1)^{k_1} \ldots (\xi_n - x_n)^{k_n} = \\
+        = & \sum_{k_1 + \ldots + k_n \leq m} 
+            \frac{1}{k_1! \ldots k_n!}
+            \frac{\partial^{k_1 + \ldots + k_n} f(\vc{x})}
+            {\partial x_1^{k_1} \ldots \partial x_n^{k_n}} 
+            \cdot
+            (\xi_1 - x_1)^{k_1} \ldots (\xi_n - x_n)^{k_n} + \oo(|\vc{\xi} - \vc{x}|^m)
+\end{aligned}
+\end{equation}
+для некоторого $\vartheta \in (0, 1)$.

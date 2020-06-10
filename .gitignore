@@ -1,0 +1,12 @@
+
+*.aux
+
+*.out
+
+*.gz
+
+*.sublime-workspace
+
+tex/LinAl_2.pdf
+
+*.log
