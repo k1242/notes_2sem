@@ -1,0 +1,21 @@
+\section{Векторные пространства}
+
+\begin{to_def}
+	Пусть $\varkappa$ -- произвольное поле. \textbf{Векторным пространством} над $\varkappa$ называется множество $V$ элементов (векторов), удовлетворяющее следующим аксиомам:
+
+	\noindent
+	a) На $V$ бинарная операция $V \times V \rightarrow V$:
+	\begin{enumerate}[label = \Roman*.]
+		\item $\vc{x} + \vc{y} = \vc{y} + \vc{x}$ (коммутативность);
+		\item $(\vc{x} + \vc{y}) + \vc{z} = \vc{x} + (\vc{y} + \vc{z})$ (ассоциативность);
+		\item $\vc{x} + \vc{0} = \vc{x}, \, \forall \vc{x}\in V$ (нулевой вектор);
+		\item $\vc{x} + (-\vc{x}) = \vc{0}, \, \forall \vc{x} \in V$ (обратный вектор) ;
+	\end{enumerate}
+	б) На $\varkappa \times V$ операция $(\lambda, \vc{x} \rightarrow \lambda \vc{x})$:
+	\begin{enumerate}[label = \Roman*., start = 5]
+		\item $1 \cdot \vc{x} = \vc{x}$ (унитарность);
+		\item $(\alpha \beta) \vc{x} = \alpha  (\beta \vc{x})$ (ассоциативность);
+		\item $(\alpha + \beta) \vc{x} = \alpha \vc{x} + \beta \vc{x}$;
+		\item $\lambda (\vc{x} +\vc{y}) = \lambda \vc{x} + \lambda \vc{y}$.
+	\end{enumerate}
+\end{to_def}
