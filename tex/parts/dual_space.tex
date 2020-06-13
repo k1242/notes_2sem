@@ -1,0 +1,116 @@
+\section{Двойственное пространство}
+
+\begin{to_def} 
+	$f \colon V \to \varkappa:$ $f (\alpha \vc{x} + \beta \vc{y}) = \alpha f(\vc{x}) + \beta f(\vc{y})$ --  \textbf{линейная функция} (\textit{форма/функционал})на $V$.
+\end{to_def}
+
+Выберем в $V$ $(\vc{e}_1,\ldots, \vc{e}_n)$, тогда для $\vc{x} = \lambda_1 \vc{e}_1 + \ldots + \lambda_n \vc{e}_n$: $f(\vc{x}) = \lambda_1 \beta_1 + \ldots + \lambda_n \beta_n$, где $f(\vc{e}_i) = \beta_i$.
+Базисные векторы и коэффициенты линейной формы при замене базиса меняются по одним и тем же формулам (\textit{согласовано} aka \textit{когредиентно}).
+
+\begin{to_def} 
+	Относительно введенных + и \texttimes (на скаляры) линейные функции составляют векторное пространство $V^* = \mathcal{L}(V , F)$, \textbf{двойственное} (\textit{сопряженное} или \textit{дуальное}) к $V$.
+\end{to_def}
+
+При одновременном рассмотрении пространства и дуального к нему, векторы из $V^*$ называют \textit{ковариантными векторами}, а элементы из $V$ -- \textit{контрвариантными векторами}.
+
+\begin{to_thr} 
+	$\dim_\mathbb{F} V = n$, \textbf{тогда} $\dim V^* = n$. Для базисов в этих пространствах:
+\begin{equation*}
+	(\vc{e}_1,\ldots,\vc{e}_n) \text{ -- базис V}, \, (\vc{e}^1,\ldots,\vc{e}^n) \text{ -- линейные функции:}\: e^i(\vc{e}_j) = \delta_{i j} = 
+	\left\{
+	\begin{aligned}
+		&1 &\text{ при } i = j,\\
+		&0 &\text{ при } i \neq j,
+	\end{aligned}
+	\right.
+\end{equation*}
+\label{delta}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1)В заданном базисе пространства $V$ есть однозначное соответствие $\Phi \colon f \mapsto (\beta_1,\ldots,\beta_n)$ -- изоморфизм векторных пространств $V^*$ и $\mathbb{F}^n$, $\dim V^* = \dim \mathbb{F}^n = n$.
+
+	2)Задав $\beta_j = 0$ для $j \neq i$, и $\beta_i = 1$, и положив $\vc{e}^i(\vc{e}_j) = \delta_{i j}$, определим линейную функцию $e^i \in V^*: \: e^i \left(\sum\limits_{  }^{  } \lambda_j \vc{e}_j\right) = \sum\limits_{   }^{   } \lambda_j e^i (\vc{e}_j) = \sum\limits_{   }^{   } \lambda_j \beta_j = \lambda_i$.
+\end{proof}
+
+\begin{to_def} 
+	Базис $(e^1,\ldots,e^n)$ пространства $V^*$ -- \textbf{двойственный} для данного $(\vc{e}_1,\ldots, \vc{e}_n)$ в $V$.
+\end{to_def}
+
+Условимся писать $f(\vc{x}) \leadsto (f,\vc{x})$, тем самым определяется отображение $V^* \times V \to \mathbb{F}$ линейное по каждому аргументу.
+
+Отображения $V \times W \to \mathbb{F}$ с таким свойством принято называть \textbf{билинейным}, а также спариванием между пространствами $V$ и $W$. Спаривание между $V^*$ и $V$ -- \textbf{каноническое}.
+
+\begin{to_thr} 
+	$\exists$ \textbf{канонический изоморфизм}:\\ $\varepsilon \colon V \to V^{**}:$ $\varepsilon(\vc{x}) = \varepsilon_{\vc{x}}, \: \varepsilon_{\vc{x}} (f) = f(\vc{x})$, для $\vc{x} \in V, \, f \in V^*,\, \varepsilon_{\vc{x}} \in V^{**}$ 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1)Линейность: непосредственно $\varepsilon_{\alpha \vc{x} + \beta \vc{y}}(f) = f(\alpha \vc{x} + \beta \vc{y})$, то есть $\varepsilon(\alpha \vc{x} + \beta \vc{y}) = \alpha \varepsilon (\vc{x}) + \beta \varepsilon (\vc{y})$.
+
+	2)Биективность: выберем $V = \langle \vc{e}_1,\ldots, \vc{e}_n\rangle$ и $V^* = \langle e^1,\ldots, e^n\rangle$. Тогда $\varepsilon_{\vc{e}_j}(e^i) = e^i(\vc{e}_j) = \delta_{i j}$.
+
+	3) Апеллируя к \eqref{delta}: $V^{**} = \langle \varepsilon_{\vc{e}_1},\ldots,\varepsilon_{\vc{e}_n}\rangle$, то есть двойственный к $(e^i)$. Сюръективность и инъективность $\varepsilon$ очевидны. Каноничность заключена в определении. 
+\end{proof}
+
+\begin{to_def} 
+	Наличие естественного изоморфизма $V$ и $V^{**}$ наделяет их свойством -- \textbf{рефлексивность}.
+\end{to_def}
+
+Отождествив пространства $V$ и $V^{**}$, можно считать $V$ пространством линейных функций на $V^*$. Тогда формулы спаривания: $x(f) = (f,x) = f(x)$. В частности, $\forall V^*:\: \exists!$ двойственный ему базис в $V$.
+
+\begin{to_lem} ($i$ --- номер строки, $j$ --- номер столбца)
+	\begin{equation*}
+	\left.
+	\begin{aligned}
+		&\vc{a}_1,\ldots,\vc{a}_m &- &\text{ линейно зависимые векторы из } V\\
+		&f_1,\ldots, f_m  &- &\text{ произвольные линейные функции на } V
+	\end{aligned}
+	\right\} \Rightarrow
+	\det  \left(f_i (\vc{a}_j)\right) = 0, \: 1\leq i,j\leq m.
+	\end{equation*}
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+	1) В силу ЛЗ выберем из всех $\vc{a}_m = \alpha_1 \vc{a}_1 + \ldots + \alpha_{m-1} \vc{a}_{m-1}$.
+
+	2) В $\det(f_i(\vc{a}_j))$ вычтем из последнего столбца первый $\cdot \alpha_1$, потом второй и т.д. 
+
+	3)Сам определитель не изменится, а на $i$-том месте последнего столбца будет стоять нуль по (1).
+\end{proof}
+
+\begin{to_lem}
+	Если $\langle f_1,\ldots,f_n \rangle = V^*$, 
+	\textbf{то} $\vc{a}_1,\ldots,\vc{a}_n \in V$ -- независимы $\Longleftrightarrow$ $\det\left( f_i (\vc{a}_j)\right) \neq 0, \: 1\leq i,j \leq n$.
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+	1) по предыдущей лемме $\Rightarrow$.
+
+	2) $(\vc{a}_i)$ -- ЛНеЗ, $V = \langle \vc{a}_1, \ldots, \vc{a}_n\rangle$. Обозначим $(\vc{e}_i)$ -- базис в $V$, c двойственным из $(f_i)$, а через $\alpha_{i j}$ -- координаты $\vc{a}_j$ в этом базисе. Тогда получим матрицу перехода из таких $\alpha$.
+
+	3) Матрица перехода по \eqref{transition_matrix} обратима, а значит и $\det(\alpha_{i j}) \neq 0$, но $\alpha_{i j} = f_i(\vc{a}_j)$, что и значит.
+\end{proof}
+
+\begin{to_thr} 
+	$(f_1,\ldots,f_n)$ -- базис $V^*$. Тогда ранг системы $\vc{a}_1,\ldots,\vc{a}_k \in V$ равен наибольшему порядку отличного от нуля определителя вида $\det\left(f_i(\vc{a}_j)\right)$, $1 \leq i = i_1,\ldots,i_m \leq n$; $1 \leq j = j_1,\ldots, j_m \leq k$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) $r$ -- ранг $\vc{a}_1,\ldots,\vc{a}_k.$ Любые $m>r$ векторов -- ЛЗ, по лемме выше $\det = 0$ порядка ($m>r$).
+
+	2) Остаётся док-ть, что $\exists \det \neq 0$ порядка $r$, для этого обозначим $\overline{f_i}:= f_1 \big|_U$ ($U = \langle \vc{a}_1,\ldots,\vc{a}_n\rangle$).
+
+	3) Докажем, что $\langle \overline{f_1}, \ldots, \overline{f_n}\rangle = U^*$:
+	\begin{enumerate}
+		\item[a)] $\langle \overline{f_1}, \ldots, \overline{f_n}\rangle \subseteq U^*$ -- очевидно;
+		\item[б)] $\tilde{f} \in U^*$, $(\vc{e}_1,\ldots,\vc{e}_r)$ -- базис в $U$, а $(\vc{e}_1,\ldots,\vc{e}_r, \vc{e}_r,\ldots, \vc{e}_n)$ его дополнение до $V$.
+
+		Возьмём $f \in V^*$, которая $f(\vc{e}_i) = \tilde f(\vc{e}_i), \, i = 1,\ldots,r$, $f(\vc{e}_i)=0, \, i = r+1,\ldots,n$.
+
+		Очевидно, что $\overline{f} = f \big|_U = \tilde{f}$, поскольку $f$ и $\tilde{f}$ принимают одинаковые значения на базисных векторах $U$. $\Rightarrow$ $\tilde{f} \in \langle \overline{f}_1,\ldots, \overline{f}_n\rangle$, то есть $U^* \subseteq \langle \overline{f}_1,\ldots, \overline{f}_n\rangle$
+	\end{enumerate}
+
+	4) Выберем $r$ ЛНеЗ векторов среди $\vc{a}_1, \ldots, \vc{a}_k$ и $\overline{f}_1,\ldots,\overline{f}_n$. Они составляют базисы в $U, U^*$, и по лемме выше:
+	$\det\left(\overline{f}_i(\vc{a}_j)\right) \neq 0,$ $ i = i_1,\ldots, i_r;\; j = j_1,\ldots,j_r,$ и $\overline{f}_i(\vc{a}_j) = f_i(\vc{a}_j)$.
+\end{proof}
