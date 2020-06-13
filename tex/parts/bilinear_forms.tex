@@ -1,0 +1,58 @@
+\section{Билинейные формы}
+
+\noindent
+\socrat. Матрица билинейной формы:
+\begin{equation}
+     f(\vc{x}, \vc{y}) = x\T B y
+\end{equation} 
+
+\noindent
+\socrat. Матрица билинейной формы, полярной к квадратичной $q(\vc{x})$:
+\begin{equation}
+     f(\vc{x}, \vc{y}) = \frac{1}{2} \lr{q(\vc{x} + \vc{y}) - q(\vc{x}) - q(\vc{y})}
+\end{equation} 
+
+\begin{to_thr}
+    Для  $\forall B\colon B = B\T$ $\exists$ канонический базис.
+\end{to_thr}
+
+\noindent
+$\boxed{\Rightarrow}$. Для  $\forall B\colon B = B\T$ $\exists$ $A \colon A\T B A$ -- диагональная матрица. 
+
+\noindent
+$\boxed{\Rightarrow}$. Всякая $q$ на $V(\mathbb{R})$ приводится к \textit{нормальному} виду:
+\begin{equation}
+\label{q_norm}
+    q(x) = x_1^2 + \dots + x_s^2 - x_{s+1}^2 - \dots - x_r^2.
+\end{equation}
+
+\begin{to_thr}[закон инерции]
+    Пусть $q$ -- квадр. форма на $V_n(\mathbb{R})$. Тогда $r$ и $s$ из \eqref{q_norm} $\equiv f(q)$.
+\end{to_thr}
+
+
+\begin{to_thr}[метод Якоби]
+    \underline{Пусть} $q$ -- квадратичная форма на $V$: все главные миноры отличны от 0. \underline{Тогда} существует базис \vc{e}:  $q(\vc{x})$ принимает канонический вид:
+    \begin{equation}
+        q(\vc{x}) = \frac{\Delta_0}{\Delta_1} (x_1')^2 + \frac{\Delta_1}{\Delta_2} (x_2')^2 + \dots + \frac{\Delta_{n-1}}{\Delta_n} (x_n')^2
+    \end{equation}
+\end{to_thr}
+
+\begin{to_thr}[критерий Сильвестра]
+    Квадратичная форма $q$ на $V_n(\mathbb{R})$  положительно определена $\Leftrightarrow$ все главные миноры её матрицы $(b_{ij})$ положительно определены.
+\end{to_thr}
+
+\begin{to_thr}
+    $\forall$ $B: B\T = - B$ размера $2m \times 2m$ конгруэнтна матрице:
+    \begin{equation}
+        J = \begin{bmatrix}
+            0   & -1    &       &   &   \\
+            1   & 0     &       &   &   \\
+                &       &\dots  &   &   \\
+                &       &       &0  &-1 \\
+                &       &       &1  &0  
+        \end{bmatrix},
+    \end{equation}
+т.е. найдётся невырожденная матрица $A$: $A\T B A = J$.
+\end{to_thr}
+

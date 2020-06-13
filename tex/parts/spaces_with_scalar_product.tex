@@ -1,0 +1,65 @@
+\section{Евклидово пространство}
+
+\begin{to_def}[\textbf{Скалярное произведение}]
+    Отображение $V \times V \to \mathbb{R}$:\\
+      \begin{tabular}{rll}
+       i) & $(\vc{x}, \vc{y}) = (\vc{y}, \vc{x})$ & $\forall \vc{x}, \vc{y} \in V$; \\
+       ii) & $(\alpha \vc{x} + \beta \vc{y}, \vc{z}) = \alpha \Sp{x}{z} + \beta \Sp{y}{z}$ & $\forall \alpha, \beta \in \mathbb{R}$; \\
+       iii) & $\Sp{x}{x} > 0$ & $\forall \vc{x} \neq 0$. \\
+        \end{tabular}
+\end{to_def}
+
+
+\noindent
+Любое, уважающее себя, евклидово пространство содержит:\\
+\begin{tabular}{rl}
+    \textit{норма }              & $||\vc{v}|| = \sqrt{\Sp{v}{v}}$ \\
+    \textit{угол }               & $\cos \alpha_{{x}}^{{y}} = \Sp{x}{y} / ||\vc{x}|| / ||\vc{y}||$ \\
+    \textit{н-во Коши-Буняк.}    & $|\Sp{x}{y}| \leqslant \norm{x} \cdot \norm{y}$\\
+    \textit{н-во треугольника}   & $||{\vc{x} \pm \vc{y}}|| \leqslant \norm{x} + \norm{y}$\\
+\end{tabular}
+
+\begin{to_thr}[процесс Грама -- Щмидта]
+\textbf{П}усть $\vc{e}_1, \dots, \vc{e}_m$ --  Л$_\text{не}$З система $\subset \vR{m}$. \textbf{Т}огда $\exists$ ортонормированная система векторов $\vc{e}_1', \dots, \vc{e}_m'$ такая, что $L_i = \langle \vc{e}_1, \dots, \vc{e}_i \rangle$ и $L_i' = \langle \vc{e}_1', \dots, \vc{e}_i' \rangle$ совпадают при $i = 1,2, \dots, m \leqslant n$.
+\end{to_thr}
+  
+\begin{to_thr}
+    \textbf{П}усть $L$ -- подпространство конечномерного еклидова пространства $V$, $L^{\bot}$ -- его ортогональное дополнение. \textbf{Т}огда 
+    \begin{equation}
+        V = L \oplus L^{\bot}, \hspace{1cm} L^{\bot \bot} = L.
+    \end{equation}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+Кострикин, с. 110.
+\end{proof}
+
+\begin{to_thr}
+    Любые евклидовы пространства $V$, $V'$ одинаковой конечной размерности изоморфны. Существует изморфизма $f \colon V \to V'$, сохраняющий скалярное произведение, т.е.
+    \begin{equation}
+        \Sp{x}{y} = (f(\vc{x}), f(\vc{y}))'
+    \end{equation}
+\end{to_thr}
+
+\begin{to_thr}
+    Отображение $\Phi \colon \vc{v} \to \Sp{v}{*} \equiv \Phi_{v}$ -- естественный изоморфизм $V$ и $V^{*}$. При этом $\Phi$ ОНБ $V$ отождествляется с \textbf{дуальным} к нему базисом $f_1, \dots, f_n$ пространства $V^*$. 
+\end{to_thr}
+
+
+\noindent
+\socrat. Для любой ортогональной матрицы:
+\begin{equation}
+    A\T \cdot A = E
+\end{equation} 
+
+
+\section*{Эрмитовы векторные пространства}
+
+\begin{to_def}[\textbf{Скалярное произведение/Эрмитова форма}]
+    Отображение $V \times V \to \mathbb{C}$:\\
+      \begin{tabular}{rll}
+        i)& $(\vc{x}, \vc{y}) = \overline{(\vc{y}, \vc{x})}$ & $\forall \vc{x}, \vc{y} \in V$; \\
+       ii) & $(\alpha \vc{x} + \beta \vc{y}, \vc{z}) = \alpha \Sp{x}{z} + \beta \Sp{y}{z}$ & $\forall \alpha, \beta \in \mathbb{R}$; \\
+       iii) & $\Sp{x}{x} > 0$ & $\forall \vc{x} \neq 0$. \\
+        \end{tabular}
+\end{to_def}
