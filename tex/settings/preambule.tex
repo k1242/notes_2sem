@@ -23,6 +23,17 @@ amssymb,textcomp, esvect,esint}
 \usepackage{cancel}
 \usepackage{ulem}
 
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./img/}{#1.pdf_tex}
+}
+
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
