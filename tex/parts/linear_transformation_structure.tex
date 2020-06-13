@@ -130,12 +130,43 @@ $\mathcal A $.  Кратность $\lambda $ как корня характер
 
 \subsubsection{Критерий диагонализируемости}
 
+\begin{to_def} 
+    Множество всех собственных значений линейного оператора $\mathcal A $ называют \textit{спектром} -- $\Spec \mathcal A $. Еси все точки спектра простые, то и спектр называется \textit{простым}.
+\end{to_def}
 
+\begin{to_lem} 
+    Собственные векторы, принадлежащие к различным собственным значениям, линейно независимы. Сумма $\sum_{\lambda \in \Spec \mathcal A} V^{\lambda}$ прямая. 
+\end{to_lem}
 
+\begin{proof}[$\triangle$]
+    По индукции докажем ЛНеЗ набора $e_i \in V^{\lambda_i}$ $\forall i $. 
+$$
+    \alpha_1 \vc{e}_1 + \ldots + \alpha \vc{e}_m = \vc{0} \hspace{0.5cm} \mapsto \hspace{0.5cm} \alpha_1 \lambda_1 \vc{e}_1 + \ldots + \alpha_m \lambda_m \vc{e}_m = 0.
+$$
+Умножая на $\lambda_m $ первое соотношение и вычиатая из него второе, приходим к линейной зависимости первых $m-1 $ векторов:
+$$
+    \alpha_1 (\lambda_m - \lambda_1) \vc{e}_1 + \ldots 
+    + \alpha_{m-1} (\lambda_m - \lambda_{m-1}) \vc{e}_{m-1} = \vc{0}.
+$$
+Но $\alpha_1 (\lambda_m - \lambda_1) \neq 0$. По доказанному $V^{\lambda_i} \cap \sum_{j \neq i} V^{\lambda_j} = \vc{0} $.
+\end{proof}
 
+\begin{to_def} 
+    Линейный оператор $\mathcal A $ на $n $-мерном пространстве $V $ называют \textit{диагонализируемым}, если существует базис $(\vc{e}_i) $, относительно которого матрица оператора принимает диагональный вид. 
+\end{to_def}
 
+\begin{to_thr} 
+    Линейный оператор $\mathcal A $ с простым спектром диагонализируем. 
+\end{to_thr}
 
+\begin{to_thr} 
+    Пусть $\mathcal A $ -- линейный оператор на конечномерном векторном пространтсве $V $ над полем $\mathbb{F} $. Для диагонализируемости  $\mathcal A $ необходимо и достаточно, чтобы все корни $\xi_{\mathcal A} (t) $ лежат в $\mathbb{F} $  \textbf{и} геометрическая кратность каждого собственного значения $\lambda $ совпадает с его алгебраической кратностью.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    ...
+\end{proof}
 
 \subsubsection{Существование инвариантных подпространств}
-\subsubsection{Сопряженный линейный оператор}
-\subsubsection{Фактороператор}
+% \subsubsection{Сопряженный линейный оператор}
+% \subsubsection{Фактороператор}
