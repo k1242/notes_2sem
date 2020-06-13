@@ -1,27 +1,32 @@
 \section{Векторные пространства}
 
 \begin{to_def}
-	Пусть $\varkappa$ -- произвольное поле. \textbf{Векторным пространством} над $\varkappa$ называется множество $V$ элементов (векторов), удовлетворяющее следующим аксиомам:
+	Пусть $\mathbb{F}$ -- произвольное поле. \textbf{Векторным пространством} над $\mathbb{F}$ называется множество $V$ элементов (векторов), удовлетворяющее следующим аксиомам:
 
+\begin{minipage}[t]{0.45\textwidth}
 	\noindent
 	a) На $V$ бинарная операция $V \times V \rightarrow V$:
 	\begin{enumerate}[label = \Roman*.]
 		\item $\vc{x} + \vc{y} = \vc{y} + \vc{x}$ (коммутативность);
 		\item $(\vc{x} + \vc{y}) + \vc{z} = \vc{x} + (\vc{y} + \vc{z})$ (ассоциативность);
 		\item $\vc{x} + \vc{0} = \vc{x}, \, \forall \vc{x}\in V$ (нулевой вектор);
-		\item $\vc{x} + (-\vc{x}) = \vc{0}, \, \forall \vc{x} \in V$ (обратный вектор) ;
+		\item $\vc{x} + (-\vc{x}) = \vc{0}, \, \forall \vc{x} \in V$ (обратный вектор);
 	\end{enumerate}
-	б) На $\varkappa \times V$ операция $(\lambda, \vc{x} \rightarrow \lambda \vc{x})$:
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	б) На $\mathbb{F} \times V$ операция $(\lambda, \vc{x} \rightarrow \lambda \vc{x})$:
 	\begin{enumerate}[label = \Roman*., start = 5]
 		\item $1 \cdot \vc{x} = \vc{x}$ (унитарность);
 		\item $(\alpha \beta) \vc{x} = \alpha  (\beta \vc{x})$ (ассоциативность);
 		\item $(\alpha + \beta) \vc{x} = \alpha \vc{x} + \beta \vc{x}$;
 		\item $\lambda (\vc{x} +\vc{y}) = \lambda \vc{x} + \lambda \vc{y}$.
 	\end{enumerate}
+\end{minipage}
 \end{to_def}
 
 \begin{to_def}
-	Пусть $V$ -- векторное пространство над $\varkappa$, $U \subset V$ -- его подмножество, аддитивна подгруппа и переходящая в себя при умножении на скаляры. Тогда ограничение на $U$ операций в $V$ делает $U$ векторным пространством. $U$ -- \textbf{векторное подпространство} V.
+	Пусть $V$ -- векторное пространство над $\mathbb{F}$, $U \subset V$ -- его подмножество, аддитивна подгруппа и переходящая в себя при умножении на скаляры. Тогда ограничение на $U$ операций в $V$ делает $U$ векторным пространством. $U$ -- \textbf{векторное подпространство} V.
 \end{to_def}
 
 \begin{to_def}
@@ -45,19 +50,19 @@
 \end{to_def}
 
 \begin{to_def}
-	$V$, содержащее $n$ ЛНеЗ векторов, в котором не ЛНеЗ систем большего ранга, называется \textbf{n-мерным}. $\dim_\varkappa V = n$. 
+	$V$, содержащее $n$ ЛНеЗ векторов, в котором не ЛНеЗ систем большего ранга, называется \textbf{n-мерным}. $\dim_\mathbb{F} V = n$. 
 \end{to_def}
 
 \begin{to_def}
-	$\dim_\varkappa V = n$. Любая система и $n$ независимых векторов называется \textbf{базисом} пространства $V$.
+	$\dim_\mathbb{F} V = n$. Любая система и $n$ независимых векторов называется \textbf{базисом} пространства $V$.
 \end{to_def}
 
 \begin{to_thr}
-	$\dim_\varkappa V = n$ c $( \vc{e}_1,\ldots,\vc{e}_n)$. Тогда: 1) $\forall \vc{v} \in V$ $\exists!$ ЛК из векторов базиса; 2) любую систем из $s<n$ ЛНеЗ векторов можно дополнить до базиса. 
+	$\dim_\mathbb{F} V = n$ c $( \vc{e}_1,\ldots,\vc{e}_n)$. Тогда: 1) $\forall \vc{v} \in V$ $\exists!$ ЛК из векторов базиса; 2) любую систем из $s<n$ ЛНеЗ векторов можно дополнить до базиса. 
 \end{to_thr}
 
 \begin{to_def}
-	$\dim_\varkappa V = n$ c $( \vc{e}_1,\ldots,\vc{e}_n)$. $\lambda_i \in \varkappa$ называются \textbf{координатами вектора}: $\vc{v} = \lambda_1 \vc{e}_1 + \ldots + \lambda \vc{e}_n$. 
+	$\dim_\mathbb{F} V = n$ c $( \vc{e}_1,\ldots,\vc{e}_n)$. $\lambda_i \in \mathbb{F}$ называются \textbf{координатами вектора}: $\vc{v} = \lambda_1 \vc{e}_1 + \ldots + \lambda \vc{e}_n$. 
 \end{to_def}
 
 \begin{to_thr}
@@ -65,11 +70,11 @@
 \end{to_thr}
 
 \begin{to_def}
-	$V$ и $W$ над $\varkappa$ -- \textbf{изоморфны}, если  $\exists$ биективное $f \colon V \to W:$ $f(\alpha \vc{u} + \beta \vc{v}) = \alpha f(\vc{u}) + \beta f(\vc{v})$.
+	$V$ и $W$ над $\mathbb{F}$ -- \textbf{изоморфны}, если  $\exists$ биективное $f \colon V \to W:$ $f(\alpha \vc{u} + \beta \vc{v}) = \alpha f(\vc{u}) + \beta f(\vc{v})$.
 \end{to_def}
 
 \begin{to_thr}
-	Все $V$ одинаковой $\dim = n$ над $\varkappa$ изоморфны (координатному пространству $\varkappa^n$).
+	Все $V$ одинаковой $\dim = n$ над $\mathbb{F}$ изоморфны (координатному пространству $\mathbb{F}^n$).
 \end{to_thr}
 
 \begin{to_thr}
