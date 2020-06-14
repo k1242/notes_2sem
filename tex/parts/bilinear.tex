@@ -69,16 +69,6 @@ $b^-(\vc{u},\vc{v}) = \frac{b(\vc{u},\vc{v}) - b (\vc{v}, \vc{u})}{2}$ \\
 	$\Ker b := \left\{ \vc{v} \in V \colon \forall \vc{u} \in V \: b(\vc{u}, \vc{v}) = 0\right\} = \left\{ \vc{u} \in V \colon \forall \vc{v} \in V \: b(\vc{u}, \vc{v}) = 0\right\}$ (соответственно левое и правое ядра). 
 \end{to_def}
 
-\begin{to_thr} 
-	$\dim \Ker b = \dim V - \rg b$.
-\end{to_thr}
-
-\begin{proof}[$\triangle$]
-	1) Рассмотрим базис $e = (\vc{e},\ldots,\vc{e}_n)$, и $b \underset{e}{\longleftrightarrow} B$. Пусть $\vc{v}\in V, \, \vc{v} \underset{e}{\longleftrightarrow} x, \, \vc{v} \in \Ker b \Leftrightarrow \forall \vc{u} \: b(\vc{u},\vc{v}) = 0$;
-
-	2) Или равносильно: $\forall i \: b(\vc{e}_i, \vc{v}) = 0 \Leftrightarrow E B X = 0 \Leftrightarrow B X = 0$. Пространство решений это ОСЛУ имеет требуемое равенство: $\dim \Ker b = \dim V - \rg B$.
-\end{proof}
-
 	% Другое оформление
 	% \begin{minipage}{0.45\linewidth}
 	% 	Симметричная билинейная форма.
@@ -99,4 +89,58 @@ $b^-(\vc{u},\vc{v}) = \frac{b(\vc{u},\vc{v}) - b (\vc{v}, \vc{u})}{2}$ \\
 
 	% 	$b \underset{e}{\longleftrightarrow} B$, $B^T = -B$
 	% \end{minipage}
-	
+
+
+\begin{to_thr} 
+	$\dim \Ker b = \dim V - \rg b$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Рассмотрим базис $e = (\vc{e},\ldots,\vc{e}_n)$, и $b \underset{e}{\longleftrightarrow} B$. Пусть $\vc{v}\in V, \, \vc{v} \underset{e}{\longleftrightarrow} x, \, \vc{v} \in \Ker b \Leftrightarrow \forall \vc{u} \: b(\vc{u},\vc{v}) = 0$;
+
+	2) Или равносильно: $\forall i \: b(\vc{e}_i, \vc{v}) = 0 \Leftrightarrow E B X = 0 \Leftrightarrow B X = 0$. Пространство решений это ОСЛУ имеет требуемое равенство: $\dim \Ker b = \dim V - \rg B$.
+\end{proof}
+
+\subsection{Ортогональные и невырожденные}
+\begin{to_def} 
+	Пусть $b \in \mathcal{B}^{\pm}(V), \, \vc{u},\vc{v} \in V$. $\vc{u}$ и $\vc{v}$ \textbf{ортогональны} относительно $b$, если $b(\vc{u},\vc{v}) = 0$. 
+
+	Для $U \subseteq V$, \textbf{ортогональное дополнение} $U$ -- $U^\bot \left\{ \vc{v} \in V \colon \forall \vc{u} \in U \: b(\vc{u},\vc{v}) = 0\right\}$.
+\end{to_def}
+
+\begin{to_def} 
+	Пусть  $b \in \mathcal{B}^\pm (V)$, форма $b$ --- \textbf{невырожденная},
+	% \footnote{Униженные и оскорблённые}
+	 если $\rg b = \dim V$.
+\end{to_def}
+
+\begin{to_thr} 
+	$\dim U^\bot \geq \dim V - \dim U$. А если форма $b$ -- невырождена, то $\dim U^\bot = \dim V - \dim U$
+	\label{dim_ort}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Выберем в $V$ базис $(\vc{e}_1,\ldots,\vc{e}_n)$ так, чтобы первые $k$ векторов были базисом $U$.
+
+	2) Тогда, если $\vc{v} \underset{e}{\longleftrightarrow} x$: $\vc{v} \in U^\bot \Leftrightarrow \forall i = 1,\ldots,k: \: b(\vc{e}_i, \vc{v}) = 0 \Leftrightarrow \left(E_k | 0\right) B x = 0$.
+
+	3) ОСЛУ (2) состоит из $k$ строк матрицы $B$, значит её ранг $\leq k \Longrightarrow \dim U^\bot = n -k$.
+
+	4)Если $b$ -- невырождена, то строчки $B$ -- ЛНеЗ $\Longrightarrow$ ОСлу имеет ранг $k \Longrightarrow \dim U^\bot = n -k$.
+\end{proof}
+
+\begin{to_def} 
+	$b \in \mathcal{B}^\pm (V), \, U \subseteq V$. $U$ --- \textbf{невырожденное} относительно $b$, если $b \big|_U \in \mathcal{B}^\pm (U)$ -- невырождена. 
+\end{to_def}
+
+\begin{to_thr} 
+	 Пусть $b \in \mathcal{B}^\pm (V), \, U \subseteq V$. Тогда $U$ -- невырождено $<==> V = U \oplus U^\bot$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Базис как в теореме \eqref{dim_ort}. Матрица $b \big|_U$ -- это подматрица $B$ стоящая в верхнем левом углу.
+
+	2) так как $U$ -- невырождено: $\rg B_U = k \Rightarrow$ первые $k$ строк $B_U$ ЛНеЗ, значит $\dim U^\bot = n -k$.
+
+	3) Кроме того, $\Ker b \big|_U = 0$ так как $\dim \Ker b \big|_U = k - k = 0$. То есть $\forall \vc{v} \in U, \, \vc{v} \neq 0 => \exists \vc{u} \in U: \: b(\vc{u},\vc{v}) = 0$, что означает, что $U \cap U^\bot = \varnothing$. \textbf{Итак}, $U + U^\bot = U \oplus U^\bot$ и $\dim(U + U^\bot) = k + (n-k) = n$.
+\end{proof}
