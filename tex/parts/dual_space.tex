@@ -1,5 +1,6 @@
 \section{Двойственное пространство}
 
+\subsection{Линейные функции}
 \begin{to_def} 
 	$f \colon V \to \varkappa:$ $f (\alpha \vc{x} + \beta \vc{y}) = \alpha f(\vc{x}) + \beta f(\vc{y})$ --  \textbf{линейная функция} (\textit{форма/функционал}) на $V$.
 \end{to_def}
@@ -7,6 +8,7 @@
 Выберем в $V$ $(\vc{e}_1,\ldots, \vc{e}_n)$, тогда для $\vc{x} = \lambda_1 \vc{e}_1 + \ldots + \lambda_n \vc{e}_n$: $f(\vc{x}) = \lambda_1 \beta_1 + \ldots + \lambda_n \beta_n$, где $f(\vc{e}_i) = \beta_i$.
 Базисные векторы и коэффициенты линейной формы при замене базиса меняются по одним и тем же формулам (\textit{согласовано} aka \textit{когредиентно}).
 
+\subsection{Двойственное пространство}
 \begin{to_def} 
 	Относительно введенных + и \texttimes (на скаляры) линейные функции составляют векторное пространство $V^* = \mathcal{L}(V , F)$, \textbf{двойственное} (\textit{сопряженное} или \textit{дуальное}) к $V$.
 \end{to_def}
@@ -41,6 +43,7 @@
 
 Отображения $V \times W \to \mathbb{F}$ с таким свойством принято называть \textbf{билинейным}, а также спариванием между пространствами $V$ и $W$. Спаривание между $V^*$ и $V$ -- \textbf{каноническое}.
 
+\subsection{Канонический изоморфизм}
 \begin{to_thr} 
 	$\exists$ \textbf{канонический изоморфизм}:\\ $\varepsilon \colon V \to V^{**}:$ $\varepsilon(\vc{x}) = \varepsilon_{\vc{x}}, \: \varepsilon_{\vc{x}} (f) = f(\vc{x})$, для $\vc{x} \in V, \, f \in V^*,\, \varepsilon_{\vc{x}} \in V^{**}$ 
 \end{to_thr}
@@ -58,6 +61,8 @@
 \end{to_def}
 
 Отождествив пространства $V$ и $V^{**}$, можно считать $V$ пространством линейных функций на $V^*$. Тогда формулы спаривания: $x(f) = (f,x) = f(x)$. В частности, $\forall V^*:\: \exists!$ двойственный ему базис в $V$.
+
+\subsection{Критерий линейной независимости}
 
 \begin{to_lem} ($i$ --- номер строки, $j$ --- номер столбца)
 	\begin{equation*}

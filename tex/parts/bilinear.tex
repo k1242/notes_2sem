@@ -1,0 +1,102 @@
+\section{Билинейные и квадратичные форма}
+
+\subsection{Билинейная форма}
+\begin{to_def} 
+	\textbf{Билинейная форма} на линейном пространстве $V$ -- $b \colon V \times V \to \mathbb{F}$, линейное по $\forall$ аргументу.
+\end{to_def}
+
+\begin{to_def} 
+	$b \in \mathcal{B} (V)$\footnote{$\mathcal{B}(V)$ --- линейное пространство над $\mathbb{F}$.}, а $(\vc{e}_{1},\ldots,\vc{e}_n)$ -- базис в $V $. \textbf{Матрица билинейной формы}: $B = (b(\vc{e}_i,\vc{e}_j)), \, b \underset{e}{\longleftrightarrow}  B $
+
+	Для $\vc{v},\vc{u} \in V$: $\vc{u} \underset{e}{\longleftrightarrow} x$ и $\vc{v} \underset{e}{\longleftrightarrow} y$ --- $b(\vc{u}, \vc{v}) = x^T B y$. ($B = (b_{i j})$).
+\end{to_def}
+
+\begin{to_thr} 
+	Пусть $e$ -- базис в $V$ ($\dim V = n$), тогда соответствие $\mathcal{B}(V) \rightarrow M_{n\times n}(\mathbb{F})$ осуществляет изоморфизм линейных пространств. Следствие: $\dim \mathcal{B}(V) = n^2$.
+\end{to_thr}
+ \begin{proof}[$\triangle$]
+ 	Инъективность: $b_1 (\vc{u},\vc{v}) = x^T B y = b_2(\vc{u},\vc{v}) \Rightarrow b_1 = b_2$;
+
+ 	Сюръективность: определяем $b(\vc{u},\vc{v}) = x^T B y$, тогда $b(\vc{e}_i, \vc{e}_j) = b_{i j}$, значит $b \underset{e}{\longleftrightarrow} B$.
+ \end{proof}
+
+\begin{to_thr}
+	$b \in \mathcal{B}(V)$, $e$ и $e'$ -- базисы в $V$, $e' = e S$,
+	$b\underset{e}{\longleftrightarrow} B$ и $b \underset{e'}{\longleftrightarrow} B'$. Тогда $B' = S^T B S$.
+\end{to_thr}
+
+\begin{to_def} 
+	Матрицы $B$ и $B' = S^T F S$ с $\det A \neq 0$ --- \textbf{конгруэнтны}. Ранг $B$ в каком-то базисе соответствующей $b$ называется \textbf{рангом} билинейной формы. $\text{rg}b$ инвариантен относительно изменения базиса.
+\end{to_def}
+
+\subsection{Симметричные и кососимметричные формы}
+
+\begin{to_def} 
+\begin{tabular}{|l|l|}
+\hline
+ Симметричная билинейная форма. & Кососимметричная билинейная форма.\\
+\hline
+\hline
+
+ $\forall \vc{u}, \vc{v} \in V: \: b(\vc{u},\vc{v}) = b(\vc{v}, \vc{u})$ & 
+$\forall \vc{u}, \vc{v} \in V: \: b(\vc{u},\vc{v}) = - b(\vc{v}, \vc{u}) \overset{}{\Leftarrow} b(\vc{u},\vc{u}) = 0 $\\
+
+&\\
+
+$\mathcal{B}^- (V)$ ---  \textbf{симметричные} формы на $V$ &
+$\mathcal{B}^- (V)$ ---  \textbf{кососимметричные} формы на $V$ \\
+
+&\\
+
+$b \underset{e}{\longleftrightarrow} B, \, b \in \mathcal{B}^+ (V) \Leftrightarrow B^T = B$ &
+$b \underset{e}{\longleftrightarrow} B, \,  b \in \mathcal{B}^- (V) \Leftrightarrow B^T = -B$ \\
+
+&\\
+
+$b^+(\vc{u},\vc{v}) = \frac{b(\vc{u},\vc{v}) + b (\vc{v}, \vc{u})}{2}$ &
+$b^-(\vc{u},\vc{v}) = \frac{b(\vc{u},\vc{v}) - b (\vc{v}, \vc{u})}{2}$ \\
+
+\hline
+\end{tabular}
+\end{to_def}
+
+\begin{to_thr} 
+	Пусть $\text{char}(\mathbb{F}) \neq 2 $, $\mathcal{B} = \mathcal{B}^+ \oplus \mathcal{B}^-$. 
+\end{to_thr}
+
+\begin{to_def} 
+	Пусть $b \in \mathcal{B}^\pm (V)$. Тогда \textbf{ядром} формы $b$ называется:
+	$\Ker b := \left\{ \vc{v} \in V \colon \forall \vc{u} \in V \: b(\vc{u}, \vc{v}) = 0\right\} = \left\{ \vc{u} \in V \colon \forall \vc{v} \in V \: b(\vc{u}, \vc{v}) = 0\right\}$ (соответственно левое и правое ядра). 
+\end{to_def}
+
+\begin{to_thr} 
+	$\dim \Ker b = \dim V - \rg b$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Рассмотрим базис $e = (\vc{e},\ldots,\vc{e}_n)$, и $b \underset{e}{\longleftrightarrow} B$. Пусть $\vc{v}\in V, \, \vc{v} \underset{e}{\longleftrightarrow} x, \, \vc{v} \in \Ker b \Leftrightarrow \forall \vc{u} \: b(\vc{u},\vc{v}) = 0$;
+
+	2) Или равносильно: $\forall i \: b(\vc{e}_i, \vc{v}) = 0 \Leftrightarrow E B X = 0 \Leftrightarrow B X = 0$. Пространство решений это ОСЛУ имеет требуемое равенство: $\dim \Ker b = \dim V - \rg B$.
+\end{proof}
+
+	% Другое оформление
+	% \begin{minipage}{0.45\linewidth}
+	% 	Симметричная билинейная форма.
+
+	% 	$\forall \vc{u}, \vc{v} \in V: \: b(\vc{u},\vc{v}) = b(\vc{v}, \vc{u})$
+
+	% 	$\mathcal{B}^- (V)$ ---  \textbf{симметричные} формы на $V$
+
+	% 	$b \underset{e}{\longleftrightarrow} B$, $B^T = B$
+	% \end{minipage}
+	% \hfill
+	% \begin{minipage}{0.45\linewidth}
+	% 	Кососимметричная билинейная форма.
+
+	% 	$\forall \vc{u}, \vc{v} \in V: \: b(\vc{u},\vc{v}) = - b(\vc{v}, \vc{u}) \overset{}{\Leftarrow} b(\vc{u},\vc{u}) = 0$
+
+	% 	$\mathcal{B}^- (V)$ ---  \textbf{кососимметричные} формы на $V$
+
+	% 	$b \underset{e}{\longleftrightarrow} B$, $B^T = -B$
+	% \end{minipage}
+	
