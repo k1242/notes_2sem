@@ -241,12 +241,100 @@ $$
     Соотношением $\overline{\A} \cdot \overline{\vc{x}} = \overline{\A \vc{x}}$ на $\overline{V}$ \textit{фактороператор}. Другими словами, $\overline{\mathcal A} (\vc{x} + L) = \A \vc{x} + L$.
 \end{to_def}
 
+$$
+    \vc{v} - \infty + \frac{1}{2} + \frac{1}{2} + x_{3} - y_{7} - \vc{y} + 
+$$
+
+
 \subsection{Жорданова нормальная форма}
 
-\subsubsection{Теорема Гамильтона-Кэли}
-\subsubsection{ЖНФ: формулировка и следствие}
-\subsubsection{Корневые подпространства}
+% \subsubsection{Теорема Гамильтона-Кэли}
+% ...
+
+
+% \subsubsection{ЖНФ: формулировка и следствие}
+\begin{to_thr} 
+    Каждая квадратная матрица $A$ порядка $n$ над алгебраически замкнутым полем $\mathbb{F}$ (достаточно, чтобы $\xi_{A}$ раскладывался на линейные сомножители) приводится к жордановой нормальной форме. Именно, $\exists C (\det C \neq 0) \colon C^{-1} A C = J(A) = J$. С точностью до перестановки клеток жорданова нормальная форма матрицы единственна. 
+\end{to_thr}
+
+% \subsubsection{Корневые подпространства}
+% ...
+
 \subsubsection{Случай нильпотентного оператора}
-\subsubsection{Единственность}
-\subsubsection{Другие подходы к ЖНФ}
-\subsubsection{Другие нормальные формы}
+
+Далее, положив $\N = \A - \lambda \mathcal E$ , мы получим нильпотентный оператор индекса нильпотентности $m$ с нильпотентной матрицей $N$.
+
+\begin{to_def} 
+    Линейная оболочка 
+$$
+    \mathbb{F}[\N] \vc{v} = \langle \vc{v}, \N \vc{v}, \ldots, \N^{m'-1} \vc{v}\rangle
+$$
+называется \textit{циклическим подпространством}, ассоциированным с оператором $\N$ индекса нильпотентности $m$ и вектором $\vc{v}$. Предполагается, что $m` \leq m$ -- наименьшее натуральное число, для которого $\N^{m`} \vc{v} = \vc{0}$.
+\end{to_def}
+
+\begin{to_thr} 
+    ЖНФ нильпотентной матрицы $N$ существует (над произвольным $\mathbb{F}$).
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Достаточно показать, что $V$ , на котором действует оператор $\N$, разлагается в прямую сумму циклических подпространств.
+
+    По теореме 1 матрица $N$ приводится к верхнему треугольному виду с 0 по диагонали. Это значит, что линейная оболочка $U$ первых $n-1$ базисных векторов инвариантна относительно $\N$. По определению $\N V \subset U$ ,  а по предположению индукции а $U$ можно выбрать жорданов базис для $\N$ , или, что то же самое,
+    \begin{align*}
+        U &= \mathbb{F}[\N] \vc{e}_1 \oplus \ldots \oplus \mathbb{F}[\N]\vc{e}_s, \\
+        \mathbb{F} [\N] \vc{e}_i &= \langle \vc{e}_i, \N \vc{e}_i, \ldots, \N^{m_i - 1} \vc{e}_i \rangle, \hspace{0.5cm}  B^{m_i} \vc{e}_i = \vc{0}.
+    \end{align*}
+
+    Далее, $V = \langle \vc{v}, U \rangle, \; \N \vc{v} \in U$ для любого вектора $\vc{v}$, не содержащегося в $U$ , так что $\N \vc{v} = \sum_i \alpha \vc{e}_i + \N \vc{v}, \vc{u} \in U$. Заменяя $\vc{v}$ на $\vc{v}' = \vc{v} - \vc{u}$, будем иметь
+    $$
+        V = \langle \vc{v}', U\rangle, \hspace{0.5cm} \N \vc{v}' = \sum_{i=1}^{s} \alpha_i \vc{e}_i.
+    $$
+
+    Если $\alpha_i = 0, 1 \leq i \leq s$, то к клеткам Жордана добавится $J_1 (0)$ , отвечающее циклическому подпространству $\langle \vc{v}'\rangle$ , т.е. 
+    $$
+        N \sim J(N) = \diag \left(
+            J_{m_{1}} (0), \ldots, J_{m_s} (0), J_{1} (0)
+        \right)
+    $$
+
+    Остаётся рассмотреть случай, когда
+    $$
+        \alpha_{1} = \ldots = \alpha_{r-1} = 0, \hspace{0.5cm}  \N \vc{v}' = \sum_{i=r}^s \alpha_i \vc{e}_i, \hspace{0.5cm} \alpha_r \neq 0
+    $$
+    для некоторого $r \geq 1$. Положим
+    $$
+        \vc{e}_i' = \vc{e}_i, \hspace{0.5cm}  
+        i \neq r, \hspace{0.5cm}   
+        \vc{e}'_r = \frac{1}{\alpha_r} \vc{v}', \hspace{0.5cm} 
+        \beta_i = \frac{\alpha_i}{\alpha_r}.
+    $$
+    Тогда
+    $$
+        \N \vc{e}_r' = \vc{e}_r + \sum_{i=r+q}^s \beta_i \vc{e}_i := \vc{f}_r
+    $$
+    Считая $m_{1} \geq \ldots \geq m_n$: $\N^{m_r} \vc{f}_r = \vc{0}$. Верно, что $\N^{m_{r-1}} \vc{f}_r \neq \vc{0}$, $\forall \beta$. Кроме того, сумма
+    $$
+        \sum_{i \neq r} \mathbb{F}[\N] \vc{e}_i' + \mathbb{F}[\N] \vc{f}_r
+    $$
+    также является прямой и совпадает с $U$ .
+
+    Но $\mathbb{F} [\N] \vc{f}_r$ расширяется за счёт вектора $\vc{e}'_r \not \in U \colon \mathbb{F}[\N] \vc{f}_r \subset \mathbb{F}[\N] \vc{e}'_r$, и получается прямая сумма
+    $$
+        V = \bigoplus_{i=1}^s \mathbb{F} [\N] \vc{e}_i',
+    $$
+    отвечающую набору индексов $m_{1}', \ldots, m'_s$, где $m_i' = m_i, \, i \neq r, \, m'_r = m_r + 1$. Тогда
+    $$
+        B \sim \diag \left(J_{m_{1}}' (0), \ldots, J_{m_s'} (0)\right).
+    $$
+    Таким образом, существование базиса для нильпотентного $\N$ доказано.
+\end{proof}
+
+
+
+% \subsubsection{Единственность}
+% ...
+
+% \subsubsection{Другие подходы к ЖНФ}
+
+
+% \subsubsection{Другие нормальные формы}

@@ -29,17 +29,20 @@ amssymb,textcomp, esvect,esint}
 \usepackage{transparent}
 
 
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./img/}{#1.pdf_tex}
-}
+% \newcommand{\incfig}[1]{%
+%     \def\svgwidth{\columnwidth}
+%     \import{./img/}{#1.pdf_tex}
+% }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
 \renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
 \newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
 \renewcommand{\d}{\, d}
 \newcommand{\A}{\mathcal A}
+\newcommand{\N}{\mathcal N}
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\L}{\mathcal{L}}
@@ -61,6 +64,7 @@ amssymb,textcomp, esvect,esint}
 \newcommand{\vR}[1]{V_{#1}(\mathbb{R})}
 \newcommand{\tr}{\text{tr}}
 \newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \newtheorem{to_thr}{Thr}[section]
