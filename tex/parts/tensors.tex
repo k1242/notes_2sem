@@ -1,6 +1,7 @@
-\section{Начала тензорного исчисления}
-
-\begin{to_def}[понятие тензора]
+\section{Тензоры}
+\subsection{Начала тензорного исчисления}
+\subsubsection{Понятие о тензорах}
+\begin{to_def}[Понятие тензора]
     Пусть $\F$ -- поле, $V(\F)$ - векторное пространство, $V^*$ -- сопряженное к $V$, $p$ и $q$ -- целые числа $\geqslant 0$. Всякое $(p+q)$-линейное отображение 
     \begin{equation}
         f \colon V^p \times (V^*)^q \to \F
@@ -8,10 +9,13 @@
     называется \textbf{тензором на $V$ типа $(p, q)$} и валентности (или ранга) $p+q$.
 \end{to_def}
 
-\marginpar{\small $\otimes$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Произведение тензоров}
+
 \begin{to_def}
     Пусть $f \colon V_1 \times \dots \times V_r \to \F$, $g \colon W_1 \times \dots \times W_s \to \F$.
-    Под тензорным произведением $f$ и $g$ понимают отображение
+    Под \textit{тензорным произведением} $f$ и $g$ понимают отображение
     \begin{equation}
         f \otimes g \colon V_1 \times \dots \times V_r \times W_1 \times \dots \times W_s \to \F,
     \end{equation}
@@ -21,7 +25,8 @@
     \end{equation}
 \end{to_def}
 
-
+\noindent
+Некоторые свойства тензорного произведения:
 \begin{figure}[ht!]
 \begin{minipage}{0.5\textwidth}
 \center
@@ -38,29 +43,35 @@
 \begin{minipage}[b]{0.3\textwidth}
         \begin{tabular}{rll}
         1) & $\otimes \colon \mathbb{T}^{p}_{q} \times \mathbb{T}^{p'}_{q'} \to \mathbb{T}^{p+p'}_{q+q'}$; &\\
-        2) & ассоцитивность     & \checkmark    \\
+        2) & ассоциативность     & \checkmark    \\
             & дистрибутивность  & \checkmark \\
-            & \cancel{комутативность}    & \xmark       \\
+            & \cancel{коммутативность}    & \xmark       \\
         \end{tabular}
 \end{minipage}
 \end{figure}
 
-\noindent
-\socrat. Базис в $V$ и $V^*$ выбирается:
-\begin{equation}
-\begin{aligned}
-    (\vc{e}_i, e^j) = \delta_i^j = 
-        \left\{
-            \begin{aligned}
-                0, \text{ если }  i \neq j, \\
-                1,  \text{ если }  i = j,   \\
-            \end{aligned} 
-        \right. \\
-    f(\vc{x}) = (f, \vc{x}) = \sum\nolimits_i \alpha^i  \beta_i = \alpha^i  \beta_i.
-\end{aligned}
-\end{equation}
+\begin{minipage}{0.3\textwidth}
+    Базис в $V$ и $V^*$ выбирается:
+\end{minipage}
+\hfill
+\begin{minipage}{0.7\textwidth}
+   \begin{equation}
+    \begin{aligned}
+        (\vc{e}_i, e^j) = \delta_i^j = 
+            \left\{
+                \begin{aligned}
+                    0, \text{ если }  i \neq j, \\
+                    1,  \text{ если }  i = j,   \\
+                \end{aligned} 
+            \right. \\
+        f(\vc{x}) = (f, \vc{x}) = \sum\nolimits_i \alpha^i  \beta_i = \alpha^i  \beta_i.
+    \end{aligned}
+    \end{equation} 
+\end{minipage}
 
-\begin{to_def}[компоненты тензора]
+\subsubsection{Координаты тензора}
+
+\begin{to_def}[Компоненты тензора]
     Значения тензора обозначаются в виде:
     \begin{equation}
             T_{i_1, \dots, i_p}^{j_1, \dots, j_p} := T(\vc{e}_{i_1}, \dots, \vc{e}_{i_p}, e^{j_1}, \dots, e^{j_q}).
@@ -68,23 +79,63 @@
     Числа  $\numt$ называются \textbf{координатами} тензора $T$ в базисе $(\vc{e}_1, \dots, \vc{e}_n)$
 \end{to_def}
 
-\begin{proof}[$\triangle$]
-Достаточно построить \textit{разложимый} тензор
-\begin{equation*}
-    T_1(\vc{e}_{i_1}, \dots, \vc{e}_{i_p}, e^{j_1}, \dots, e^{j_p}) = \numt,
-\end{equation*}
-и воспользоваться тем, что тензор $T$ полностью определяется своими координатами. 
-
-Далее остается показать, что разложимые тензоры, отвечающие различным наборам индексов линейно независимы.
-\end{proof}
-
 \begin{to_thr}
-    Тензоры типа $(p, q)$ на $V$ составляют $\ten(V)_p^q$ размерности $n^{p+q}$ с базисными векторами
+    Тензоры типа $(p, q)$ на $V$ составляют $\mathbb{T}_p^q (V)$ размерности $n^{p+q}$ с базисными векторами
     \begin{equation}
         e^{i_1} \otimes \dots \otimes  e^{i_p} \otimes \vc{e}_{j_1} \otimes \dots \otimes \vc{e}_{j_q},
     \end{equation}
     При том $\exists ! T$ с координатами $\numt$.
 \end{to_thr}
+
+
+\begin{proof}[$\triangle$]
+Достаточно построить \textit{разложимый} тензор. Далее воспользуемся равенством:
+$$
+    (e^{i_{1}} \otimes \ldots e^{i_p} \otimes \vc{e}_{j_{1}} \otimes \ldots \otimes \vc{e}_{j_q}) (\vc{e}_{i_{1}'},  \ldots,  \vc{e}_{i_p'}, e^{j_1'}, \ldots,  e^{j_q'}) =
+     \delta_{i_1'}^{i_{1}} \ldots \delta_{i_p'}^{i_{p}}
+     \delta_{j_1'}^{j_{1}} \ldots \delta_{j_q'}^{j_{q}}.
+$$
+Построим тензор
+$$
+    T_{1} = \sum_{i, j} T_{i_1 \ldots i_p}^{j_1 \ldots  j_q} 
+    (e^{i_{1}} \otimes \ldots e^{i_p} \otimes \vc{e}_{j_{1}} \otimes \ldots \otimes \vc{e}_{j_q}),
+$$
+просто линейную комбинацию с некоторой индексацией. Теперь получим
+\begin{equation*}
+    T_1(\vc{e}_{i_1}, \dots, \vc{e}_{i_p}, e^{j_1}, \dots, e^{j_p}) = \numt,
+\end{equation*}
+и воспользуемся тем, что тензор $T$ полностью определяется своими координатами. Почему? 
+
+В силу полилинейности для произвольных векторов
+$$
+    \vc{x}_{1} = \sum\nolimits_{i_{1}} \xi^{i_{1}} \vc{e}_{i_{1}}, \; \;
+    \ldots, \; \;
+    \vc{x}_p = \sum\nolimits_{i_p} \rho^{i_p} \vc{e}_{i_p}
+$$
+и линейных форм
+$$
+    u^1 = \sum\nolimits_{j_{1}} \sigma_{j_{1}} e^{j_{1}}, \; \;
+    \ldots, \; \;
+    u^p = \sum\nolimits_{j_p} \tau_{j_q} e^{j_q}
+$$
+имеем
+$$
+    T(\vc{x}_{1}, \ldots,  \vc{x}_p, u^1, \ldots,  u^p) = \sum\nolimits_{i, \, j}
+    T_{i_1, \dots, i_p}^{j_1, \dots, j_p} \xi^{i_{1}} \ldots \rho^{i_p} \sigma_{j_{1}} \ldots \tau_{j_q}.
+$$
+
+
+Далее остается показать, что разложимые тензоры, отвечающие различным наборам индексов линейно независимы. Это следует из правила вычисления их значений. Пусть они ЛЗ
+$$
+    \sum \lambda_{i_1, \dots, i_p}^{j_1, \dots, j_p} \xi^{i_{1}} 
+    e^{i_{1}} \otimes \ldots e^{i_p} \otimes \vc{e}_{j_{1}} \otimes \ldots \otimes \vc{e}_{j_q} = 0,
+$$
+где $\lambda_{i_1, \dots, i_p}^{j_1, \dots, j_p} \in \mathbb{F}$. Аналогично с $T_1$ можем подставить элемент базиса, свести к работе с символами Кронекера. 
+
+\end{proof}
+
+
+\subsubsection{Переход к другому базису}
 
 \begin{to_thr}
     При переходе от дуальных базисов $(\vc{e}_i)$, $(e^i)$ пространств $V$ и $V^*$ к новым дуальным базисам тех же пространств:
@@ -102,13 +153,55 @@
     \end{equation}
 \end{to_thr}
 
-\noindent
-\textbf{\# тензорное произведение пространств}
+\begin{proof}[$\triangle$]
+    \koz \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} (в принципе, всё понятно) \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} \koz
+\end{proof}
 
-\noindent
-\textbf{\# тензорное произведение операторов}
 
-\phantom{42} \marginpar{\textit{\small свёртка}}
+\subsubsection{Тензорное произведение пространств}
+\begin{to_thr} 
+    Пусть $V, W$ --- векторные пространства над полем $\mathbb{F}$ . Тогда существует векторное пространство $T$ над $\mathbb{F}$ и билинейное отображение $b \colon V \times W \to T$, удовлетворяющее условиям:
+
+             \begin{tabular}{c|rl}
+                (T1) &
+                если $\vc{v}_{1}, \ldots, \vc{v}_k \in V$ ЛНеЗ и $\vc{w}_{1}, \ldots, \vc{w}_k \in W,$  & 
+                то $\sum_{i=1}^k b(\vc{v}_i, \vc{w}_i) = 0$ $\Longrightarrow$ $\vc{w}_{1}=\ldots =\vc{w}_k=0$;\\
+                (Т2) &
+                если $\vc{w}_{1}, \ldots, \vc{w}_k \in W$ ЛНеЗ и $\vc{v}_{1}, \ldots, \vc{v}_k \in V,$  & 
+                то $\sum_{i=1}^k b(\vc{v}_i, \vc{w}_i) = 0$ $\Longrightarrow$ $\vc{v}_{1}=\ldots =\vc{v}_k=0$;\\
+                (Т3) &
+                $b$ -- сюръективно, т.е. &
+                $T = \langle b(\vc{v}, \vc{w}) \mid \vc{v} \in V, \; \vc{w} \in W\rangle_{\mathbb{F}}$.
+             \end{tabular}
+      
+      Кроме того, пара $(b, T)$ универсальна в том смысле, что какова ни была пара $(b', T')$, состоящая из векторного пространства $T'$ и билинейного отображения $b' \colon V \times W \to T'$, найдётся единственное линейное отображение $\sigma \colon T \to T'$, для которого $b' (\vc{v}, \vc{w}) = \sigma (b(\vc{v}, \vc{w}))$, $\vc{v} \in V$, $\vc{w} \in W$.
+\end{to_thr}
+
+
+\begin{proof}[$\triangle$]
+    \textit{Точно не для экзамена.}
+\end{proof}
+
+\begin{to_def} 
+    Пару $(b, T)$, однозначно определенную с точностью до изоморфизма по заданным векторным пространствам $V$, $W$, называют \textit{тензорным произведением} этих пространств.
+\end{to_def}
+
+\begin{to_def} 
+    Пусть $\mathcal A \colon V \to V, \mathcal B \colon W \to W$ -- линейный операторы. Их \textit{тензорным произведением} называется линейный оператор 
+    $$
+        \mathcal A \otimes \mathcal B \colon V \otimes W \to V \otimes W,
+    $$
+    действующий по правилу
+    $$
+        \left(\mathcal A \otimes \mathcal B\right) \left(\vc{v} \otimes \vc{w}\right) = \mathcal A \vc{v} \otimes \mathcal B \vc{w}
+    $$
+    (далее по линейности $\left(\mathcal A \otimes \mathcal B\right) \left( \sum (\vc{v}_i \otimes \vc{w}_i)\right) = \sum \mathcal A \vc{v}_i \otimes \mathcal B \vc{w}_i$).
+\end{to_def}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Свёртка, симметризация и альтернирование тензоров}
+\subsubsection{Свёртка}
 
 \begin{to_def}[свёртка]
     Зафиксировав все переменные кроме $\vc{x}_r$ и $u_s$, получим билинейную форму:
@@ -122,8 +215,7 @@
     называется \textbf{свёрткой тензора} $T$ по $r$-му ковариантному и $s$-му контрвариантному индексу.
 \end{to_def} 
 
-\noindent
-\socrat. Если обозначить свёртку по индексам $r$, $s$ символом $\tr^s_r$, то $\tr^s_r$ -- линейное отображение:
+Если обозначить свёртку по индексам $r$, $s$ символом $\tr^s_r$, то $\tr^s_r$ -- линейное отображение:
 \begin{equation}
     \tr^s_r: \ten^q_p(V) \to \ten_{p-1}^{q-1}(V).
 \end{equation}
@@ -144,6 +236,10 @@
     \end{equation}
 \end{to_thr}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Симметричные тензоры}
 \marginpar{$S\ten^p(V)$}
 Для любой перестановки $\pi \in S_p$ положим 
 \begin{equation}
@@ -156,17 +252,7 @@
     \end{equation}
 \end{to_def}
 
-\noindent
-\socrat. Подпростраснство сим. тензоров типа $\ten^0_p (V)$ обозначим $\ten^+_p (V)$.
-
-\noindent
-\socrat. Действие $S$: 1) $S^2 = S$, $\Im S = \ten^+_p (V)$.
-
-\noindent
-\socrat\footnote{
-    стр. 281, Кострикин.
-}
-. Пространства $\F[X_1, \dots, X_n]_p$ и $\ten^+_p (V)$ биективны. Тогда
+ЗФ: Подпространство сим. тензоров типа $\ten^0_p (V)$ обозначим $\ten^+_p (V)$.  Действие $S$: 1) $S^2 = S$, $\Im S = \ten^+_p (V)$. Пространства $\F[X_1, \dots, X_n]_p$ и $\ten^+_p (V)$ биективны. Тогда
 \begin{equation}
     \dim \F[X_1, \dots, X_n]_p = \dim \ten^+_p (V) = 
     \begin{pmatrix}
@@ -175,7 +261,7 @@
 \end{equation}
 
 \begin{to_def}
-    Ассоциативная и комутативная \textbf{симметрическая алгебра} пространства $V$:
+    Ассоциативная и коммутативная \textbf{симметрическая алгебра} пространства $V$:
     \begin{equation}
         S(V) = \oplus_{p=0}^{\infty} S\ten^p (V),
     \end{equation}
@@ -183,7 +269,11 @@
 
 \end{to_def}
 
-\marginpar{$\Lambda^p(V)$}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Кососимметричные тензоры}
 
 \begin{to_def}
     Назовём тензор $T$ кососимметричным, если 
@@ -193,16 +283,21 @@
 \end{to_def}
 
 \begin{to_def}
-    \textbf{Альтернрованием} называется отображение
+    \textbf{Альтерированием} называется отображение
     \begin{equation}
         A(T) = \frac{1}{p!} \sum_{\pi \in S_p} \sign(\pi) \cdot f_{\pi} (T) \colon  \ten^0_p (V) \to \ten^0_p (V).
     \end{equation}
 \end{to_def}
 
-\noindent
-\socrat. Действие $A$: 1) $A^2 = A$, 2) $\Im A = \Lambda^+_p (V)$, 3) $A(f_{\sigma}(T)) = \sign(\sigma) A(T)$.
 
-\marginpar{\small $\wedge$}
+Действие $A$: 1) $A^2 = A$, 2) $\Im A = \Lambda^+_p (V)$, 3) $A(f_{\sigma}(T)) = \sign(\sigma) A(T)$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Внешняя алгебра}
 
 \begin{to_def}
     Зададим \textbf{операцию внешнего умножения}
@@ -250,10 +345,12 @@ $\boxed{\Rightarrow}$. Внешняя алгебра $\Lambda(V)$ простра
         n \\ p
     \end{pmatrix}.
 \end{equation}
-Базис пространства $\Lambda^n (V)$ состоит из одного $n-$вектора $$\vc{e}_1 \wedge \vc{e}_2 \wedge \dots \wedge \vc{e}_p$$.
+Базис пространства $\Lambda^n (V)$ состоит из одного $n-$вектора 
+$$
+    \vc{e}_1 \wedge \vc{e}_2 \wedge \dots \wedge \vc{e}_p.
+$$
 
-\noindent
-\socrat. Внешняя алгебра $V$ \textbf{антикоммутативна}:
+Внешняя алгебра $V$ \textbf{антикоммутативна}:
 \begin{equation}
     Q \in \Lambda^q(V), R \in \Lambda^r(V) \Rightarrow Q \wedge R = (-1)^{qr} R \wedge Q.
 \end{equation}
