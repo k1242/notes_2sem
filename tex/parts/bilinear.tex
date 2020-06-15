@@ -142,5 +142,304 @@ $b^-(\vc{u},\vc{v}) = \frac{b(\vc{u},\vc{v}) - b (\vc{v}, \vc{u})}{2}$ \\
 
 	2) так как $U$ -- невырождено: $\rg B_U = k \Rightarrow$ первые $k$ строк $B_U$ ЛНеЗ, значит $\dim U^\bot = n -k$.
 
-	3) Кроме того, $\Ker b \big|_U = 0$ так как $\dim \Ker b \big|_U = k - k = 0$. То есть $\forall \vc{v} \in U, \, \vc{v} \neq 0 => \exists \vc{u} \in U: \: b(\vc{u},\vc{v}) = 0$, что означает, что $U \cap U^\bot = \varnothing$. \textbf{Итак}, $U + U^\bot = U \oplus U^\bot$ и $\dim(U + U^\bot) = k + (n-k) = n$.
+	3) Кроме того, $\Ker b \big|_U = 0$ так как $\dim \Ker b \big|_U = k - k = 0$. То есть $\forall \vc{v} \in U, \, \vc{v} \neq 0 => \exists \vc{u} \in U: \: b(\vc{u},\vc{v}) = 0$, что означает, что $U \cap U^\bot = \vc{0}$. \textbf{Итак}, $U + U^\bot = U \oplus U^\bot$ и $\dim(U + U^\bot) = k + (n-k) = n$.
 \end{proof}
+
+\subsection{Квадратичные формы}
+\begin{to_def} 
+	$h \colon V \to \mathbb{F}$ --- \textbf{квадратичная форма}, $h(\vc{v}) = b(\vc{v},\vc{v}) \: \forall \vc{v} \in V$, для некоторой $b \in \mathcal{B}(V)$.
+\end{to_def}
+
+\begin{to_thr} 
+	Если $\text{char}(\mathbb{F}) \neq 2$. Тогда $\forall h \in \mathcal{Q}(V)\, \exists! b \in \mathcal{B}^+(V): \: h(\vc{v}) = b(\vc{v},\vc{v})$ ($\mathcal{Q} \cong \mathcal{B}^+(V)$).
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	$\encircled{\exists}$. Пусть $b \in \mathcal{B}(V):\: b = b^+ + b^- \leadsto h(\vc{v}) = b(\vc{v},\vc{v}) = b^+(\vc{v},\vc{v}) + \cancel{b^-(\vc{v},\vc{v})}$. $h$ задаётся $b^+$.
+
+	$\encircled{!}$. Пусть $h(\vc{v}) = b(\vc{v},\vc{v}), \, b \in \mathcal{B}^+(V)$. Восстановим $b$ по $h$. Для $\vc{u},\vc{v} \in V$:
+
+	$h(\vc{u} + \vc{v}) = b (\vc{u} + \vc{v}, \vc{u} + \vc{v}) = b(\vc{u},\vc{u}) + b(\vc{v},\vc{v}) + 2 b (\vc{u}, \vc{v}) \leadsto b(\vc{u},\vc{v}) = \big[h(\vc{u}+\vc{v}) - h(\vc{u}) - h(\vc{v})\big]/2$\\
+	Полученная симметричная форма --- \textbf{билинейная форма полярная к $h$}.
+\end{proof}
+
+Пусть $b \underset{e}{\longleftrightarrow} B, \, \vc{u} \underset{e}{\longleftrightarrow} x, \, \vc{v} \underset{e}{\longleftrightarrow} y$. Имеем $b(\vc{u},\vc{v}) = x^T B y = \sum\limits_{ i=1 }^{ n } \sum\limits_{ j=1 }^{ n } b_{i j} x_i, y_j$. Тогда квадратичная форма $h (\vc{v}) = y^T B y = \sum\limits_{ i=1 }^{ n } \sum\limits_{ j=1 }^{ n } b_{i j}y_i y_j$. Если $b$ -- симметричная, то $b_{ i j} = b_{j i}$, а $h(\vc{v}) = \sum\limits_{ i=1 }^{ n } b_{i i} y_i^2 + 2 \sum\limits_{ i<j }^{ n } b_{i j} y_i y_j$.
+
+Отныне характеристика нашего поля ни в коем виде не \textbf{двойка}.
+
+\begin{to_def} 
+	 $h \in \mathcal{Q}(V)$ с \textbf{полярной} $b \in \mathcal{B}(V)$, $e$ -- базис. Тогда матрица $h$ -- это матрица $b$  в базисе $e$.
+
+	 Матрица $h \in \mathcal{Q}(V)$ всегда симметрична. Если $h \underset{e}{\longleftrightarrow} B, \, \vc{v} \underset{e}{\longleftrightarrow} x$, то $h(\vc{v}) = b(\vc{v}, \vc{v}) = x^T B x$.
+\end{to_def}
+
+\begin{to_thr} 
+	Пусть $h \in \mathcal{Q}(V)$. Тогда $\exists e$ -- базис в $V:$ $h$ в этом базисе имеет диагональную матрицу. 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Индукция по $n = \dim V$. Для $n = 1$ доказывать нечего. Для $h = 0$ тоже.
+
+	2) $n>1$: $\exists \vc{e}_1:\: h(\vc{e}_1) \neq 0$. Тогда $\langle \vc{e}_1\rangle$ -- невырождена относительно полярной к $h$ -- $b$.
+
+	3) То есть $V = \langle \vc{e}_1\rangle \oplus \langle \vc{e}_1\rangle^\bot$. По индукции, в $U = \langle \vc{e}_1\rangle^\bot$ есть базис $(\vc{e}_2,\ldots,\vc{e}_n)$, где $h \big|_U$ диагональна.
+
+	4) Матрица(3) -- $B'$, тогда $h\underset{e}{\longleftrightarrow} B$ в $(\vc{e}_1,\vc{e}_2,\ldots,\vc{e}_n)$ состоит из $B'$ и $h(\vc{e}_1)$ в верхнем левом углу.
+\end{proof}
+
+\begin{to_con}
+	Пусть $\mathbb{F} = \mathbb{R} \Rightarrow\forall h \in  \mathcal{Q}(V), \, \exists e \in V:\: h \underset{e}{\longleftrightarrow} B \in e$ -- диагональна c $0,\, \pm 1$ на диагонали.
+\end{to_con}
+
+\begin{to_def} 
+	Над $\mathbb{R}$ $h \in \mathcal{Q}(V)$.  Базис, в котором $h \underset{e}{\longleftrightarrow} B$ -- диагональна с $0,\, \pm 1$ --- \textbf{нормальный базис}.
+	Матрица $B$ --- \textbf{нормальная форма} для $h$.
+\end{to_def}
+
+\begin{to_def} 
+	 Пусть $h \in \mathcal{Q}(V)$ над $\mathbb{R}$ (далее всегда \textbf{$\mathbb{F}  = \mathbb{R}$}). Тогда $h$ называется:
+
+	  	\textbf{положительно полуопределенной},  если $\forall \vc{v} \in V\: h(\vc{v}) \geq 0$ $\Leftrightarrow$ на диагонали $B$ только $0,\, + 1$.
+
+	  	\textbf{положительно определенной}, если $\forall \vc{o} \neq \vc{v} \in V\: h(\vc{v}) > 0$ $\Leftrightarrow$ на диагонали $B$ только $+ 1$. 
+
+	  	\textbf{отрицательно определенной или полуопределенной}.\\
+	  	В этих случаях полярная к $h$ билинейная форма приобретает те же названия.
+\end{to_def}
+
+\begin{to_def} 
+	Пусть $h \in \mathcal{Q}(V)$. Её \textbf{положительный индекс инерции} $\sigma_+(h)$  --- наибольшая размерность подпространства $U\subseteq V$, на которой $h \big|_U$ -- положительно определена. (Отрицательный индекс инерции так же)
+\end{to_def}
+
+\begin{to_thr} 
+	$\mathcal{Q}(V) \ni h \underset{e}{\longleftrightarrow} B$ -- её нормальный вид в $e$. Тогда на диагонали $B$ стоит ровно $\sigma_+(h)$ единиц и $\sigma_-(h)$ минус единиц. 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Пусть $B = 
+	\begin{pmatrix}
+	E_k&&O\\
+	&0_l&\\
+	O&&-E_m\\	
+	\end{pmatrix}$.
+	Тогда, если $U = \langle \vc{e}_1,\ldots,\vc{e}_k\rangle$, то матрица $h \big|_U$ -- единичная, то есть $h \big|_U$ -- положительно определена. Для $W = \langle \vc{e}_{k+1},\ldots,\vc{e}_n\rangle$ получаем $h\big|_U$ -- отрицательно полуопределена.
+
+	2) Пусть $U' \subseteq V: \: h\big|_{U'}$ -- положительно определена $\Rightarrow \forall (\vc{0} \neq) \vc{v} \in U' \cap W: \: 0 < h(\vc{v}) \leq 0$ -- невозможно.
+	 \textbf{Итак}, $U' \cap W = 0 \Rightarrow \dim U' \leq \dim V - \dim W = k$, в итоге $\sigma_+(h) = k$.
+	 Аналогично $\sigma_-(h) = m$.
+\end{proof}
+
+\begin{to_con}[Закон инерции]
+	Нормальный вид матрицы $h\in \mathcal{Q}(V)$ определён однозначно с точностью до перестановки элементов диагонали.
+\end{to_con}
+
+\begin{to_def} 
+	$B$ -- симметричная матрица над $\mathbb{R}$ Она обретает такие же названия, как у квадратичной формы, если она её матрица.
+
+	$B$ -- положительно определена $\Leftrightarrow \exists$ невырожденная $A:\: B = A^T A$
+\end{to_def}
+
+\begin{proof}[$\triangle$]
+	$\encircled{\Rightarrow}$. У соответствующей $h$ нормальный вид -- $E = S^T B S$. Тогда $B = (S^T)^{-1} S^{-1} = (S^{-1})^{T} S^{-1}$.
+
+	$\encircled{\Leftarrow}$. Если $B = A^T A \Rightarrow \forall(\vc{0} \neq)\vc{v} \in V, \, \vc{v} \underset{e}{\longleftrightarrow} x, \: h(\vc{v}) = x^T B x = x^T A^T A x = (A x)^T A x > 0$.
+
+	\textit{Note}: и также для $B$ -- полуопределенной $\Leftrightarrow \exists A:\: B = A^T A$.
+\end{proof} 
+
+\begin{to_def} 
+	$B$ -- симметричная матрица. Её \textbf{главный минор} $i$-порядка $\Delta_i(B)$ --- это определитель матрицы $i \times i$ в левом верхнем углу. 
+\end{to_def}
+
+\begin{to_thr}[Метод Якоби]
+	 $\mathcal{Q}(V) \ni h \underset{e}{\longleftrightarrow} B$, причём $\Delta_i (B) \neq 0, \, i = 1,\ldots,n(=\dim V)$. Тогда $\exists e' = e S$, где $S$ -- верхнетреугольная матрица с единицами на диагонали такой, \\что $h \underset{e'}{\longleftrightarrow} 
+	 \begin{pmatrix}
+	 d_1&&O\\
+	 &\ddots&\\
+	 O&&d_n\\	
+	 \end{pmatrix}$, где $d_i = \frac{\Delta_i(B)}{\Delta_{i-1}(B)}$ ($\Delta_0(B) = 1$).
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Индукция по $n$. При $n =1$ доказывать нечего. Для $n >1$ имеем $\langle \vc{e}_1,\ldots,e_{n-1}\rangle$ - невырожденный относительно билинейной формы, полярной к $h$ (так как $\Delta_{n-1}(B) \neq 0)$).
+
+	2) Значит $V = U \oplus U^\bot$. Разложим $\vc{e}_n = \vc{u} + \vc{e}_n'$ ($u \in U,\, \vc{o} \neq \vc{e}_n' \in U^\bot$). 
+	Тогда по предположению индукции: найдётся замена базиса в $U$: $(\vc{e}_1',\ldots,\vc{e}_{n-1}') = (\vc{e}_1,\ldots,\vc{e}_{n-1}) S$, приводящая $h \big|_U$ к диагональному.
+
+	3) Тогда $\vc{e}_n' \in \langle \vc{e}_1',\ldots, \vc{e}_{n-1}'\rangle^\bot = U^\bot$. Получаем $h \underset{e'}{\longleftrightarrow} B' = 
+	\begin{pmatrix}[c|c]
+		\begin{matrix}d_1&&\\&\ddots&\\&&d_{n-1}\\ \end{matrix} & O\\
+		\hline
+		O & d_n\\
+	\end{pmatrix}$
+	$S = \begin{pmatrix}[c|c]
+		S'&O\\
+		\hline
+		O&1\\
+	\end{pmatrix}$.
+
+	% $\boxed{\begin{matrix}d_1&&\\&\ddots&\\&&d_{n-1}\\ \end{matrix}}$
+
+	4) Доказав переход индукции осталось вычислить $d_i$. Заметим, что: $\vc{e}_i' \in \langle \vc{e}_1,\ldots,\vc{e}_i\rangle(=\langle \vc{e}_1',\ldots,\vc{e}_i'\rangle)$. 
+
+	5) Пусть $B_i(')$ -- подматрица в $B(')$ в левом верхнем углу ($\Delta_i (B) = |B_i|$). Тогда $B_i' = S_i^T B_i S_i$ ($e_i' = e_i S_i$ и $S_i$ -- верхнетреугольная с единицами на диагонали).
+
+	6) Значит $\Delta_i(B') = |B_i'| = |S_i^T B_i S_i| = |B_i| |S_i|^2 = |B_i| = \Delta_i(B) (= d_1 \ldots d_i) \leadsto$ $d_i = \frac{|B_i'|}{|B_{i-1}'|} = \frac{\Delta_i (B)}{\Delta_{i-1}(B)}$.
+\end{proof}
+
+\begin{to_thr}[Критерий Сильвестра]
+	 $\mathcal{Q}(V) \ni h \underset{e}{\longleftrightarrow} B$.
+
+	 $h$ -- положительно определена $\Longleftrightarrow \forall i = 1,\ldots,n(=\dim(V))\: \Delta_i(B) > 0$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	$\encircled{\Rightarrow}$. $h$ -- положительно определена $\Leftrightarrow B = A^T A$, $A$ -- невырождена. Тогда $\Delta_n (B) = |B| = |A|^2 >0$.
+
+	$\encircled{\Leftarrow}$. Из метода Якоби, на диагонали: $\Delta_1, \, \Delta_2/\Delta_1 \ldots$ все $>0$ $\Rightarrow h$ -- положительно определена. 
+\end{proof}
+
+\begin{to_con}
+	Если $\forall i = 1, \ldots, n:\:\Delta_i(B) \neq 0 \Rightarrow \sigma_-(h)$ -- число перемен знака в $1, \Delta_1(B),\ldots, \Delta_n(B)$. 
+\end{to_con}
+
+\subsection{Кососимметричные и полуторолинейные формы}
+
+\begin{to_thr} 
+	Теперь и далее $\mathbb{F}$ -- любое. Пусть $b \in \mathcal{B}^-(V)$. Тогда в $V \, \exists e$, в котором $b \underset{e}{\longleftrightarrow} \begin{pmatrix}
+		$\boxed{\begin{matrix}0&1\\-1&0\\\end{matrix}}$&&O\\
+		&\ddots&\\
+		O&&\boxed{0}\\
+	
+	\end{pmatrix}$ 
+	% $\boxed{\begin{matrix}0&1\\-1&0\\\end{matrix}}$
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) Индукция по $n = \dim V$. Если $\rg b = 0$, то доказывать нечего.
+
+	2)Иначе $\exists \vc{e}_1, \vc{e}_2:\: b(\vc{e}_1, \vc{e}_2) \neq0 \Rightarrow \vc{e}_1, \vc{e}_2$ -- ЛНеЗ и, можно считать, $b(\vc{e}_1,\vc{e}_2)= 1$.
+
+	3) Далее, $U = \langle \vc{e}_1, \vc{e}_2\rangle$ -- невырождено относительно $b$
+	и $b \big|_U \underset{(\vc{e}_1, \vc{e}_2)}{\longleftrightarrow} B = \begin{pmatrix} 0&1\\ -1&0\\ \end{pmatrix}$.
+
+	4) Значит, $V = U \oplus U^\bot$. По предположению индукции к $b \big|_U^\bot$ получаем $B_1$ в базисе $(\vc{e}_3,\ldots,\vc{e}_n)$.
+
+	5) Тогда, для $e = (\vc{e}_1,\ldots,\vc{e}_n)$ имеем: $b \underset{e}{\longleftrightarrow} 
+	\begin{pmatrix}[c|c]
+		\begin{matrix}0&1\\-1&0\\\end{matrix} & O\\
+		\hline
+		O& B_1\\
+	\end{pmatrix}
+	$.
+\end{proof}
+
+Пусть отныне $\mathbb{F} = \mathbb{C}$, $V$ -- линейное пространство над $\mathbb{F}$.
+
+\begin{to_def} 
+	$b \colon V \times V \to \mathbb{F}$ --- \textbf{полуторолинейная форма}, если она:
+	\begin{equation*}
+		\begin{aligned}
+			&\text{1) Линейная по первому аргументу:} 
+			&\left\{
+			\begin{aligned}
+				b(\vc{u}_1 +\vc{u}_2, \vc{v}) = b(\vc{u}_1, \vc{v}) + (\vc{u}_2, \vc{v}) \\
+				\forall \lambda \in \mathbb{C}:\: b(\lambda \vc{u}, \vc{v}) = \lambda b(\vc{u},\vc{v})	
+			\end{aligned}
+			\right. \\
+			&\text{2) Сопряженно линейная по второму аргументу:}
+			&\left\{
+			\begin{aligned}
+				b(\vc{u},\vc{v}_1 +\vc{v}_2) = b(\vc{u},\vc{v}_1) + (\vc{u},\vc{v}_2) \\
+				\forall \lambda \in \mathbb{C}:\: b(\vc{u},\lambda \vc{v}) = \overline{\lambda} b(\vc{u},\vc{v})	
+			\end{aligned}
+			\right.
+		\end{aligned}
+	\end{equation*}
+\end{to_def}
+
+\begin{to_def} 
+	\textbf{Матрица полуторолинейной формы} в базисе $(\vc{e}_1,\ldots,\vc{e}_n)$ --- это $b \underset{e}{<-->} B = (b(\vc{e}_i, \vc{e}_j))$. 
+
+	Если $\vc{u} \underset{e}{\longleftrightarrow} x, \, \vc{v} \underset{e}{\longleftrightarrow} y$, то $b(\vc{u},\vc{v}) = x^T B \overline{y}$.
+\end{to_def}
+
+\begin{to_thr} 
+	Пространство полуторолинейных форм $S(V) \cong M_{n\times n}(\mathbb{C)})$. Переход: $e' = e S, \, B' = S^T B \overline{S}$.
+\end{to_thr}
+
+\begin{proof}
+	$|B'| = |S^T| \cdot |B| \cdot |\overline{S}| = |B| \cdot |\det S|^2$
+\end{proof}
+
+\begin{to_con}
+	$\rg B(=\rg b)$ и $\arg \det B$ не зависят от выбора базиса. 
+\end{to_con}
+
+\begin{to_def} 
+	Пусть $b \in S(V)$. $b$ называется \textbf{эрмитовой формой}, если $b(\vc{u},\vc{v}) = \overline{b(\vc{v},\vc{u})}$.   
+\end{to_def}
+
+\begin{to_lem}
+	Пусть $S(V) \ni b \underset{e}{\longleftrightarrow} B$. Тогда $b$ -- эрмитова $\Longleftrightarrow B^T = \overline{B}$.
+\end{to_lem}
+
+\begin{to_def} 
+	$B \in M_{n \times n}(\mathbb{C})$ --- \textbf{эрмитова}, если $B = \overline{B^T}$. $B^* = \overline{B^T}$ --- \textbf{эрмитово сопряженной } к $B$.
+\end{to_def}
+
+\begin{to_def}
+	Пусть $b$ -- эрмитова форма на $V$. Тогда $h \colon V \to \mathbb{C}, \, h(\vc{v}) = b(\vc{v},\vc{v})$ --- \textbf{эрмитова квадратичная форма} соответствующая $b$. ($b$ полярна к $h$)
+\end{to_def}
+	
+\begin{to_lem}
+	Если $b$ -- эрмитова форм, то 1) $b (\vc{v},\vc{v}) \in \mathbb{R}$; 2) $b \underset{e}{\longleftrightarrow} B:\, |B| \in \mathbb{R}$.	Следствие: $h$ принимает значения лишь из $\mathbb{R}$.
+\end{to_lem}
+
+\begin{to_lem}
+	Если $b_1 \neq b_2$ -- эрмитовы формы, то соответствующие $h_1 \neq h_2$.
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+	Восстановим $b$ по $h$: $h(\vc{u} + \vc{v}) = h(\vc{u}) + h(\vc{v}) + b(\vc{u}, \vc{v}) + b(\vc{v}, \vc{u}) = h(\vc{u}) + h(\vc{v}) + 2\Re (b(\vc{u},\vc{v})) \Rightarrow$
+
+	$\Re(b(\vc{u}, \vc{v})) = [h(\vc{u}, + \vc{v}) - h(\vc{u}) - h(\vc{v})]/2,$
+
+	$b(\vc{u},i \vc{v}) = - i b(\vc{u}, \vc{v}) \Rightarrow\Im (b(\vc{u},\vc{v})) = \Re (-i b(\vc{u},\vc{v})) = \Re (b(\vc{u}, i \vc{v})) = [h(\vc{u}, + i \vc{v}) - h(\vc{u}) - h(i \vc{v})]/2$
+
+	Следствие: Соответствие между эрмитовыми и квадратичными эрмитовыми формами биеткивно и $\mathbb{R}$-линейно 
+\end{proof}
+
+Значит линейные вещественные пространства эрмитовых и эрмитовых квадратичных форм изоморфны.
+
+Пусть $b$ -- эрмитова форма. $\Ker b = \{\vc{u} \colon \forall \vc{v} \in V\, b(\vc{u},\vc{v}) = 0\} = \{\vc{v}\colon \forall \vc{u} \in V\, b(\vc{u},\vc{v})=0\}$.
+
+$\dim U^\bot \geq \dim V - \dim U$, если $b$ -- невырождена $\Longrightarrow \dim U^\bot = \dim V - \dim U$.
+
+$V = U \oplus U^\bot \Longleftrightarrow U$ -- невырождено относительно $b$ (то есть $b\big|_U$ -- невырождена).
+
+\begin{to_thr} 
+	Пусть $h$ -- эрмитова квадратичная форма, тогда $\exists e:\: h \underset{e}{\longleftrightarrow} B$ -- диагональна с $\{0, \pm 1\}$	 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1)Приведём к диагональному виду индукцией: $h(\vc{e}_1) \neq 0:\: \langle \vc{e}_1\rangle$ -- невырождена относительно $b \Longrightarrow$
+
+	2) $V = \langle \vc{e}_1\rangle \oplus \langle \vc{e}_1\rangle^\bot$ применим индукцию: $h \underset{e}{\longleftrightarrow}\text{diag}(\alpha_i)$.
+
+	3) Нормируем векторы: $\vc{e}_i = \frac{\vc{e}_i}{\sqrt{|h (\vc{e}_i)|}}$, если $h(\vc{e}_1) \neq 0$.
+\end{proof}
+
+\begin{to_def} 
+	Пусть $h$ -- эрмитова квадратичная форма. $h$ --- \textbf{положительно (полу)определена}, если $\forall v:\: h(\vc{v}) >0 (\geq)$. Аналогично с \textbf{отрицательной} (полу)определенностью.  
+\end{to_def}
+
+\begin{to_def} 
+	\textbf{Положительный/отрицательный индекс инерции} $\sigma_+(h), \sigma_-(h)$ --- как и раньше. 
+
+	\textbf{Закон инерции}: В нормальном виде формы $b$ ровно $\sigma_+(h)$ единиц и $\sigma_-(h)$ минус единиц.
+\end{to_def}
+
+\begin{to_thr} [Метод Якоби и Критерий Сильвестра]
+	 АНАЛОГИЧНО
+\end{to_thr}
