@@ -1,0 +1,226 @@
+\subsection{Эрмитовы векторные пространства}
+
+\subsubsection{Эрмитовы формы}
+
+Пусть отныне $\mathbb{F} = \mathbb{C}$, $V$ -- линейное пространство над $\mathbb{F}$.
+
+\begin{to_def} 
+	$b \colon V \times V \to \mathbb{F}$ --- \textbf{полуторалинейная форма}, если она:
+	\begin{equation*}
+		\begin{aligned}
+			&\text{1) Линейная по первому аргументу:} 
+			&\left\{
+			\begin{aligned}
+				b(\vc{u}_1 +\vc{u}_2, \vc{v}) = b(\vc{u}_1, \vc{v}) + (\vc{u}_2, \vc{v}) \\
+				\forall \lambda \in \mathbb{C}:\: b(\lambda \vc{u}, \vc{v}) = \lambda b(\vc{u},\vc{v})	
+			\end{aligned}
+			\right. \\
+			&\text{2) Сопряженно линейная по второму аргументу:}
+			&\left\{
+			\begin{aligned}
+				b(\vc{u},\vc{v}_1 +\vc{v}_2) = b(\vc{u},\vc{v}_1) + (\vc{u},\vc{v}_2) \\
+				\forall \lambda \in \mathbb{C}:\: b(\vc{u},\lambda \vc{v}) = \overline{\lambda} b(\vc{u},\vc{v})	
+			\end{aligned}
+			\right.
+		\end{aligned}
+	\end{equation*}
+\end{to_def}
+
+\begin{to_def} 
+	\textbf{Матрица полуторалинейной формы} в базисе $(\vc{e}_1,\ldots,\vc{e}_n)$ --- это $b \underset{e}{\longleftrightarrow} B = (b(\vc{e}_i, \vc{e}_j))$. 
+
+	Если $\vc{u} \underset{e}{\longleftrightarrow} x, \, \vc{v} \underset{e}{\longleftrightarrow} y$, то $b(\vc{u},\vc{v}) = x^T B \overline{y}$.
+\end{to_def}
+
+\begin{to_thr} 
+	Пространство полуторалинейных форм $S(V) \cong M_{n\times n}(\mathbb{C)})$. Переход: $e' = e S, \, B' = S^T B \overline{S}$.
+\end{to_thr}
+
+\begin{proof}
+	$|B'| = |S^T| \cdot |B| \cdot |\overline{S}| = |B| \cdot |\det S|^2$
+\end{proof}
+
+\begin{to_con}
+	$\rg B(=\rg b)$ и $\arg \det B$ не зависят от выбора базиса. 
+\end{to_con}
+
+\begin{to_def} 
+	Пусть $b \in S(V)$. $b$ называется \textbf{эрмитовой формой}, если $b(\vc{u},\vc{v}) = \overline{b(\vc{v},\vc{u})}$.   
+\end{to_def}
+
+\begin{to_lem}
+	Пусть $S(V) \ni b \underset{e}{\longleftrightarrow} B$. Тогда $b$ -- эрмитова $\Longleftrightarrow B^T = \overline{B}$.
+\end{to_lem}
+
+\begin{to_def} 
+	$B \in M_{n \times n}(\mathbb{C})$ --- \textbf{эрмитова}, если $B = \overline{B^T}$. $B^* = \overline{B^T}$ --- \textbf{эрмитово сопряженной } к $B$.
+\end{to_def}
+
+\begin{to_def}
+	Пусть $b$ -- эрмитова форма на $V$. Тогда $h \colon V \to \mathbb{C}, \, h(\vc{v}) = b(\vc{v},\vc{v})$ --- \textbf{эрмитова квадратичная форма} соответствующая $b$. ($b$ полярна к $h$)
+\end{to_def}
+	
+\begin{to_lem}
+	Если $b$ -- эрмитова форма, то 1) $b (\vc{v},\vc{v}) \in \mathbb{R}$; 2) $b \underset{e}{\longleftrightarrow} B:\, |B| \in \mathbb{R}$.	Следствие: $h$ принимает значения лишь из $\mathbb{R}$.
+\end{to_lem}
+
+\begin{to_lem}
+	Если $b_1 \neq b_2$ -- эрмитовы формы, то соответствующие $h_1 \neq h_2$.
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+	Восстановим $b$ по $h$: $h(\vc{u} + \vc{v}) = h(\vc{u}) + h(\vc{v}) + b(\vc{u}, \vc{v}) + b(\vc{v}, \vc{u}) = h(\vc{u}) + h(\vc{v}) + 2\Re (b(\vc{u},\vc{v})) \Rightarrow$
+
+	$\Re(b(\vc{u}, \vc{v})) = [h(\vc{u}, + \vc{v}) - h(\vc{u}) - h(\vc{v})]/2,$
+
+	$b(\vc{u},i \vc{v}) = - i b(\vc{u}, \vc{v}) \Rightarrow\Im (b(\vc{u},\vc{v})) = \Re (-i b(\vc{u},\vc{v})) = \Re (b(\vc{u}, i \vc{v})) = [h(\vc{u}, + i \vc{v}) - h(\vc{u}) - h(i \vc{v})]/2$
+
+	Следствие: Соответствие между эрмитовыми и квадратичными эрмитовыми формами биеткивно и $\mathbb{R}$-линейно 
+\end{proof}
+
+Значит линейные вещественные пространства эрмитовых и эрмитовых квадратичных форм изоморфны.
+
+Пусть $b$ -- эрмитова форма. $\Ker b = \{\vc{u} \colon \forall \vc{v} \in V\, b(\vc{u},\vc{v}) = 0\} = \{\vc{v}\colon \forall \vc{u} \in V\, b(\vc{u},\vc{v})=0\}$.
+
+$\dim U^\bot \geq \dim V - \dim U$, если $b$ -- невырождена $\Longrightarrow \dim U^\bot = \dim V - \dim U$.
+
+$V = U \oplus U^\bot \Longleftrightarrow U$ -- невырождено относительно $b$ (то есть $b\big|_U$ -- невырождена).
+
+\begin{to_thr} 
+	Пусть $h$ -- эрмитова квадратичная форма, тогда $\exists e:\: h \underset{e}{\longleftrightarrow} B$ -- диагональна с $\{0, \pm 1\}$	 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1)Приведём к диагональному виду индукцией: $h(\vc{e}_1) \neq 0:\: \langle \vc{e}_1\rangle$ -- невырождена относительно $b \Longrightarrow$
+
+	2) $V = \langle \vc{e}_1\rangle \oplus \langle \vc{e}_1\rangle^\bot$ применим индукцию: $h \underset{e}{\longleftrightarrow}\text{diag}(\alpha_i)$.
+
+	3) Нормируем векторы: $\vc{e}_i = \frac{\vc{e}_i}{\sqrt{|h (\vc{e}_i)|}}$, если $h(\vc{e}_1) \neq 0$.
+\end{proof}
+
+\begin{to_def} 
+	Пусть $h$ -- эрмитова квадратичная форма. $h$ --- \textbf{положительно (полу)определена}, если $\forall v:\: h(\vc{v}) >0 (\geq)$. Аналогично с \textbf{отрицательной} (полу)определенностью.  
+\end{to_def}
+
+\begin{to_def} 
+	\textbf{Положительный/отрицательный индекс инерции} $\sigma_+(h), \sigma_-(h)$ --- как и раньше. 
+
+	\textbf{Закон инерции}: В нормальном виде формы $b$ ровно $\sigma_+(h)$ единиц и $\sigma_-(h)$ минус единиц.
+\end{to_def}
+
+\begin{to_thr} [Метод Якоби и Критерий Сильвестра]
+	 АНАЛОГИЧНО СИММЕТРИЧНЫМ
+\end{to_thr}
+
+\subsubsection{Эрмитово пространство}
+
+\begin{to_def} 
+	Конечномерное $V$ над $\mathbb{C}$, с положительно определенной эрмитовой формой $(\vc{x} | \vc{y}) := f (\vc{x},\vc{y})$, называется \textbf{эрмитовым}(унитарным) пространством.
+
+	Комплексное число $(\vc{x},\vc{y})$ --- \textbf{скалярное произведение}(внутреннее) векторов $\vc{x}, \vc{y} \in V$.
+\end{to_def}
+
+В новых обозначениях теперь имеем: 
+$\begin{aligned}
+	&(\vc{x}|\vc{y}) = \overline{(\vc{y}|\vc{x})},\hspace{0.5cm}
+	&(\alpha \vc{x} + \beta \vc{y} | \vc{z}) = \alpha(\vc{x}|\vc{z}) + \beta (\vc{y}|\vc{z})\\
+	&(\vc{x}|\vc{x}) \geq 0; \hspace{0.5cm} 
+	&(\vc{x}|\vc{x}) = 0 \text{ лишь при } \vc{x} = \vc{0}
+\end{aligned}$
+
+\begin{to_def} 
+	Определим \textbf{Длину вектора} $\vc{v}\in V$ --- $||\vc{v}|| = \sqrt{(\vc{v}|\vc{v})}$. 
+
+	C помощью длин можно выразить: $2(\vc{u}|\vc{v}) = ||\vc{u}+\vc{v}||^2 + i ||\vc{u} + i \vc{v}||^2 - (1 + i)\{||\vc{u}||^2 + ||\vc{v}||^2\}$
+\end{to_def}
+
+Эрмитово пространство позволяет проводить множество параллелей с евклидовым, будь то свойство нормы: $||\lambda \vc{x}|| = \sqrt{(\lambda \vc{x}| \lambda \vc{x})}= \sqrt{|\lambda|^2 (\vc{x}|\vc{x})} = |\lambda|\sqrt{(\vc{x}|\vc{x})}$. Также можно записать...
+
+\begin{to_thr}[Неравенство Коши-Буняковского-Шварца]
+	 $|(\vc{x}|\vc{y})| \leq ||\vc{x}|| \cdot ||\vc{y}||$. (Равенство при $\vc{x} = \alpha \vc{y}$)
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1)$(\vc{x}|\vc{y}) = |(\vc{x}|\vc{y}| e^{i \varphi}), \, \varphi \in \mathbb{R}$, и $\forall t \in \mathbb{R}$ выполняется:
+	$||\vc{x}||^2 t^2 + [(\vc{x}|\vc{y})t^{-i \varphi} + \overline{(\vc{x}|\vc{y})}e^{i \varphi}]t + ||\vc{y}||^2 = (\vc{x} t + \vc{y} e^{i \varphi} | \vc{x} t + \vc{y} e^{i \varphi}) \geq 0$
+
+	2) Так как $(\vc{x}|\vc{y})e^{- i \varphi} = |(\vc{x}|\vc{y})| = \overline{(\vc{x}|\vc{y}) e^{i \varphi}}$, то (1) переписывается: $||\vc{x}||^2 t^2 + 2 |(\vc{x}|\vc{y})| t + ||\vc{y}||^2 \geq 0$.
+\end{proof}
+
+Как следствие из предыдущей теоремы можно сразу получить неравенство треугольника:
+$$||\vc{x} \pm \vc{y}|| \leq ||\vc{x}|| + ||\vc{y}|| \hspace{1cm} ||\vc{x} - \vc{z}|| \leq ||\vc{x} - \vc{y}|| + ||\vc{y}-\vc{z}||$$
+
+Также с помощью доказанного неравенство можно утверждать, что существует единственный угол $0 \leq \varphi \leq \pi/2$, для которого: $\cos \varphi = \frac{|(\vc{x}|\vc{y})|}{||\vc{x}||\cdot ||\vc{y}||}$.
+
+\subsubsection{Ортогональность}
+\begin{to_def} 
+	 Набор $\vc{e}_1,\ldots,\vc{e}_m$ эрмитова пространства называется \textbf{ортонормированным}, если $(\vc{e}_i|\vc{e}_j) = \delta_{i j}$. Этот набор векторов ЛНеЗ и дополняем до ортонормированного базиса пространства $V$(метод Грама-Шмидта).
+\end{to_def}
+
+\begin{to_thr} 
+	$(\vc{e}_1,\ldots,\vc{e}_n)$ -- ортонормированный базис эрмитова векторного пространства $(V, (*|*))$. 
+
+	\begin{enumerate}[label = \roman*)	]
+		\item $\vc{x} = \sum\limits_{ i }^{   } (\vc{x}|\vc{e}_i)\vc{e}_i, \forall \vc{x} \in V$.
+
+		\item $(\vc{x}|\vc{y}) = \sum\limits_{ i }^{   } (\vc{x}|\vc{e}_i)(\vc{e}_i|\vc{y}),\, \forall \vc{x}, \vc{y} \in V$ (Равенство Персеваля)
+
+		\item $\vc{x} \in V \Longrightarrow ||\vc{x}||^2 = \sum\limits_{ i }^{   } |(\vc{x}|\vc{e}_i)|^2$.
+	\end{enumerate}
+\end{to_thr}
+
+В теореме выше для $\forall \vc{x} \in V: \: \vc{x} = \sum\limits_{ i }^{   } x_i \vc{e}_i$, ввиду линейности скалярного произведения по первому аргументу: $(\vc{x}|\vc{e}_j) = \left(\sum\limits_{ i }^{   } x_i \vc{e}_i|\vc{e}_j\right) = \sum\limits_{ i }^{   } x_i(\vc{e}_i|\vc{e}_j) = x_j$
+
+Таким образом получена линейная форма $f_i = (*|\vc{e}_j) \colon V \to \mathbb{C}$, сопоставляющая каждому $\vc{x} = \sum\limits_{ i }^{   } x_i \vc{e}_i$ его $j$-ю координату относительно $(\vc{e}_i)$.
+Теперь если взять ещё такой $\vc{y} = \sum\limits_{ j }^{   } y_j \vc{e}_j$, то
+$$
+(\vc{x}|\vc{y}) = \sum\limits_{ i,j }^{   } x_i \overline{y_j} (\vc{e}_i|e_j) = x_1 \overline{y_1} + \ldots + x_n \overline{y_n}
+$$
+\begin{to_def} 
+	 Пусть $f$ -- линейная форма на комплексном векторном пространстве $V$. \textbf{Сопряженной} к $f$ (полу)линейной формой на $V$ называется $\overline{f}\colon V \to \mathbb{C}$, которая сопряженно линейна по своему аргументу.
+\end{to_def}
+
+Если $(V,(*|*))$ -- эрмитово пространство, то $f(\vc{x}) = (\vc{x}|\vc{a})$ для некоторого однозначно определенного вектора $\vc{a} = \sum\limits_{ i }^{ } \overline{f}(\vc{e}_i) \vc{e}_i$. Тогда для любого $\vc{x}$ будем иметь соотношение:
+$$
+(\vc{a}|\vc{x}) = \sum\limits_{ i }^{   } \left(\vc{e}_i \bigg| \sum\limits_{ j }^{   } x_j \vc{e}_j\right) = \sum\limits_{ i }^{   } \overline{f}(\vc{e}_i) \overline{x_i} = \overline{f}(\vc{x})
+\hspace{1cm}
+\overline{f}(\vc{x}) = (\vc{a}|\vc{x}) = \overline{(\vc{x}|\vc{a})} =	\overline{f(\vc{x})}
+$$
+
+\subsubsection{Нормированные векторные пространства}
+\begin{to_def} 
+	Пусть $E$ -- множество точек и $d\colon E \times E \to \mathbb{r}$ -- отображение, сопоставляющем любым двум точкам $u,v \in E$ неотрицательное $d(u,v) \in \mathbb{R}$(aka расстояние) и обладающее следующими свойствами:
+
+	\begin{enumerate}[label = \roman*)]
+		\item $d (u,v) = d(v,u)$ (симметрия);
+		
+		\item $d(u,v) = 0 \Longleftrightarrow u = v$;
+		
+		\item $d(u,w) \leq d(u,v) + d(v,w)$ (неравенство треугольника) 
+	\end{enumerate}
+
+	Функция $d$ с такими свойствами называется --- \textbf{метрикой}, а пара $(E,d)$ --- \textbf{метрическое пространство}.
+	Ещё как в матане можно определить открытый шар, замкнутый шар и сферу и прочие радости жизни.
+\end{to_def}
+
+
+Итак, $V$ -- вещественное или комплексное пространство с метрикой $d$.
+Особо важным является случай, когда $d$ удовлетворяет двум дополнительным условиям: а)инвариантность относительно сдвига; б) умножение на скаляр $\lambda$ увеличивает расстояние в $\lambda$ раз.
+
+\begin{to_def} 
+	Назовём \textbf{нормой} вектора $\vc{x} \in V$ относительно метрики $d$ c (а,б) число $d(\vc{x}, \vc{0}) =:||x||$.
+\end{to_def}
+
+Нужно убедиться, что выполняются следующие свойства нормы:
+
+\begin{enumerate}
+	\item $||\vc{0}|| = 0; \; ||\vc{x}|| > 0, \text{ если } \vc{x} \neq \vc{0}$;
+
+	\item $||\lambda \vc{x}|| = |\lambda| ||\vc{x}|| \text{ для всех } \lambda \in \mathbb{C}, \, \vc{x} \in V$;
+
+	\item $||\vc{x}+\vc{y}|| \leq ||\vc{x}|| + ||\vc{y}||\, \forall \vc{x},\vc{y} \in V$.
+\end{enumerate}
+
+\begin{to_def} 
+	 $V$, снабженное функцией нормы $||*||:\colon V \to \mathbb{R}$, удовлетворяющей условиям выше называется \textbf{нормированным}. Полное нормированное векторное пространство называется \textbf{банаховым}.
+\end{to_def}
