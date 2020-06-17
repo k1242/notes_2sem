@@ -1,0 +1,147 @@
+\subsection{Связь между линейными операторами и $\theta$-линейными формами}
+
+Положим $\theta = 2$, если $V$ -- евклидово пространство и $\theta=3/2$, если $V$ -- эрмитово.
+
+Будем считать теперь $V$ евклидовым(эрмитовым) пространством над $\mathbb{R}(\mathbb{C})$ со скалярным произведением (*,*), $\varphi$ -- линейный оператор на $V$.
+
+Определим: $f_\varphi (\vc{u}, \vc{v}) = (\varphi(\vc{u}), \vc{v})$, где $f_\varphi$ -- $\theta$-линейная форма, $f_\varphi \in \mathcal{B}_\theta (V)$.
+
+\begin{to_lem} 
+	 Пусть $e$ -- ОНБ в $V$, $\mathcal{L}(V) \ni \varphi \underset{e}{\longleftrightarrow} A, \, f_\varphi \underset{e}{\longleftrightarrow} B \Longrightarrow B = A^T$
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+	Если $\vc{u} \underset{e}{\longleftrightarrow} x, \, \vc{v} \underset{e}{\longleftrightarrow} y$, то 
+	$\varphi (\vc{u}) = A x, \, f_\varphi(\vc{u},\vc{v}) = (\varphi(\vc{u}),\vc{v}) = (A x)^T \overline{y} = x^T A y$. И есть $f_\varphi \underset{e}{\longleftrightarrow} A^T$.
+\end{proof}
+
+Как следствие получаем, что сопоставление $\varphi \longleftrightarrow f_\varphi$ -- изоморфизм $\mathcal{L}(V) \longleftrightarrow \mathcal{B}_\theta(V)$
+
+% Аналогично, можно каждому $\varphi \in \mathcal{L}(V)$ сопоставить $g_\varphi (\vc{u},\vc{v}) = (\vc{u}, \varphi(\vc{v}))$.
+% Если в ОНБ $e$ $\varphi \underset{e}{\longleftrightarrow}A \Rightarrow g_\varphi(\vc{u},\vc{v}) = x^T (\overline{A u})$. То есть $g_\varphi \underset{e}{\longleftrightarrow} \overline{A}$. И соответствие $\varphi \underset{e}{\longleftrightarrow} g_\varphi$ -- биекция $\mathcal{L}(V) \longleftrightarrow \mathcal{B}_\theta(V)$.
+
+%далее больше по кострикину
+\begin{to_thr} 
+	Пусть $V$ -- векторное пространство со скалярным произведением $(*|*)$. Тогда любая из формул: $f_\mathcal{A} (\vc{x},\vc{y}) =(\mathcal{A} \vc{x} | \vc{y}) = (\vc{x}|\mathcal{A}^* \vc{y})$ устанавливает биективное соответствие между $\theta$-линейными формами и линейными операторами на $V$. А вместе определяют линейный оператор $\mathcal{A}^* \colon V \to V$, сопряженный к $\mathcal{A}$.
+
+	В ОНБ матрица оператора $\mathcal{A}^*$ получается из матрица оператора $\mathcal{A}$ путём транспонирования и комплексного сопряжения.
+\end{to_thr}
+
+Выпишем свойства отображения $\A \mapsto \A^*$: $\A + \mathcal{B}^* = \A^* + \mathcal{B}^*, \, (\alpha \A)^* = \bar{\alpha} \A^*, \, (\A \mathcal{B})^* = \mathcal{B}^* \A^*, \, \A^{* *} = \A$.
+
+\subsection{Типы линейных операторов}
+Все линейные операторы на $V$ со скалярным произведением разбиваются на классы в зависимости от поведения по отношению к операции "*".
+\begin{to_def} 
+	Линейный оператор $\mathcal{A}$ называется \textbf{эрмитовым}(самосопряженным), если $\mathcal{A}^* = \mathcal{A}$. В евклидовом случае его ещё называют симметричным.
+\end{to_def}
+
+
+% Пусть $\varphi \in \mathcal{L}(V)$. Оператор $\varphi^* \in \mathcal{L}(V)$ --- \textbf{самосопряженный} к $\varphi$, если $f_\varphi = g_{\varphi^*}$, то есть $\forall \vc{u}, \vc{v} \in V:\: (\varphi(\vc{u}), \vc{v}) = (\vc{u}, \varphi(\vc{v}))$. 
+
+Самосопряженность оператора $\mathcal{A}$ эквивалентна условию эрмитовости $\theta$-линейной формы $(\mathcal{A} \vc{x}|\vc{y})$. 
+Условие самосопряженности записывается в виде: $(\mathcal A \vc{x} | \vc{y}) = (\vc{x}| \mathcal 	A \vc{y})$, 
+а условие эрмитовости формы $f_\mathcal{A}$ -- в виде: ($\mathcal{A} \vc{x} | \vc{y}) = f_\mathcal{A}(\vc{x},\vc{y}) = \overline{f_\mathcal{A}(\vc{y}, \vc{x})} = \overline{(\mathcal{A} \vc{y}|\vc{x})}$.
+
+Так как $(*|*)$ -- эрмитова форма, то $\overline{(\mathcal{A} \vc{y}|\vc{x})} = (\vc{x}|\mathcal{A} \vc{y})$.
+
+\begin{to_def} 
+	Линейный оператор $\mathcal{A}$ --- \textbf{косоэрмитов}, если $\mathcal A^* = -\mathcal A$.
+\end{to_def}
+
+Так как $\forall \mathcal{A}\in \mathcal{L}(V):\: \mathcal A^{* *} = \mathcal{A}$, то оператор $\mathcal{A} + \mathcal{A}^*$ эрмитов, а $\mathcal{A} - \mathcal{A}^*$ косоэрмитов. 
+
+\begin{to_thr} 
+	Каждый линейный оператор $\mathcal{Z}$ на эрмитовом пространстве записывается в виде: $\mathcal{Z} = \mathcal{A} + \mathcal{B}$, где  $\A$ -- эрмитов, а $\mathcal{B}$ -- косоэрмитов оператор. 
+	Кроме того, $\mathcal{Z} = \mathcal{X} + i \mathcal{Y}$, где $\mathcal{X}, \mathcal{Y}$ -- эрмитовы линейные операторы.
+\end{to_thr}
+
+\begin{to_thr} 
+	Произведение $\mathcal{A B}$ эрмитовых операторов является эрмитовым $\Longleftrightarrow \mathcal{A B} = \mathcal{B A}$ 
+\end{to_thr}
+
+\begin{to_thr} [Критерий тривиальности $\A$]
+	 Пусть $(\A \vc{x}|\vc{x}) = 0, \, \forall \vc{x} \in V$, и пусть выполнено одно из условий: 1) $V$ -- эрмитово пространство; 2) $V$ --евклидово пространство и $\A$ -- симметричный оператор.
+	 \textbf{Тогда} $\A = \mathcal{0}$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	\textbf{1)} Из двух тождеств с нулевыми (по предположению) правыми частями приходим к системе двух линейных однородных уравнений:
+	 $\begin{aligned}
+	 	&(\A \vc{x} | \vc{y}) + (\A \vc{y}+\vc{x}) = &(\A (\vc{x} + \vc{y}) | \vc{x} + \vc{y}) - (\A \vc{x}|\vc{x}) - (\A \vc{y}|\vc{y}),\\
+	 	&(\A \vc{x} | \vc{y}) - (\A \vc{y}+\vc{x}) = &- i(\A (i\vc{x} + \vc{y}) | i\vc{x} + \vc{y}) + i(\A (i\vc{x})|i \vc{x}) + i(\A \vc{y}|\vc{y})
+	 \end{aligned}$
+
+	 Из равенства нулю правых частей получаем: $(\A \vc{x}|\vc{y})= 0, \, \forall \vc{x}, \vc{y} \in V$, это эквивалентно $\A = \mathcal O$.
+
+	 \textbf{2)} Применяем условие симметричности к верхнему тождеству в пункте (1).
+\end{proof}
+
+
+\begin{to_def} 
+	Линейный оператор $\A$ на векторном пространстве со скалярным произведением называется \textbf{унитарным} (в евклидовом -- ортогональным), если $\A^* \cdot \A = \mathcal E = \A \cdot \A^*$.
+\end{to_def}
+
+\begin{to_def} 
+	Линейный оператор $\A \colon V \to V$, сохраняющий метрику, то есть такой, что $||\A \vc{x} - \A \vc{y}|| = || \vc{x} - \vc{y}||, \, \forall \vc{x},\vc{y} \in V$, называется \textbf{изометрией}.
+\end{to_def}
+
+Так как $\A \vc{x} - \A \vc{y} = \A (\vc{x} - \vc{y})$, то очевидно, $\A$ -- изометрия на $V$ тогда, когда $||\A \vc{x}|| = ||\vc{x}||, \, \forall \vc{x} \in V$. 
+Далее,
+$$
+||\A \vc{x}|| = ||\vc{x}|| \Longleftrightarrow (\A \vc{x}| \A \vc{x}) = (\vc{x}|\vc{x}) \Longleftrightarrow (\A^* \A \vc{x} | \vc{x}) = (\vc{x}|\vc{x}) \Longrightarrow ( (\A^* \A - \mathcal E) \vc{x} | \vc{x}) = 0, \, \forall \vc{x} \in V.
+$$ 
+Оператор $\A^* \A - \mathcal E$ -- самосопряжён, поэтому, согласно последней теореме в эрмитовом(евклидовом) пространстве из только что записанного тождества вытекает, что $\A^* \A - \mathcal E = \mathcal O$. Откуда получаем:
+
+\begin{to_thr} 
+	Унитарные линейные операторы на векторном пространстве $V$ с метрикой, и только они, являются изометриями на $V$. 
+\end{to_thr}
+
+\subsubsection{Канонический вид эрмитовых операторов}
+ \begin{to_lem} 
+ 	Собственные значения эрмитова оператора вещественны. 
+ \end{to_lem}
+
+ \begin{proof}[$\triangle$]
+ 	Пусть $\A \colon V \to V$ -- эрмитов оператор, $\lambda$ -- его собственное значение, отвечающее собственному вектору $\vc{e} \in V$. По определению:
+ 	$$
+ 	\lambda (\vc{e}|\vc{e}) = (\lambda \vc{e}|\vc{e}) = (\A \vc{e}|\vc{e}) = (\vc{e}| \A^* \vc{e}) = (\vc{e}|\A \vc{e}) = (\vc{e}|\lambda \vc{e}) = \overline{\lambda} (\vc{e}|\vc{e}), \hspace{0.5cm} \text{так как } (\vc{e}|\vc{e}) \neq 0, \Rightarrow \overline{\lambda} = \lambda.
+ 	$$
+ \end{proof}
+
+ \begin{to_lem} 
+ 	 У каждого симметричного линейного оператора $\A$ существует собственный вектор.
+ \end{to_lem}
+
+ \begin{proof}[$\triangle$]
+ 	1) $\A$ обладает одномерным или двумерным собственным подпространством. Существование одномерного инвариантного подпространства совпадает с утверждением леммы.
+
+ 	2) Рассмотрим $L$ -- двумерное инвариантное подпространство. Оператор $\A$ индуцирует на $L$ симметричный линейный оператор $\A_L$.
+
+ 	3) Выберем в $L$ ОНБ $(\vc{e}_1, \vc{e}_2)$. Матрице оператора $\A_L = \begin{pmatrix}
+ 		a & b \\
+ 		b & d
+ 	\end{pmatrix}$,
+ 	с $\chi(t) = t^2 - (a -d) t + (a d - b^2)$.
+
+ 	4) $D_\chi = (a - d)^2 + 4 b^2 \geq 0$,так что $\chi(t)$ имеет вещественный корень, а $A$ -- собственный вектор.
+ \end{proof}
+
+ \begin{to_lem} 
+ 	 Пусть $\A$ -- самосопряженный линейный оператор на векторном пространстве со скалярным произведением $(*|*)$,  $L$ -- подпространство, инвариантное относительно $\A$. Тогда ортогональное дополнение $L^\bot$ к $L$ также инвариантно относительно $\A$.
+ \end{to_lem}
+
+ \begin{to_thr} 
+ 	Существует ортонормированный базис пространства $V$ со скалярным произведением, в котором матрице самосопряженного оператора $\A$ диагональна, причём $\text{Spec}(\A)$ вещественный.
+ \end{to_thr}
+
+ \begin{proof}[$\triangle$]
+ 	1) По первым двум леммам раздела у $\A$ имеется собственный вектор $||\vc{e}_1|| =1$ c $\lambda_1 \in \mathbb{R}$.
+
+ 	2) $\dim \langle \vc{e}_1\rangle^\bot = \dim V - 1$ и по последней лемме инвариантно относительно $\A$.
+
+ 	3) Рассмотрим $\A \big|_{V'}$ находим собственный вектор $\vc{e}_2 \colon \A \vc{e}_2 = \lambda_2 \vc{e}_2, \, ||\vc{e}_2|| = 1, \, \lambda_2 \in \mathbb{R}$.
+
+ 	4) $\langle \vc{e}_1, \vc{e}_2\rangle$ инвариантна относительно $\A$, поэтому инвариантно $\langle \vc{e}_1, \vc{e}_2\rangle^\bot$.
+
+ 	5) Рассуждая так и дальше по индукции найдём требуемые $\dim V$ взаимно ортогональных векторов.
+ \end{proof}
