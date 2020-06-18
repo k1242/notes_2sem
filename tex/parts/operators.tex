@@ -17,6 +17,20 @@
 
 Как следствие получаем, что сопоставление $\varphi \longleftrightarrow f_\varphi$ -- изоморфизм $\mathcal{L}(V) \longleftrightarrow \mathcal{B}_\theta(V)$
 
+\begin{to_thr} [Теорема Фредгольма]
+	 $\Ker \varphi^* = (\Im \varphi)^\bot$
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+	1) $\vc{v} \in \Ker \varphi^* \Longrightarrow \varphi^*(\vc{v}) = \vc{0}$.
+
+	2) $\forall \vc{u} \in V: \: 0 = (\vc{u}, \varphi^*(\vc{v})) = (\varphi(\vc{u})_, \vc{v}) \Longrightarrow \vc{v} \in (\Im \varphi)^\bot$.
+
+	3) Пусть $n = \dim V, \, d = \rg \varphi = \rg \varphi^*: \: d = \dim \Im \varphi = \dim \varphi^* = n - \dim \Ker \varphi^*$.
+
+	4) Из (3): $\dim \Ker \varphi^* = n - \dim \Im \varphi = \dim (\Im \varphi)^\bot \Longrightarrow \Ker \varphi^* = (\Im \varphi)^\bot$. 
+\end{proof}
+
 % Аналогично, можно каждому $\varphi \in \mathcal{L}(V)$ сопоставить $g_\varphi (\vc{u},\vc{v}) = (\vc{u}, \varphi(\vc{v}))$.
 % Если в ОНБ $e$ $\varphi \underset{e}{\longleftrightarrow}A \Rightarrow g_\varphi(\vc{u},\vc{v}) = x^T (\overline{A u})$. То есть $g_\varphi \underset{e}{\longleftrightarrow} \overline{A}$. И соответствие $\varphi \underset{e}{\longleftrightarrow} g_\varphi$ -- биекция $\mathcal{L}(V) \longleftrightarrow \mathcal{B}_\theta(V)$.
 
@@ -61,14 +75,14 @@
 
 \begin{to_thr} [Критерий тривиальности $\A$]
 	 Пусть $(\A \vc{x}|\vc{x}) = 0, \, \forall \vc{x} \in V$, и пусть выполнено одно из условий: 1) $V$ -- эрмитово пространство; 2) $V$ --евклидово пространство и $\A$ -- симметричный оператор.
-	 \textbf{Тогда} $\A = \mathcal{0}$.
+	 \textbf{Тогда} $\A = \mathcal{O}$.
 \end{to_thr}
 
 \begin{proof}[$\triangle$]
 	\textbf{1)} Из двух тождеств с нулевыми (по предположению) правыми частями приходим к системе двух линейных однородных уравнений:
 	 $\begin{aligned}
-	 	&(\A \vc{x} | \vc{y}) + (\A \vc{y}+\vc{x}) = &(\A (\vc{x} + \vc{y}) | \vc{x} + \vc{y}) - (\A \vc{x}|\vc{x}) - (\A \vc{y}|\vc{y}),\\
-	 	&(\A \vc{x} | \vc{y}) - (\A \vc{y}+\vc{x}) = &- i(\A (i\vc{x} + \vc{y}) | i\vc{x} + \vc{y}) + i(\A (i\vc{x})|i \vc{x}) + i(\A \vc{y}|\vc{y})
+	 	&(\A \vc{x} | \vc{y}) + (\A \vc{y}|\vc{x}) = &(\A (\vc{x} + \vc{y}) | \vc{x} + \vc{y}) - (\A \vc{x}|\vc{x}) - (\A \vc{y}|\vc{y}),\\
+	 	&(\A \vc{x} | \vc{y}) - (\A \vc{y}|\vc{x}) = &- i(\A (i\vc{x} + \vc{y}) | i\vc{x} + \vc{y}) + i(\A (i\vc{x})|i \vc{x}) + i(\A \vc{y}|\vc{y})
 	 \end{aligned}$
 
 	 Из равенства нулю правых частей получаем: $(\A \vc{x}|\vc{y})= 0, \, \forall \vc{x}, \vc{y} \in V$, это эквивалентно $\A = \mathcal O$.
