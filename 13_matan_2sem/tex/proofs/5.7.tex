@@ -1,0 +1,87 @@
+\sbs{\small Измеримые по Лебегу и борелевские функции}
+
+\begin{minipage}[t]{0.53\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+{$\triangle$} 
+thr \eqref{thr5.41}]
+
+\phantom{42}
+
+\noindent
+1) $ \{ x \mid \inf\{f_n(x) \mid n \in \mathbb{N} \} < c\} = \bigcup_{n \in \mathbb{N}} \{x \mid f_n(x) < c \}$; \\
+2) $ \sup \{ f_n(x) \mid n \in \mathbb{N} \ = - \inf \{ - f_n(x) \mid n \in \mathbb{N} \}$;\\
+3) $\left\{\varlimsup\limits_{n \to \infty} f_n(x) < c \right\} = \bigcup\limits_{s \in \mathbb{Q}, s>0} \bigcup\limits_{N\in \mathbb{N}} \bigcap\limits_{n \geq N} \{ f_n(x) < c-s \}$;\\
+4) $ \varliminf_{n \to \infty} f_n(x) = -\varlimsup_{n \to infty} (-f_n(x)) $.
+\end{proof}
+
+
+
+\begin{proof}[
+{$\triangle$} 
+thr \eqref{thr5.46}]
+
+\phantom{42}
+
+\noindent
+1) 1)$\forall r \in \mathbb{Q}: \, X_r = \{ x\ in X \mid f(x) < r \}$;\\
+2)$f(x) = \inf \{r \in \mathbb{Q} \mid x \in X \} $;\\
+3) $X_r \to Y_r^\text{бор},$ $Y_r \subseteq X_r$ $\mu(X_r \setminus Y_r) = 0$;\\
+4)$g(x) = \inf\{r \in \mathbb{Q} \mid x \in Y_r\};$\\
+5) бор. $g(x)$ и $f(x)$ отл. на мн. $\mu =0$.
+\end{proof}
+
+\begin{proof}[
+{$\triangle$} 
+thr \eqref{thr5.50}]
+
+\phantom{42}
+
+\noindent
+1)$\forall b \in \mathcal{B}$ $f^{-1} (g^{-1} (b)) \in \mathcal B$
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+{$\triangle$} 
+lem \eqref{lem5.39}]
+
+\phantom{42}
+
+\noindent
+1) $\{x \mid f(x) \leq c \} = 
+\bigcap\limits_{k=1}^{\infty} \{x \mid f(x) < 1 + 1/k\}$.
+\end{proof}
+
+\begin{proof}[
+{$\triangle$} 
+thr \eqref{thr5.45}]
+
+\phantom{42}
+
+\noindent
+1) I $\Rightarrow$ II по $\mathbb{R}^n \setminus X$. \\
+2) Дост док для $X_k$ : \\
+\eqref{meas_4} $\Rightarrow$ $X \supseteq F_n^{\text{комп}} \colon 
+\mu(X \setminus F_n) < 1/n$; \\
+$\bigcup_n F_n = Y^{\text{бор}} \subseteq X \colon \mu(X \setminus Y) < 1/n \; \forall n$.
+\end{proof}
+
+\begin{proof}[
+{$\triangle_{\Rightarrow}$} 
+thr \eqref{thr5.48}]
+
+\phantom{42}
+
+\noindent
+1) def $\Rightarrow$ $f^{-1}(-\infty, c) \in \mathcal{B}$ \\
+2) $[a, b]$ и $(a, b) \in \mathcal{B}$; 3) \eqref{lem5.39} $\Rightarrow$ $f^{-1}(-\infty, c] \in \mathcal{B}$ \\
+4) $U = \bigcup_{r \in \mathbb{Q}} \max I(r)$ $\Rightarrow$ $U \in \mathcal{B}$.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}  

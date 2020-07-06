@@ -1,0 +1,20 @@
+\subsection*{Пример №1}
+Рассмотрим двухатомную молекулу. Она описывается набором параметров $x, y, z$, $\varphi_1, \varphi_2, \xi$ --- 6 степеней свободы.
+$$
+\varepsilon = \lr{\frac{m \dot x}{2} + \frac{m \dot y}{2} + \frac{m \dot z}{2}} + \lr{\frac{I_2 \omega_1^2}{2} + \frac{I_1 \omega_2^2}{2}} + \frac{m^* \dot \varepsilon^2}{2} + \frac{k \xi^2}{2}
+$$
+
+Далее найдём $\overline{\varepsilon}$. Найдем среднюю энергию по вращательным степеням свободы.
+$$ \text{Получим\footnote{
+Зная, что величины распределены по Гиббсу-Больцману.
+} }\; 
+\frac{
+\int\limits_{-\infty}^{-\infty} \dfrac{mq^2}{2} \cdot \exp{\lr{-\dfrac{mq^2}{2kT}}} dq
+}{
+\int\limits_{-\infty}^{-\infty} \exp{\lr{-\dfrac{mq^2}{2kT}}} dq
+}  = \frac{1}{2} kT, \; \; \Rightarrow \; \; 
+\boxed{\overline{\frac{mq^2}{2}} = \frac{kT}{2}}.
+$$
+
+Таким образом получаем (\ref{energy}). В частности для 
+двухатомной молекулы получаем $\frac{7}{2} kT$. 

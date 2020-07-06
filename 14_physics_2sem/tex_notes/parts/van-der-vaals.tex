@@ -1,0 +1,145 @@
+\section{Ликбез по газу Ван-дер-Ваальса}
+
+\noindent
+\textbf{\hyperref[new_V]{0)} Уравнение газа Ван-дер-Ваальса}
+\begin{equation}
+\label{vdv}
+    \left(  
+    P + \frac{a \nu^2}{V^2}
+    \right)
+    \left(  
+    V - b \nu
+    \right) = \nu R T \; \; \; \text{или} \; \; \; 
+    P = \frac{\nu R T}{V - \nu b} - \frac{a \nu^2}{V^2}
+\end{equation}
+
+\noindent
+\textbf{\hyperref[cr_dot]{1)} Свзязь с критическими значениями}
+\begin{equation}
+\label{cr_p}
+    V_{cr} = 3b, \; \; P_{cr} = \dfrac{a}{27b^2}, \; \; T_{cr} = \frac{8a}{27Rb}
+\end{equation}
+
+\noindent
+\textbf{2) Безразмерная форма\footnote{
+Где $\varphi = V/V_{cr}$, $\pi = P / P_{cr}$, $\tau = T / T_{cr}$.
+}}
+\begin{equation}
+    \left(\pi+\frac{3}{\varphi^2} \right) \left( \varphi - \frac{1}{3} \right) 
+    = 
+    \frac{8}{3} \tau
+\end{equation}
+
+\noindent
+\textbf{\hyperref[docUvdv]{3)} Внутренняя энергия газа Ван-дер-Ваальса}
+\begin{equation}
+\label{uvdv}
+    U(V, T) = C_V T - \frac{a \nu}{V}
+\end{equation}
+
+\noindent
+\textbf{4) Энтропия газа Ван-дер-Ваальса}
+\begin{equation}
+    \Delta S = \nu c_V \ln \frac{T_2}{T_1} + \nu R \ln \frac{V_2 - \nu b}{V_1 - \nu b}
+\end{equation}
+
+\noindent
+\textbf{5) Политропа газа Ван-дер-Ваальса}
+\begin{equation}
+    \left(P + \frac{a}{V^2}\right) \left( V - b \right)^{C_{P_{id}} / C_V} = \text{const}, \; \;
+    T (V - b)^{R / C_V} = \text{const}.
+\end{equation}
+
+\begin{proof}
+Находится \href{https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%92%D0%B0%D0%BD-%D0%B4%D0%B5%D1%80-%D0%92%D0%B0%D0%B0%D0%BB%D1%8C%D1%81%D0%B0}{здесь} и чуть ниже.
+\end{proof}
+
+% \newpage
+\section{Реальные газы}
+\noindent
+\textbf{Вывод уравнения газа Ван-дер-Ваальса}
+Есть два момента которые хотелось бы учесть: конечный размер молекул и притяжение. 
+
+Во-первых пусть молекула -- шарик, тогда ограничение объёма на одну молекулу пропорционально количеству вещества на характерный размер молекулы. Тогда $$V = V - \nu b. \label{new_V}$$ 
+
+Во-вторых учтём притяжение молекул. Так как они нейтрально заряжены в целом и наиболее ощутимым может быть именно электростатическое взаимодействие, то будем считать их примерно диполями, соответсвенно $E \sim 1/x$. Тогда сила притяжения на одну молкулу со стороны всех остальных $\sim \sum_1^N x_i^{-1} \sim \nu / V$ (считая равномерно распределенными по пространству), тоесть пропорциональна $n$. Частота соударений также пропорциональна $n$. Тогда $\Delta p \sim n^2$. Тогда давление на стенку можно записать в виде (\ref{vdv}).
+
+\phantom{42}
+
+
+\noindent
+\textbf{Другие уравнение состояния}
+\begin{align}
+    P(V - b) = RT \exp \left(  
+    - \frac{a}{RTV}
+    \right) & \-- \text{\textit{уравнение Дитеричи;}} \\
+    \left(
+    P + \frac{a}{T\left(V + c\right)^2)}
+    \right) \left(
+    V - b
+    \right) = RT  & \-- \text{\textit{уравнение Клаузиуса;}} \\
+    PV = RT \left(
+    1 + \frac{B_2}{V} + \frac{B_3}{V^2} + \dots
+    \right) & \-- \text{\textit{уравнение Камерлинг-Оннеса,}}
+\end{align}
+где $B_i$ -- вириальный коэффициент, зависящий от температуры.
+
+\phantom{42}
+
+\noindent
+\textbf{Критические значения}
+
+Рассмотрим всё на грани фола (и получим \textit{спинодаль}):
+\begin{equation}
+\ptdr{P}{V}{T} = 0, \; \; \text{тогда} \; \; -\frac{RT}{(V - b)^2} + \frac{2a}{V^3} = 0, \; \text{соответсвенно} \; P_{ext} = \frac{(V - 2b) a}{V^2}.
+\end{equation}
+
+Также можно найти\footnote{
+    Такое условие задаёт квадратичную форму. По критерию Сильвестра для положительной определенности требуем положительность каждого из миноров.
+    } \textit{критическую точку}:
+
+\begin{equation*}
+\label{cr_dot}
+    \frac{d P_{ext} (V)}{dV} = 0, \; \text{что равносильно} \; \ptdr{P}{V}{T}=0, \; \ptdrsq{P}{V}{T} = 0.
+\end{equation*}
+Отсюда легко найти  (\ref{cr_p}).
+
+\phantom{42}
+
+\noindent
+\textbf{Правило Максвелла}
+
+Поскольку $d \mu = - s d T + v d P$, при $T = const$ :
+$$d \mu =  v d P \Rightarrow \mu =  P v - \int P d v  .$$
+
+В начале и в конце горизонтального участка изотермы химические потенциалы должны быть равны, из этого можно получить:
+$$ \int _{v_1}^{v_2} P d V = P(v_2 - v_1),$$
+где $v_1$ и $v_2$ - объем жидкости и пара в расчете на одну молекулу. 
+Из этого следует, что площади должны быть равны. 
+
+
+
+\phantom{42}
+
+\noindent
+\textbf{Внутренняя энергия и энтропия}
+
+Рассмотрим внутреннюю энергию, как $U(T, V)$. С учётом (\ref{derU}), получим
+$$
+dU = C_V dT + \left(
+T \ptdr{P}{T}{V} - P
+\right) dV.
+$$
+Подставив сюда (\ref{vdv}), считая $C_V = const$, получим (\ref{uvdv}):
+\begin{equation}
+\label{docUvdv}
+    dU  = C_V dT + \frac{a}{V^2}dV, \; \text{или} \; U = C_VT - \frac{a}{V}.
+\end{equation}
+Аналагично найдём $S$, учитывая, что $\ptdr{S}{V}{T} = \ptdr{P}{T}{V}$:
+$$
+dS = \ptdr{S}{T}{V} dT + \ptdr{S}{V}{T} dV = \frac{C_V}{T} dT + \ptdr{P}{T}{V}dV.
+$$
+
+
+
+

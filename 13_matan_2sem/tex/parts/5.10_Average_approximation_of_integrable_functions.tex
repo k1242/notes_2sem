@@ -1,0 +1,32 @@
+\sbs{Приближение интегрируемых функций в среднем}
+
+\begin{to_def}
+    Функция $f \colon \mathbb{R}^n \to \mathbb{R}$ называется \textbf{элементарно ступенчатой}, если она является ступенчатой с конечным числом ступенек, каждая из которых либо элементарна, либо функция на этой ступеньке равна нулю.
+\end{to_def}  
+
+\begin{to_thr}
+\label{5.75}
+    Пусть функция $f \colon \mathbb{R}^n \to \mathbb{R}$ интегрируема по Лебегу с конечным интегралом. Тогда $f$ можно сколь угодно близко приблизить в среднем элементарно ступенчатой функцией.
+\end{to_thr}
+
+\begin{to_thr}
+\label{5.76}
+    Пусть функция $f \colon X \to \mathbb{R} \in \L_c$. Положим для $M > 0$
+    \begin{equation*}
+    \begin{split}
+        f_M(x) = \left\{
+        \begin{aligned}
+            &M,     &f(x) \geq M; \\
+            &f(x)   &|f(x)| \leq M; \\
+            &-M,    &f(x) \leq -M.
+        \end{aligned}
+        \right.
+    \end{split}
+    \end{equation*}
+    Тогда 
+    $$
+    \lim_{M \to + \infty} \int_X f_M(x) \d x = \int_X f(x) \d x 
+    \hspace{1cm} \text{и} \hspace{1cm} 
+    \lim_{M \to + \infty} \int_X |f(x) - f_M(x)| \d x = 0.
+    $$
+\end{to_thr}

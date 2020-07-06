@@ -1,0 +1,24 @@
+\section*{Вычисление объёмов тел и площадей поверхности}
+
+Для вращения относительно $Ox$ непрерывной функции, с непрерывной неотрицательной производной $f(t)$ (для II случая), верно, что:
+
+\begin{table}[h]
+    \centering
+        \begin{tabular}{r|c|c}
+    % \toprule
+            & \centering $V$ & $S$ \\
+    \midrule
+            $y(x)$ \phantom{$\dfrac{1}{2}$}
+            & $\pi \int_a^b y^2 (x) \, dx$
+            & $2 \pi \int_a^b |y(x)| \sqrt{1 + y'^2 (x)} dx$\\
+            $x(t), y(t)$ \phantom{$\dfrac{1}{2}$}
+            & $\pi \int_a^b y^2 (x) \, dx$
+            & $ 2 \pi \int_{\alpha}^{\beta} |y(t)| \sqrt{x'^2(t) + y'^2(t)} dt$  \\
+    % \bottomrule
+        \end{tabular}
+\end{table}
+
+Площадь, при вращении вокруг полярного луча кривой $r = r(\varphi)$, $0 \leqslant \varphi_1 \leqslant \varphi_2 \leqslant \pi/2$:
+$$
+S = 2 \pi \int_{\varphi_1}^{\varphi_2} r(\varphi) \sqrt{r^2(\varphi) + r'^2(\varphi)} \cos{\varphi} \, d \varphi.
+$$

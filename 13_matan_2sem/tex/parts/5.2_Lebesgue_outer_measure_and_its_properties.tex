@@ -1,0 +1,25 @@
+\sbs{Внешняя мера Лебега и её свойства}
+
+\begin{to_def}
+    \textbf{Внешняя мера Лебега} множества $X \subset \mathbb{R}^n$ --- это точная нижняя грань по всем счётным покрытиям $X$ элементарными множествами
+    $$
+    \mu^* \lr{X} = \inf \left\{
+    \sum_{k=1}^{\infty} \mu \lr{S_k} \mid X \subseteq  \bigcup_{k=1}^{\infty} S_k
+    \right\}.
+    $$.
+\end{to_def}
+
+% ТО ЖЕ ЧТО И МЕРА ЖОРДАНА ДЛЯ ЭЛЕМЕНТАРНЫХ МНОЖЕСТВ
+\begin{to_lem}
+\label{lem5.9}
+    Для элементарного $S \subset \mathbb{R}^n$ выполняется $\mu^* (S) = m (S)$ .
+\end{to_lem}
+
+\begin{to_lem}[Счётная субаддитивность внешней меры Лебега]
+\label{lem5.10}
+    Для любого счётного сечения множеств $X_k \subseteq \mathbb{R}^n$, $k \in \mathbb{N}$, выполняется 
+    $$
+        \mu^* \lr{\bigcup_{k=1}^{\infty} X_k} \leq \sum_{k=1}^{\infty} \mu^* (X_k).
+    $$
+\end{to_lem}
+

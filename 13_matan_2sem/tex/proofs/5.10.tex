@@ -1,0 +1,39 @@
+\sbs{\small Приближение интегрируемых функций в среднем}
+
+\begin{minipage}[]{0.49\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{5.75}]
+
+\phantom{42}
+\noindent
+
+1)$f \overset{\varepsilon}{\to} g$-cтуп, if $\exists$ $\mu$(ст-ка)$\to \infty$ $\leadsto$ сч.ст-нек;\\
+2) $h$-кон.ступ, $\mu(X_k)<\infty$, $h(x) = \sum\limits_{ k=1 }^{ N } a_k \chi_{X_k} (x)$;\\
+3) $\int_{\mathbb{R}^n} |f - h|\d x \leq \int|f-g|\d x + \int|g-h| \d x < 2\varepsilon$;\\
+4) $M=\sum\nolimits_{ k=1 }^{ N }|a_k|$, $X_k \to S_k:$\\ $\mu(S_k \triangle X_k) = \int_{\mathbb{R}^n}|\chi_{X_k}(x) - \chi_{S_k}(x)| < \varepsilon/M$;\\
+5) $\varphi(x) = \sum\nolimits_{ k=1 }^{ N } \chi_{S_k}(x)$, тогда по (3):\\
+$\int |h - \varphi| \d x < \sum\nolimits_{ k=1 }^{ N } \int_{\mathbb{R}^n}|a_k||\chi_{X_k}(x) - \chi_{S_k}(x)| \d x < \varepsilon'$.
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+ thr $\triangle$
+\eqref{5.76}]
+
+\phantom{42}
+\noindent
+
+1) (\ref{5.75}, $\varphi \leadsto g$) $f \to g$: $M>\sup\{|g| \mid x\in X\}$;\\
+2)для таких $M:$ $|f_M - g| = |f_M - g_M| \leq |f-g|;$\\
+3)$\forall \cdot:$ $|f_M - f| \leq |f_M - g|+|g -f| =\\ |f_M - g_M| - |g - f| \leq 2|f-g|;$\\
+4)$\int(3):$ $\int_X |f_M - f| \d x \leq 2 \int_X |f-g|\d x < 2\varepsilon$. 
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}

@@ -1,0 +1,50 @@
+\section{ЛикБез по распределениям}
+
+\noindent
+\textbf{1) Биномиальное распределение\footnote{
+Дисперсия $\sigma^2 = \overline{n}(1-p)$, $\overline{n}=pN$.
+}}
+\begin{equation}
+    W_N(n) = \frac{N!}{n!(N-n)!} p^n (1-p)^{N-n}.
+\end{equation}
+
+
+\noindent
+\textbf{2) Распределение Пуассона\footnote{
+Где $\overline{n}$ -- среднее количество частиц в рассматриваемом объеме.
+}}
+\begin{equation}
+    W (n, \overline{n})= \frac{\overline{n}^n}{n!}\exp{-\overline{n}}.
+\end{equation}
+
+\noindent
+\textbf{2) Распределение Гаусса\footnote{
+Где $x = n - n_{max}$, $\sigma = \sqrt{Npq}$.
+}}
+\begin{equation}
+    W(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp{\lr{ - \frac{x^2}{2 \sigma^2}}}
+\end{equation}
+
+\noindent
+\textbf{3) Распределение\footnote{
+$F_1(|v|)=2 f_1(v)$, $F_2(|v|)=2 \pi v f_2(v)$, $F_3(|v|)=4 \pi v^2 f_3(v)$. $F(v)dv=dW=F(\varepsilon) d \varepsilon$, $dv = dE/\sqrt{2mE}$.
+} $\vc{v}$}
+\begin{align}
+    1D \; \; \; \;& f_1(\vc{v}) = \left( \frac{m}{2 \pi k T} \right)^{1/2} \cdot \exp{\left(-\frac{m \vc{v}^2}{2 k T}\right)} \\
+    2D \; \; \; \;& f_1(\vc{v}) = \left( \frac{m}{2 \pi k T} \right)^{2/2} \cdot \exp{\left(-\frac{m \vc{v}^2}{2 k T}\right)} \\
+    3D \; \; \; \;& f_1(\vc{v}) = \left( \frac{m}{2 \pi k T} \right)^{3/2} \cdot \exp{\left(-\frac{m \vc{v}^2}{2 k T}\right)}
+\end{align}
+
+\noindent
+\textbf{4) Характерные скорости}
+\begin{align}
+    v_{in \, max} = \sqrt{\frac{2kT}{m}}, \; \; \;
+    \av{v} = \sqrt{\frac{8kT}{\pi m}}, \; \; \;
+    \av{v^2} = \sqrt{\frac{3kT}{m}}.
+\end{align}
+
+\noindent
+\textbf{5) Интегралы}
+\begin{equation}
+    \int_{- \infty}^{+ \infty} \exp{\lr{- \alpha \cdot \xi^2}} d \xi = \sqrt{\frac{\pi}{\alpha}}.
+\end{equation}

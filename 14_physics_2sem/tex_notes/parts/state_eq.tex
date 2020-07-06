@@ -1,0 +1,41 @@
+\section{Уравнение состояния}
+
+\input{img_and_tables/coef}
+
+\subsection{Тепловое расширение тел}
+В окрестности минимума потенциальной энергии разложим ее в ряд 
+$$ V(r) = V(d) + \frac{1}{2}B x^2 + \frac{1}{3}C x^3 \dots , $$
+где $x = r - d$.\\
+
+При $C=0$, $\overline x = 0$.
+Если раскладывать дальше:
+$$\overline x^2 \approx \frac{k T}{B}, \;  \overline x = - \frac{C}{B^2}k T.$$
+Для общего удлинения цепочки:
+$$ \overline r = d(1 + \alpha T).$$
+В итоге
+$$\alpha = \frac{\overline r - d}{d}\frac{1}{T} = -\frac{C}{B^2 d} k$$
+
+
+
+
+
+\subsection{Внутренняя энергия идеального газа}
+\noindent
+\textbf{STM}. Теплоемкость $C_V$ являеся функцией только температуры.
+\begin{proof}
+    Рассмотрим \textit{адиабатический} процесс Джоуля-Томпсона. Газ прошел от $P_1$ до $P_2$:
+    \begin{align*}
+        \delta A + dU  = 0, & \; \; \; \; \; A = P_2 V_2 - P_1 V_1 \\
+        \text{(на опыте) } PV = \nu R T &\Rightarrow T_1 = T_2 \\
+        \text{таким образом: } & \Rightarrow U = U(T)
+    \end{align*}
+\end{proof}
+
+\noindent
+\textbf{EQ}. Уравнение политропы:
+\begin{equation}
+    P V^{ \gamma } = const, \; \text{где } \gamma = \frac{c - c_P}{c - c_V}
+\end{equation}
+
+
+

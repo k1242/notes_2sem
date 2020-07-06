@@ -1,0 +1,25 @@
+\sbs{Множества конечной меры Лебега и их свойства}
+
+\begin{to_def}
+    Множество $X \subseteq \mathbb{R}^n$ -- \textbf{измеримо по Лебегу с конечной мерой}, 
+    \\ \textbf{если} $\forall \varepsilon > 0 \; \exists S \colon \mu^* (X \triangle S) < \varepsilon$. \textbf{Мерой Лебега} $X$ тогда
+    $$
+        \mu(X) = \mu^* (X) = \lim_{S \to X} \mu^* (S) = \lim_{S \to X} m(S).
+    $$
+\end{to_def}
+
+\begin{to_thr}
+\label{add_L}
+    Для измеримых по Лебегу с конечной мерой $X, Y \subseteq \mathbb{R}^n$ множества $X \cup Y$, $X \cap Y$, $X \setminus Y$, $Y \setminus X$ оказываются измеримыми с конечной мерой Лебега и выполняется аддитивность меры
+    $$
+        \mu(X) + \mu(Y) = \mu ( X \cup Y) + \mu(X \cap Y).
+    $$
+\end{to_thr}
+
+\begin{to_thr}[\hyperlink{534_link}{Счётная аддитивность меры Лебега в случае конечной меры}]
+\label{add_L_end}
+    Если множества $X_k$, $k \in \mathbb{N}$, попарно не пересекаются, измеримы по Лебегу с  конечной мерой и 
+    $$
+        \sum_{k=1}^{\infty} \mu(X_k) < + \infty, \hspace{0.5cm} \text{то их объединение измеримо и } \hspace{0.5cm} \mu\lr{\bigsqcup_{k=1}^{\infty} X_k} = \sum_{k=1}^{\infty} \mu (X_k).
+    $$
+\end{to_thr}

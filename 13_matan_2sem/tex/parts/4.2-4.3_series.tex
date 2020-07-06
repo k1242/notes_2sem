@@ -1,0 +1,101 @@
+\sbs{Суммирование абсолютно сходящихся рядов}
+
+\begin{to_def}
+	\textit{Сумма ряда} --- $\sum\limits_{n = 1}^{\infty} a_n = \lim\limits_{n \to \infty} \sum\limits_{k = 1}^{n} a_k$.
+\end{to_def}
+
+\begin{to_lem}
+	Если $\forall n$ $a_n \geq 0$, то $\sum\limits_{  n = 1 }^{  \infty } a_n  = \sup\left\{ \sum\limits_{ k=1 }^{ n }   a_k \mid \forall n \in \mathbb{N}\right\}$.
+	\label{4.17}
+\end{to_lem}
+
+\begin{to_con}
+	 Сумма ряда из чисел одного знака не меняется при перестановке её элементов.
+\end{to_con}
+
+\begin{to_def}
+	Сумма ряда $\sum\limits_{ n = 1 }^{ \infty } a_n $ \textit{абсолютно сходится}, если сходится ряд $\sum\limits_{ n = 1 }^{ \infty }|a_n|$.
+\end{to_def}
+
+\begin{to_lem}[Теорема Фубини]
+	Пусть сумма $\sum\limits_{ n,m = 1 }^{ \infty } a_{n m}$ сходится абсолютно, тогда $\sum\limits_{ n,m = 1 }^{ \infty } a_n = \sum\limits_{ n=1 }^{ \infty } \lr{\sum\limits_{ m = 1 }^{ \infty } a_{n m}}$.
+	\label{4.21}
+\end{to_lem}
+
+\begin{to_thr}
+	Если суммы рядов последовательностей $a_n$ и $b_n$ абсолютно сходятся, то:
+	\begin{equation*}
+	\begin{split}
+		\lr{\sum\limits_{ n = 1 }^{ \infty } a_n} \cdot \lr{\sum\limits_{ m = 1 }^{ \infty } b_m} = 
+		\sum\limits_{ n,m = 1 }^{ \infty } a_n b_m =
+		\sum\limits_{ s = 2 }^{ \infty } \lr{\sum\limits_{ n = 1 }^{ s - 1 } a_n b_{s-n}}.
+	\end{split}
+	\end{equation*}
+	\label{4.22}
+\end{to_thr}
+
+\begin{to_thr}
+	Если  $a_n = \text{O}(b_n)$ при $n \to \infty$, то из абсолютной сходимости ряда из $b_n$ следует абсолютная сходимость ряда из $a_n$.
+	\label{4.25}
+\end{to_thr}
+
+\begin{to_thr}
+	Пусть $\varlimsup\limits_{n \to \infty} \sqrt[n]{a_n} = q \in [0, +\infty]$, тогда при $q > 1$ ряд из $a_n$ расходится, при $q < 1$ сходится.
+\end{to_thr}
+
+\sbs{Равномерная сходимость функциональных последовательностей}
+
+\begin{to_def}
+	$f_n \colon X \to \mathbb{R}$ $\rr f_0$ (\textit{сходится равномерно}), если $\sup\{|f_n(x) - f_0(x)| \mid x \in X\} \to 0, \, n \to \infty$.
+\end{to_def}
+
+\begin{to_def}
+	Ряд из $u_n \colon X \to \mathbb{R}$ \textit{сходится равномерно на $X$}, если $S_n(x) = \sum\limits_{ k=1 }^{ n } u_k(x) \rr S$, $(S \colon X \to \mathbb{R})$.
+\end{to_def}
+
+\begin{to_thr}[Критерий Коши]
+	$f_n \rr f_0$ $\Leftrightarrow$ $\forall \varepsilon > 0 \, \exists N(\varepsilon) \colon \forall n,m \geq N(\varepsilon) \leadsto \sup\{|f_n(x) - f_m(x)| \mid x \in X\} < \varepsilon$.
+
+	\label{4.36}
+\end{to_thr}
+
+\begin{to_con}[Необходимое условие]
+	Для $\sum\limits_{ n = 1 }^{ \infty } u_n(x) \rr$, \textbf{необходимо}, чтобы $u_n \rr 0$ при $n \to \infty$.	
+\end{to_con}
+
+\begin{to_thr}[Признак Вейерштрасса]
+	Если $\forall x \in X\, \forall n \in \mathbb{N} \leadsto |u_n(x)| \leq a_n$ \textbf{и} $\sum\limits_{ n = 1 }^{ \infty } a_n < +\infty$ $\Rightarrow$ $\sum\limits_{ n = 1 }^{ \infty } |u_n| \rr$ 
+	\label{4.39}
+\end{to_thr}
+
+\begin{to_thr}
+	Пусть $f_n \colon X \to \mathbb{R} \rr f$ и все $f_n$ непрерывны, тогда $f$ тоже непрерывна.
+	\label{4.40}	
+\end{to_thr}
+
+\begin{to_thr}
+	\begin{equation*}
+		\left.
+		\begin{aligned}
+		    \text{дифференцируемые } &f_n \colon [a,b] \to \mathbb{R} \text{ сходятся в }x_0\\
+		    \text{последовательность }&f_n' \text{ сходится равномерно на }[a,b] \text{ к } g
+		\end{aligned}
+		\right\}
+		\Longrightarrow
+		(f_n) \underset{[a,b]}{\rightrightarrows} f\, (f' = g).
+	\end{equation*}
+	\label{4.41}
+\end{to_thr}
+
+\begin{to_con}
+	\begin{equation*}
+	\left.
+	\begin{aligned}
+		&\sum\limits_{ n = 1 }^{ \infty } u_n'(x) \rr \\
+		\exists x_0 \in X: &\sum\limits_{ n = 1 }^{ \infty } u_n(x_0) < +\infty
+	\end{aligned}
+	\right\}
+	\Rightarrow
+	\sum\limits_{ n = 1 }^{ \infty } u_n(x) \rr \textbf{ и } \lr{\sum\limits_{ n = 1 }^{ \infty } u_n(x)}' = \sum\limits_{ n = 1 }^{ \infty } u_n'(x). 
+	\end{equation*}
+\end{to_con}

@@ -1,0 +1,70 @@
+\sbs{\small Измеримость по Лебегу множеств с некоторыми свойствами}
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+{$\triangle$} 
+thr \eqref{meas_1}]
+
+\phantom{42}
+
+\noindent
+1) $Y_k = \bigcup_{i=1}^{k} X_i$, или $\lr{Y_k = \bigcap_{i=1}^{k} X_i}$ \\
+2$_1$) $Y_1 \subseteq Y_2 \subseteq \dots$, 
+2$_1$) $Y_1 \supseteq Y_2 \supseteq \dots$, \\
+3$_1$) $\bigcup_{k=1}^{\infty} Y_k = \bigcup_{i=1}^{\infty} X_i = \bigsqcup_{k=1}^{\infty} (Y_k \setminus Y_{k-1})$ \\
+3$_2$) $\bigcap_{k=1}^{\infty} Y_k = \bigcap_{i=1}^{\infty} X_i = I$ \\
+4$_1$) По \eqref{add_L_end} \dots ($\Rightarrow$ $4_2$: $X_1 = I \cup (\bigcup Y_k \setminus Y_{k-1})$)
+\end{proof}
+
+\begin{proof}[
+\hypertarget{meas_2_link}{$\triangle$} 
+thr \eqref{meas_2}]
+
+\phantom{42}
+
+\noindent
+1) $X = \bigsqcup_{k=1}^{\infty} X_k \setminus X_{k-1}$ \\
+2) $\mu(X) = \sum_{k=1}^{\infty}\lr{\mu(X_k) - \mu(X_{k-1})}$ \\
+3) $\mu(X_m) \to \mu(X) $
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+{$\triangle$} 
+thr \eqref{meas_3}]
+
+\phantom{42}
+
+\noindent
+1) $
+\left[\frac{m_1}{2^k}, \frac{m_1+1}{2^k} \right) \times
+\dots \times 
+\left[\frac{m_n}{2^k}, \frac{m_n+1}{2^k} \right)
+$, где $m \in \mathbb{Z}$ \\
+2) $S_k = \{q \mid q \in U, \; q \in [-k,k]^n\}$, $U =\bigcup_k S_k$ \\
+3) Для замкнут $\Leftarrow$ \eqref{5.34t}, для откр $\Leftarrow$ \eqref{meas_1}.
+\end{proof}
+
+\begin{proof}[
+\hypertarget{meas_4_link}{$\triangle$} 
+thr \eqref{meas_4}]
+
+\phantom{42}
+
+\noindent
+1) Пусть $\mu(X) = + \infty$: $X = \bigsqcup_{k=1}^{\infty} X_k$; \\
+$X_k \in U_k$ $\leadsto$ $U = \bigcup_{k=1}^{\infty}U_k$: $\mu(U \setminus X) < \varepsilon$. \\
+2) $\forall \varepsilon > 0$ $\exists S$: $\mu(X \triangle S) < \varepsilon$;\\
+$D = \bigcup_{k=1}^{\infty} S_k \supset X \triangle S$; \\
+$S_k \overset{+\varepsilon/2^k}{\to} S_k^{\text{откр}} $, 
+$S \overset{+\varepsilon}{\to} S^{\text{откр}} $, \\
+$U = S \cup D \supseteq X$ и $\mu(U \setminus X) < 3 \varepsilon$. \\
+3) $S \overset{-\varepsilon}{\to} S^{\text{комп}}$; \\
+$F = S \setminus D \subseteq X$ и $\mu(U \setminus X) < 3 \varepsilon$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}  

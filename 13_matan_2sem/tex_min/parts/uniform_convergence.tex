@@ -1,0 +1,36 @@
+\section*{Равномерная сходимость несобственных интегралов}
+
+\begin{to_def}
+	Интеграл $\int_a^{+ \infty}f(x;\alpha) \d x$, сходящийся для $\forall \alpha \in E$, называют \textbf{равномерно сходящимся на множестве $E$}, если для $\forall \varepsilon > 0 \, \exists \delta_\varepsilon: \forall \alpha \in E$ \textbf{и} $\xi \geq \delta_\varepsilon$ выполняется:
+	$$\left|\int_a^{+\infty} f(x; \alpha)\d x \right| < \varepsilon.$$
+\end{to_def}
+
+\noindent \textbf{\textit{Признак Вейерштрасса}}
+
+Если на $[\alpha; +\infty)$ $\exists \varphi(x): |f(x;\alpha)|\leq \varphi$ (для $\forall x \in [\alpha, +\infty)$ и $\forall \alpha \in E$), \textbf{и}
+если интеграл $\int_a^{+\infty} \varphi (x) \d x$ сходится, то интеграл $\int_a^{+ \infty}f(x;\alpha) \d x$ сходится \textbf{абсолютно} и \textbf{равномерно} на $E$.
+
+\phantom{239}
+
+
+\noindent 
+\textbf{\textit{Признак Дирихле}}
+
+ Интеграл $\int_\alpha^{+\infty} f(x; \alpha) g(x; \alpha) \d x$ сходится равномерно по $\alpha$ на $E$, если при каждом фиксированном $\alpha \in E$ функции $f, g, g_x'$ непрерывны по $x$ на $[\alpha; +\infty)$ \textbf{и} удовлетворяют следующим условиям:
+ \begin{enumerate}
+ 	\item $g(x;\alpha) \to 0$ при $x \to + \infty$ равномерно относительно $\alpha \in E$;
+ 	\item $g_x'(x; \alpha)$ для каждого фиксированного $\alpha \in E$ не меняет знака  $\forall x \in  [\alpha; +\infty)$;
+ 	\item $\forall \alpha \in E$ $f$ имеет ограниченную первообразную.
+ \end{enumerate}
+
+
+\noindent \textbf{\textit{Критерий Коши}}
+
+$\int_a^{+ \infty}f(x;\alpha) \d x$ сходится равномерно на $E$ $\Longleftrightarrow$ $\forall \varepsilon > 0 \; \exists \delta_\varepsilon \in (\alpha; + \infty): \forall \xi' \in [\delta_\varepsilon; + \infty), \xi'' \in [\delta_\varepsilon; +\infty)$ и $\forall \alpha \in E$ выполняется: $\left| \int_{\xi'}^{\xi''}f(x;\alpha)\d x \right| < \varepsilon$.
+
+
+\phantom{239}
+
+\noindent \textbf{\textit{Непрерывность равномерно сходящегося интеграла по параметру}}
+
+Если $f(x;\alpha)$ непрерывна на множестве и $I(\alpha) = \int_\alpha^{+ \infty}$ сходится равномерно по $\alpha$ на $[\alpha_1; \alpha_2]$, \textbf{то} $I(\alpha)$ непрерывна на $[\alpha_1; \alpha_2]$.

@@ -1,0 +1,184 @@
+\section*{Сходимость интеграла знакопостоянной\footnote{
+    Кроме средней колонки, там $\checkmark_{\text{\xmark}}$ -- условная сходимость.
+} функции}
+
+\begin{minipage}[]{0.25\textwidth}
+\begin{equation*}
+\begin{split}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_0^1 \frac{\d x}{x^{\alpha}}
+        &\left\{\begin{aligned}
+            &{
+                \checkmark
+            }  ,&{
+                \alpha < 1
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha \geq 1
+            }
+        \end{aligned} \right. \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_1^{\infty} \frac{\d x}{x^{\alpha}}
+        &\left\{\begin{aligned}
+            &{
+                \checkmark
+            }  ,&{
+                \alpha > 1
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha \leq 1
+            }
+        \end{aligned} \right.  \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_0^{\infty} \frac{\d x}{e^{\alpha x}}
+        &\left\{\begin{aligned}
+            &{
+                \checkmark
+            }  ,&{
+                \alpha > 0
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha \leq 0
+            }
+        \end{aligned} \right. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{split}
+\end{equation*}
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.35\textwidth}
+\begin{equation*}
+\begin{split}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_1^{\infty} \frac{\sin^2 x}{x^{\alpha}} \d x
+        &\left\{\begin{aligned}
+            &{
+                \checkmark
+            }  ,&{
+                \alpha > 1.
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha \leq 1
+            }
+        \end{aligned} \right. \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_1^{\infty} \frac{\sin x}{x^{\alpha}} \d x
+        &\left\{\begin{aligned}
+            &{
+                \checkmark_{\text{\xmark}}
+            }  ,&{
+                \alpha > 1.
+            }\\
+            &{
+                \checkmark
+            }  ,&{
+                \alpha \in (0, 1]
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha \leq 0
+            }
+        \end{aligned} \right. \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{split}
+\end{equation*}
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.35\textwidth}
+\begin{equation*}
+\begin{split}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_0^{0.5} \frac{\d x}{x^{\alpha} |\ln x|^{\beta}}
+        &\left\{\begin{aligned}
+            &{
+                \checkmark
+            }  ,&{
+                \alpha < 1, \, \forall \beta;\; a=1, \beta > 1
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha > 1, \, \forall \beta;\; a=1, \beta \leq 1
+            }
+        \end{aligned} \right. \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_2^{\infty} \frac{\d x}{x^{{\alpha}} \ln^{\beta} x}
+        &\left\{\begin{aligned}
+            &{
+                \checkmark
+            }  ,&{
+                \alpha > 1, \, \forall \beta;\; a=1, \beta > 1
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha < 1, \, \forall \beta;\; a=1, \beta \leq 1
+            }
+        \end{aligned} \right.  \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \int_1^{+\infty} \frac{\d x}{e^{\alpha} x^{\beta}}
+        &\left\{\begin{aligned}
+            &{
+                \checkmark
+            }  ,&{
+                \alpha > 0, \, \forall \beta;\; a=0, \beta > 1
+            }\\
+            &{
+                \text{\xmark}
+            }  ,&{
+                \alpha < 0, \, \forall \beta;\; a=0, \beta \leq 1
+            }
+        \end{aligned} \right. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{split}
+\end{equation*}
+\end{minipage}
+
+
+\section*{Признаки сходимости несобственных интегралов}
+
+\begin{to_thr}[критерий Коши сходимости несобственного интеграла первого рода]
+    Для того, чтобы несобственный интеграл сходился, необходимо и достаточно, чтобы было выполнено (условие Коши): $\forall \varepsilon > 0 \; \exists A > a \colon \forall A'>A$ и $\forall A'' > A$ верно:
+    $$
+    \bigg|
+    \int_{A'}^{A''} f(x) \d x
+    \bigg| < \varepsilon.
+    $$
+\end{to_thr}
+
+\begin{to_thr}[н\&д условие сходимости несобственного  интеграла от неотрицательной функции]
+    Если $f(x) \geq 0$ на $[a, +\infty)$, то для сходимости н\&д, чтобы функция
+    $$
+    \Phi (A) = \int_a^A f(x) \d x
+    $$
+    была огарниченной на $A \in [a, +\infty)$.
+\end{to_thr}
+
+% \noindent
+% \# \textit{признак сравнения} \\
+% \# \textit{признак сравнения в предельной форме}.
+
+% \phantom{42}
+
+\noindent
+\textbf{\textit{Признак Дирихле}}:
+
+Пусть на $[a, +\infty]$ $f(x)$ непрерывна, имеет ограниченную первообразную \textbf{и} $g(x)$ является монотонной, непрерывно дифференцируемой на $[a, \infty)$ и $\lim_{x \to \infty} g(x) = 0$. Тогда
+$$
+\int_a^{\infty} f(x) g(x) \d x \text{ --- сходится.}
+$$
+
+\noindent
+\textbf{\textit{Признак Абеля}}:
+
+\textbf{Если} функция $f(x)$ непрерывна на $[a, b)$ и интеграл $f(x)$ сходится, \textbf{и} функция $g(x)$ ограниченна, непрерывно дифференицруема и монотонна на $[a, b)$, \textbf{то} сходится интеграл $\int_a^b f(x) g(x) dx$.

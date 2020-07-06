@@ -1,0 +1,60 @@
+\sbs{\small Счётная аддитивность и непрерывность интеграла Лебега по множествам}
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+{thr} $\triangle$
+\eqref{5.78}]
+
+\phantom{42}
+
+\noindent
+1) Для ступ $\{X_i\}$, $f(X_i)=c_i$, по счёт адд Л: \\
+2) $\mu(X_i) = \sum_{k=1}^{\infty} \mu(X_i \cap Y_k)$ \\
+3) Для $\forall f$: $\exists g \leq f \leq h$: \\
+$\int_X g \d x = \sum_{k=1}^{\infty}\int_{Y_k} g(x) \d x \leq 
+\underline{\int} \dots  \leq$\\
+$\leq \overline{\int} \dots \leq \sum_{k=1}^{\infty} \int_{Y_k} h(x) \d x = \int_X h \d x $\\
+4) При $g \to h$: $f \in \L$ на $Y_k$ $\forall k$.
+\end{proof}
+
+\begin{proof}[
+{thr} $\triangle$
+\eqref{5.82}]
+
+\phantom{42}
+
+\noindent
+1) По Гейне $x_n \to x$ $\leadsto$ $g(x_n) \to g(x)$.\\
+2) При $x_n \uparrow$ \eqref{cont_L}, при $x_n \downarrow$ \eqref{5.81}.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.55\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+{thr} $\triangle$
+\eqref{cont_L}]
+
+\phantom{42}
+
+\noindent
+1) Как в \eqref{meas_2} $X = \bigsqcup_{k=1}^{\infty} X_k \setminus X_{k-1}$. \\
+2) По счёт адд $\mu(X) = \sum_{k=1}^{\infty}(\mu(X_k) - \mu(X_{k-1}))$ \\
+3) $\sum_1^{m} \dots = \mu(X_m)$ $\Rightarrow$ $\mu(X_m) \to \mu(X)$.
+\end{proof}
+
+\begin{proof}[
+\red{thr} $\triangle$
+\eqref{5.81}]
+
+\phantom{42}
+
+\noindent
+1) $X_k' = X_1 \setminus X_k$ \\
+2) $\int_{X_1} = \int_{X_1 \setminus X} + \int_X$
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+

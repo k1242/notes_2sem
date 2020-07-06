@@ -1,0 +1,24 @@
+\section{Поверхностное натяжение}
+
+\noindent
+\textbf{Формула Лапласа}:
+\begin{equation}
+p_{in}-p_{out} = \sigma \left(\frac{1}{r_1} + \frac{1}{r_2}\right)
+\end{equation}
+
+\noindent
+\textbf{Термодинамика поверхности}\\
+Работа сил поверхностного натяжения при уменьшении площади на $d \Pi$:
+\begin{equation}
+\delta A = - \sigma d \Pi
+\end{equation}
+Формулировка первого начала для квазистатических процессов:
+$$T d S = d U - \sigma d \Pi$$
+Внутренняя энергия поверхности
+$$d F = - T d S + \sigma d \Pi$$
+Так как $F = U - T S$:
+$$U = F - T \ptdr{F}{T}{\Pi}$$
+Представим свободную энергию в виде $F = \sigma \Pi$. Тогда:
+\begin{equation}
+U = \left(\sigma - T \frac{d \sigma}{ d T} \right) \cdot \Pi
+\end{equation}

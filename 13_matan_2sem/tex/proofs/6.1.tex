@@ -1,0 +1,69 @@
+\sbs{\small Дифференцируемые отображения открытых подмножеств $\mathbb{R}^n$}
+
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+lem $\triangle$
+\eqref{6.3}]
+
+\phantom{42}
+\noindent
+
+1)$\sum$ модулей координат $A x$ можно оценить как $\sum a_{i j} (\in A) \cdot |x_k|_{max}$;\\
+2) Заметим $ |x_k|_{max} \leq \textbf{x} \leq \sum x_i$;\\
+3) (2) $\Rightarrow$  $\sum a_{i j} (\in A)$ сгодится
+в качестве $||A||$ в требуемом неравенстве.
+
+\end{proof}
+
+
+\begin{proof}[
+thr $\triangle$
+\eqref{6.10}]
+
+\phantom{42}
+\noindent
+1) Дост. для $m=1$;\\
+2) fix $x \in U$, р-м $\xi \in U_\delta (x) \subseteq U$. двигаясь по координатным осям можно дойти $x \to \xi$;\\
+3) из (2): $f(\xi) - f(x) = f(\xi_1,..., \xi_n) -f(\xi_1,...,x_n)+...$;\\
+4) по thr.Лагр: $f(\xi) - f(x) = \lr{\frac{\partial f}{\partial x_n}(x) + \oo(1)}(\xi_n - x_n) + ...$;\\
+5) (4) и даёт непр. по опр., а $D f_x$ предст. в виде $\lr{\frac{\partial f_i}{\partial x_i}}$
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+ thr $\triangle$
+\eqref{6.7}]
+
+\phantom{42}
+\noindent
+1)$g(f(x)) =$
+\begin{equation*}
+	\begin{aligned}
+		= &g(y_0) + D g_{y_0}(f(x) - f(x_0)) + \oo (|f(x) - f(x_0)|) = \\
+		&= g(y_0) + D g_{y_0} \circ D f_{x_0} (x-x_0) + D g_{y_0} \oo (|x-x_0|) +\\
+		&+ \oo (\text{O}(|x-x_0|)) = g(y_0) + D g_{y_0} \circ D f_{x_0}(x-x_0) + \oo (|x - x_0|)
+	\end{aligned}
+\end{equation*}
+* Используя оценки из \eqref{6.3} $|A x| = \text{O}(|x|)$ и $f(x) - f(x_0) = \text{O}(x-x_0)$.
+\end{proof}
+
+
+\begin{proof}[
+lem $\triangle$
+\eqref{6.9}]
+
+\phantom{42}
+\noindent
+
+1)Подставим $x + t v$ в опр. дифф-ла:\\
+2) $f(x + t v) - f (x) = \d f_x (t v) + \oo (|t| |v|) = t (\d f_x(v) + \oo(1));$\\
+3) Поделим на $t$ и перейдём к пределу.
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+

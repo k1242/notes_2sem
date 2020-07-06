@@ -1,0 +1,109 @@
+% \documentclass[a4papper,12pt]{article}
+
+% здесь очень явно не хватает формул типа интеграла пуассона
+
+
+\documentclass[twoside]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} 
+\usepackage{amsmath} 
+\usepackage{
+amssymb,textcomp, esvect,esint}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling} 
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{indentfirst} 
+\usepackage{xcolor} 
+\usepackage{enumitem}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\com}[1]{\textcolor{red}{#1}}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\const}{\text{const}}
+\newcommand{\lr}[1]{\left(#1\right)}
+\newcommand{\oo}{\mathop{\mathrm{o}}\nolimits}
+\newcommand{\OO}{\mathop{\mathrm{O}}\nolimits}
+\newcommand{\xmark}{\ding{55}}
+
+
+\newtheorem{to_def}{DEF}
+\newtheorem{to_thr}{THR}
+\newtheorem{to_suj}{SUJ}
+\newtheorem{to_lem}{LEM}
+\newtheorem{to_com}{COM}
+
+\definecolor{linkcolor}{HTML}{0000CC}
+\definecolor{urlcolor}{HTML}{0000CC}
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
+\fancyhead[LE,RO]{МатАн (min)}
+\fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
+
+
+\begin{document}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\belowdisplayshortskip}{5pt}
+
+\thispagestyle{plain}
+\begin{center}
+    \LARGE \textsc{ТеорМин по \textbf{математическому анализу} II}
+\end{center}
+
+\hrule
+
+\phantom{42}
+
+\begin{flushright}
+    \begin{tabular}{rr}
+    % written by:
+        \textbf{Авторы}: 
+        & Хоружий Кирилл \\
+        & Примак Евгений \\
+        &\\
+    % date:
+        \textbf{От}: &
+        \textit{26.05.2020}\\
+    \end{tabular}
+\end{flushright}
+
+
+
+\input{parts/series}
+\input{parts/functional_series}
+\input{parts/uniform_convergence}
+\input{parts/intergratability}
+\input{parts/integrals}
+\input{parts/rotation_integrals}
+\input{parts/differentional}
+
+\newpage
+
+\input{parts/taylor_series}
+
+\newpage
+
+\input{parts/examples_1}
+
+\end{document}

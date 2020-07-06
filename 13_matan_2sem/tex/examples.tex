@@ -1,0 +1,102 @@
+\sec{Примеры}
+
+Функция Римана имеет счётное количество точек разрыва. 
+\begin{equation*}
+\begin{split}
+    \mathcal{R}(x) = \left\{
+    \begin{aligned}
+        &\frac{1}{n}, &\text{если } x \in \mathbb{Q} \text{ и } x = \frac{m}{n}, n \in \mathbb{N}, \\
+        &0, &\text{если } x \in \mathbb{R} \setminus \mathbb{Q}.
+    \end{aligned}
+    \right.
+\end{split}
+\end{equation*}
+Из \eqref{5.69} $\Rightarrow$, что $\mathcal{R}(x)$ интегрируема по Риману.
+
+Функция Дирихле не интегрируема по Риману. 
+
+
+
+
+\sbs{Иррациональность $e$}
+
+Пусть $e = p/q$, $p (q-1)! = eq \cdot (q-1)!$. Тогда:
+$$
+p(q-1)! = e q! = q! \sum_{n=0}^{\infty} \frac{1}{n!} = \sum_{n=q+1}^{\infty} \frac{q!}{n!} + \sum_{n=0}^q \frac{q!}{n!}.
+$$
+Также 
+$$
+\sum_{n=q+1}^{\infty} \frac{q!}{n!} = \sum_{m=1}^{\infty} \frac{1}{(q+1) \ldots (q+m} < \sum_{m=1}^{\infty} \frac{1}{(q+1)^m}
+$$
+
+Бонус: $e$ трансцендентно. 
+
+
+\sbs{Ряд Тейлора}
+
+
+\begin{table}[h]
+    \centering
+    \caption{Формулы Маклорена для элементарных функций}
+
+    \begin{tabular}{c|c}
+    \phantom{$\dfrac{42}{42}$} $e^x$ & $1 + x + \frac{x^2}{2 !} + \ldots + \frac{x^n}{n !} + \oo (x^n)$ \\
+
+    \phantom{$\dfrac{42}{42}$}$\sin x$ & $x - \frac{x^3}{3!} + \frac{x^5}{5 !} + \ldots + \frac{(-1)^n x^{2n+1}}{(2n + 1) !} + \oo(x^{2n+2})$ \\
+    
+    \phantom{$\dfrac{42}{42}$}$\cos x$ & $1 - \frac{x^2}{2 !} + \frac{x^4}{4 !} + \ldots + \frac{(-1)^n x^{2n}}{(2n)!} + \oo(x^{2n+1})$ \\
+
+    \phantom{$\dfrac{42}{42}$}$\tg x$& $x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17 x^7}{315} + \ldots$ \\
+
+    \phantom{$\dfrac{42}{42}$} $\ctg x$& $\frac{1}{x} - \frac{x}{3} - \frac{x^3}{45} - \frac{2x^5}{945} - \ldots$ \\    
+    
+    \phantom{$\dfrac{42}{42}$}$\sh x$ & $x + \frac{x^3}{3 !} + \frac{x^5}{5 !} + \ldots + \frac{x^{2n+1}}{(2n + 1) !} + \oo(x^{2n+2})$ \\
+    
+    \phantom{$\dfrac{42}{42}$}$\ch x$ & $1 + \frac{x^2}{2 !} + \frac{x^4}{4 !} + \ldots + \frac{x^{2n}}{(2n)!} + \oo(x^{2n+1})$\\
+
+    \phantom{$\dfrac{42}{42}$} $\arcsin x$ & $x + \frac{x^3}{2 \cdot 3} + \frac{1 \cdot 3 x^5}{2 \cdot 4 \cdot 5} + \ldots + \frac{1 \cdot 3 \cdot 5 \ldots (2n -1) x^{2n+1}}{2 \cdot 4 \ldots (2n)(2n+1)} + \oo(x^{2n+2})$ \\
+
+    \phantom{$\dfrac{42}{42}$}$\arctg x$ & $x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \ldots + \frac{(-1)^n x^{2n+1}}{2n+1} + \oo (x^{2n+2})$ \\
+    
+    \phantom{$\dfrac{42}{42}$}$(1 + x)^\alpha$ & $1 + \alpha x + \frac{\alpha (\alpha - 1) }{2 !}x^2 + \ldots + \frac{\alpha (\alpha - 1) \ldots (\alpha - (n-1))}{n!}x^n + \oo(x^n)$ \\
+
+    \phantom{$\dfrac{42}{42}$}$ln(1 + x)$ & $x - \frac{x^2}{2} + \frac{x^3}{3 !} + \ldots + \frac{(-1)^{n-1} x^n}{n} + \oo(x^n)$ \\
+    \end{tabular}
+\end{table}
+
+\sbs{Непрерывная недифференцируемая всюду функция}
+$$
+f(x) = \sum_{k=1}^{\infty} \lr{\frac{3}{4}^k} \varphi (4^k x),
+$$
+где $\varphi(x)$ -- кусочно линейная с периодом 2 функция.
+
+\sbs{Формула Тейлора для функции нескольких переменных}
+
+\begin{equation}
+\begin{aligned}
+    f(\vc{\xi}) = 
+        & \sum_{k_1 + \ldots + k_n < m} 
+            \frac{1}{k_1! \ldots k_n!}
+            \frac{\partial^{k_1 + \ldots + k_n} f(\vc{x})}
+            {\partial x_1^{k_1} \ldots \partial x_n^{k_n}} 
+            \cdot
+            (\xi_1 - x_1)^{k_1} \ldots (\xi_n - x_n)^{k_n} + \\
+        + & \sum_{k_1 + \ldots + k_n = m} 
+            \frac{1}{k_1! \ldots k_n!}
+            \frac{\partial^{m} f(\vc{x} + \vartheta(\vc{\xi} - \vc{x}))}
+            {\partial x_1^{k_1} \ldots \partial x_n^{k_n}} 
+            \cdot
+            (\xi_1 - x_1)^{k_1} \ldots (\xi_n - x_n)^{k_n} = \\
+        = & \sum_{k_1 + \ldots + k_n \leq m} 
+            \frac{1}{k_1! \ldots k_n!}
+            \frac{\partial^{k_1 + \ldots + k_n} f(\vc{x})}
+            {\partial x_1^{k_1} \ldots \partial x_n^{k_n}} 
+            \cdot
+            (\xi_1 - x_1)^{k_1} \ldots (\xi_n - x_n)^{k_n} + \oo(|\vc{\xi} - \vc{x}|^m)
+\end{aligned}
+\end{equation}
+
+
+
+
+

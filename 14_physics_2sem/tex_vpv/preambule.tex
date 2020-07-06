@@ -1,0 +1,91 @@
+% preambule
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} 
+\usepackage{amsmath} 
+\usepackage{
+amssymb,textcomp, esvect,esint}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling} 
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{indentfirst} 
+\usepackage{xcolor} 
+\usepackage{enumitem}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{cancel}
+\usepackage{ulem}
+
+\usepackage{caption} % высокоуровневые подписи
+\usepackage{listings}
+\usepackage{tikz} % рисовать картинки
+\usepackage{wrapfig} % обтекание картинок
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+
+
+\newcommand{\sbs}[1]{\subsection{\textcolor{darkblue}{#1}}}
+\renewcommand{\sec}[1]{\section{\textcolor{darkblue}{#1}}}
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\sign}{\text{sign}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\grey}[1]{\textcolor{grey}{#1}}
+\newcommand{\const}{\text{const}}
+\newcommand{\lr}[1]{\left(#1\right)}
+\newcommand{\oo}{\mathop{\mathrm{o}}\nolimits}
+\newcommand{\OO}{\mathop{\mathrm{O}}\nolimits}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\Kn}{\text{Kn}}
+\newcommand{\av}[1]{\langle #1 \rangle}
+
+\newcommand{\ptdv}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ptdr}[3]{\left(\dfrac{\partial {#1}}{\partial {#2}} \right)_{#3}}
+\newcommand{\ptdrsq}[3]{\left(\dfrac{\partial^2 {#1}}{\partial {#2}^2} \right)_{#3}}
+
+\newcommand{\R}{\text{R}}
+
+
+\newtheorem{to_thr}{Thr}[section]
+\newtheorem{to_suj}{Suj}[section]
+\newtheorem{to_lem}{Lem}[section]
+\newtheorem{to_com}{Com}[section]
+\newtheorem{to_con}{Con}[section]
+
+\theoremstyle{definition}
+\newtheorem{to_def}{def}[section]
+
+\definecolor{grey}{HTML}{666666}
+\definecolor{darkblue}{HTML}{000099}
+\definecolor{linkcolor}{HTML}{0000CC}
+\definecolor{urlcolor}{HTML}{006600}
+
+\hypersetup{
+pdfstartview=FitH,  
+linkcolor=linkcolor,
+urlcolor=urlcolor, 
+colorlinks=true,
+citecolor=blue}
+
+
+% add page header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
+\fancyhead[LE,RO]{Турбулентность}
+\fancyhead[CO,CE]{\leftmark}
+\fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

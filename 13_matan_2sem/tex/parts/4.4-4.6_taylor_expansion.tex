@@ -1,0 +1,76 @@
+\sbs{Степенные ряды и радиус сходимости}
+
+\begin{to_def}
+	\textbf{Степенной ряд} функции -- $\sum\limits_{n=0}^{\infty} a_n (x - x_0)^n$.
+\end{to_def}
+
+\begin{to_thr}[Существование радиуса]
+\label{4.46}
+	Для $\forall \Sigma$ $\exists R \in [0,+\infty]$, такой, что ряд  расходится при $|x - x_0| > R$ \textbf{и} для $\forall r:$ $(0 < r < R)$ равномерно и абсолютно сходится при $|x - x_0| < r$.
+\end{to_thr}
+
+\begin{to_def}
+	\textbf{Радиус сходимости}: $R = \sup \{|x - x_0| \mid \Sigma \textit{ сходится в } x \}$.
+\end{to_def}
+
+\begin{to_thr}[\hyperlink{448link}{Ф-ла Коши-Адамара}]
+\label{4.48}
+	Для $R$ у  степенного ряда   верна формула $\frac{1}{R} = \varlimsup\limits_{n \to \infty}|a_n|^\frac{1}{n}$. 
+\end{to_thr}
+
+\begin{to_thr}[Ф-ла Даламбера]
+\label{4.49}
+		Для $R$ у степенного ряда   верна формула $\frac{1}{R} = \lim\limits_{n \to \infty} \left|\frac{a_{n+1}}{a_n} \right|$.
+\end{to_thr}
+
+\begin{to_thr}
+\label{4.51}
+Радиус сходимости не меняется при взятии поэлементной производной и в
+степенных рядах можно переставлять суммирование и дифференцирование в пределах области $|x - x_0| < R$.
+	$$\lr{\sum_{n = 0}^{\infty} a_n (z - z_0)^n}' = \sum_{n = 0}^{\infty}n a_n (z - z_0)^{n-1}, \textbf{ и } R = R'$$
+\end{to_thr}
+
+\begin{to_def}
+\label{4.52}
+	\textbf{Ряд Тейлора} для $f(x)$ в окр-ти $x_0$ с $R >0$ -- $f(x) = \sum\limits_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n !}(x - x_0)^n$.
+\end{to_def}
+
+\begin{to_com}
+	У аналитической функции локально есть первообразная:\\ $f(x) = \sum_{n = 0}^{\infty} a_n (z - z_0)^n$, $F(x) = \sum_{n = 0}^{\infty} \frac{a_n (z - z_0)^{n+1}}{n+1}$ $(+\const)$
+\end{to_com}
+
+\sbs{Ряды Тейлора для элементарных функций}
+\begin{to_thr}
+\label{4.58}
+	Пусть $f\colon (a,b) \to \mathbb{R}$ $\infty$-дифференцируема на $(a,b)$ \textbf{и} $\exists C > 0$ такой, что $\forall x \in (a,b)\, \forall n \in \mathbb{Z}^+$ $\leadsto$ $|f(x)| \leq C^n$. Тогда $f$ раскладывается в ряд\footnote{
+	Теперь явно можно проверить $e^{i \varphi} = \cos \varphi + i \sin \varphi$.
+	} Тейлора с центром в $x_0 \in (a,b)$ и $R\geq min\{ |a-x_0|, |b - x_0|\}$.
+\end{to_thr}
+
+\sbs{Условная сходимость рядов, признаки Абеля и Дирихле}
+\begin{to_thr}[Дискретное преобразование Абеля]
+\label{dpA}
+$$
+\sum\limits_{k=m}^{n}a_{k}b_{k}=a_{n}B_{n}-a_{m}B_{m-1}-\sum \limits _{k=m}^{n-1}(a_{k+1}-a_{k})B_{k}, \; \; \text{где } B_k = b_m + b_{m+1} + \dots + b_{m+k-1}.
+$$
+\end{to_thr}
+
+\begin{to_thr}
+\label{4.61}
+	Если $\sum\limits_{n = 0}^{\infty} a_n$ сходится (может и не абсолютно), то $f(x) = \sum\limits_{n = 0}^{\infty} a_n x^n$ непрерывна на $[0,1]$.
+\end{to_thr}
+
+\begin{to_thr}[\red{Признак Абеля}]
+\label{4.62}
+	Если $\sum\limits_{n = 0}^{\infty} f_n (x) \rr$, а $g(x)$ монотонна и равномерно ограничена, \textbf{тогда} $\sum\limits_{n = 0}^{\infty} f_n(x) g_n(x) \rr$.
+\end{to_thr}
+
+\begin{to_thr}[\hyperlink{463link}{Признак Дирихле} $\rightrightarrows$]
+\label{4.63}
+	Если $\sum\limits_{k = m}^{n} f_k (x)$ равномерно ограничен, а монотонная $g_k(x) \rr 0$, \textbf{тогда} $\sum\limits_{n = 0}^{\infty} f_n(x) g_n(x) \rr$.
+\end{to_thr}
+
+\begin{to_thr}[\red{Признак Лейбница}]
+\label{4.64}
+	Если монотонная по n $g_k(x) \rr 0$, то $\sum\limits_{n = 0}^{\infty} (-1)^n a_n \rr$.
+\end{to_thr}

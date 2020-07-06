@@ -1,0 +1,51 @@
+\sbs{\small Приёмы интегрирования}
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{4.121}]
+
+\phantom{42}
+
+\noindent
+1) $F = fg$ -- непр на $[a, b]$ и дифф на $(a, b)$. \\
+$F' = f'g + f g'$ $\in \mathcal R$ как $\int \cdot$. 
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{4.122}]
+
+\phantom{42}
+
+\noindent
+1) Если $F' = f$, то $\lr{F(\varphi)}'=f(\varphi) \varphi'$. \\
+2) всё непр. $\Rightarrow$ по Н-Л ...
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+
+\phantom{42}
+
+\begin{minipage}[t]{0.9\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{4.123}]
+
+\phantom{42}
+
+\noindent
+1) $n=1$: $f(x) = f(x_0) + \int_{x_0}^{x} f' \d t$. \\
+2) $\int_{x_0}^x \frac{f^{(n)} (t)}{(n-1)!} (x-t)^{n-1} \d t = 
+- \int_{x_0}^{x} \frac{f^{(n)}(t)}{(n-1)!} \d \frac{(x-t)^n}{n} 
+=- \int_{x_0}^{x} \frac{f^{(n)}(t)}{n!} \d (x-t)^n =$ \\
+$= - \frac{f^{(n)}(t)}{n!} (x-t)^n \big|_{x_0}^x + \int_{x_0}^x \frac{f^{(n+1)}(t)}{n!} (x-t)^n \d t = - \frac{f^{(n)}(t)}{n!} (x-x_0)^n + \int_{x_0}^x \frac{f^{(n+1)}(t)}{n!} (x-t)^n \d t$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}

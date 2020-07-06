@@ -1,0 +1,90 @@
+\section{Адиабатические процессы в газах}
+
+\noindent
+\textbf{Дросселирование газа} 
+
+Считая $P_1$ и $P_2$ постоянными,получим, что работа в левой части $A_1 = P_1 V_1$,  в правой части $A_2 = P_2 V_2$. Тогда при $\delta Q = 0$,
+$$
+A_1 - A_2 =  \left(
+U_2 + \dots
+\right) - 
+\left(
+U_2 + \dots
+\right).
+$$
+Таким образом $H_1 = U_1 + P_1 V_1 = H_2$. 
+
+\phantom{42}
+
+\noindent
+\textbf{Уравнение Бернулли}
+
+Вдоль линии тока:
+\begin{equation}
+    u + \frac{P}{\rho} + g h + \frac{v^2}{2} = \text{const}.
+\end{equation}
+Или:
+\begin{equation}
+\label{eq1}
+   i  + g h + \frac{v^2}{2} = \text{const},
+\end{equation}
+где $i$ - удельная энтальпия.
+
+\phantom{42}
+
+\noindent
+\textbf{Скорость истечения газа из отверстия}
+
+Применим уравнение Бернулли:
+$$ i_1 + \frac{v_1^2}{2} =  i_2 + \frac{v_2^2}{2} $$
+Считая скорость $v_1$ внутри баллона пренебрежимо малой:
+$$v_2 = \sqrt{2(i_1 - i_2)} $$
+Допустим теперь, что газ идеальный и что зависимостью $C_V$ от температуры можно пренебречь.Значит:
+$$ i = \frac {C_p T}{\mu}$$
+Подставив это в выражение для $v$ и выразив $T$ через $P$ через уравнение адиабаты, получим в итоге:
+\begin{equation}
+    v_2 = \sqrt {\frac{2}{\mu} C_P T_1\left[1 - \left( \frac{P_2}{P_1} \right)^{\frac{\gamma - 1}{\gamma}}\right] \phantom{9}}
+\end{equation}
+% Мяяяяу!<3)
+
+\phantom{42}
+
+\noindent
+\textbf{Дифференциальный эффект Джоуля Томпсона} 
+
+Рассмотрим энтальпию, как функцию температуры и давления. Отсюда найдём $\ptdr{T}{P}{H}$. Далее используем $\ptdr{H}{T}{P}=C_P$, $\ptdr{H}{P}{T} = T \ptdr{S}{P}{T} + V = - T \ptdr{V}{T}{P} + V$. Таким образом, получаем\footnote{там не совчем частная, а $\Delta$}
+\begin{equation}
+\boxed{
+    \label{jte}
+    \ptdr{T}{P}{H} = \frac{1}{C_P} \left(
+    T \ptdr{V}{T}{P} - V
+    \right).
+}
+\end{equation}
+
+Тогда для газа Ван-Дер-Ваальса:
+\begin{equation}
+\boxed{
+    \ptdr{T}{P}{H} = \frac{1}{C_P \ptdr{P}{V}{T}} \left(
+    \frac{b R T}{(V - b)^2} - \frac{2a}{V^2}
+    \right)
+    }
+\end{equation}
+Знак эффекта меняется при \textit{температуре инверсии}:
+\begin{equation}
+    T_{inv} = \frac{2a}{Rb} \frac{(V-b)^2}{V^2}.
+\end{equation}
+
+\phantom{42}
+
+\noindent
+\textbf{Интегральный эффект Джоуля Томпсона} \\
+Газ в состоянии 2 разреженный (т.е. почти идеальный газ). Соответсвенно запишем сохранение энтальпии, подставим (\ref{vdv}), уравнение и.г., и получим:
+\begin{equation}
+    (C_V + R) (T_2 - T_1) = \frac{bRT_1}{V_1-b} - \frac{2a}{V_1}.
+\end{equation}
+
+Тогда температура инверсии:
+\begin{equation}
+    T_{inv} = \frac{2a}{Rb} \frac{V_1-b}{V_1}.
+\end{equation}

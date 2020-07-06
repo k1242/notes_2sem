@@ -1,0 +1,27 @@
+\section*{Дифференцируемые функции нескольких переменных}
+\begin{to_def}
+	Функция $f:U(x_0, y_0) \rightarrow \mathbb{R}$ называется \textit{дифференцируемой} в точке $(x_0, y_0)$, если она представима в виде:
+	$$f(x,y) = f(x_0, y_0) + A (x - x_0) + B (y - y_0) + \oo(\rho)$$
+	$$d f_(x_0, y_0) := A \Delta x + B \Delta y = A \, dx + B \, d y$$
+\end{to_def}
+
+\begin{to_thr}
+	Если $f$ дифференцируема в точке $(x_0, y_0)$ и $\d f (x_0, y_0) = A \d x + B \d y$, \textbf{то} в этой точке существуют частные производные функции: $f_x' = A;\, f_y' = B$.
+\end{to_thr}
+
+
+\begin{to_thr}[Достаточное условие]
+	Частные производные $f$ существуют и непрерывны в точке $(x_0, y_0)$ $\Rightarrow$ $f$ дифференцируема в этой точке.
+	\label{suff_cond_diff}
+\end{to_thr}
+
+\noindent Алгоритм исследования функции на дифференцируемость в особой точке $(x_0, y_0)$ (не попадающей под теорему \ref{suff_cond_diff}):
+\begin{enumerate}
+	\item Ищем в $(x_0, y_0)$ частные производные. Если $ \nexists \Rightarrow f$ не дифференцируема;
+	\item Ищем\footnote{
+	Что то же самое, что и 
+	$f(\rho \cos \varphi, \rho \sin \varphi) \rightrightarrows A$.
+	} 
+	$ \lim_{\rho \to 0}\lr{ \frac{1}{\rho} \bigg|f(x, y) - f(x_0, y_0) - f_x'\big|_{(x_0,y_0)} (x - x_0) - f_y'\big|_{(x_0,y_0)} (y - y_0)\bigg|}$,
+	если предел существует и равен нулю, \textbf{то} $f$ дифференцируема, \textbf{иначе}  нет.
+\end{enumerate}

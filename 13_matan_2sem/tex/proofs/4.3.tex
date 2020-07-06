@@ -1,0 +1,78 @@
+\sbs{\small Равномерная сходимость функциональных последовательностей и рядов}
+
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{4.36}]
+
+\phantom{42}
+\noindent
+ 
+ 1) $\Rightarrow:$ $|f_n - f_m| \leq |f_n - f_0| + |f_m - f_0|$, RHS $\to 0$;\\
+ 2) $\Leftarrow:$ $\forall x\in X:$ $f_n(x) \to f_0(x)$, fix $n$ \& $m \to \infty$;\\
+ 3)нер-во в усл: true if $m > N(\varepsilon) \leadsto$ $\forall \varepsilon > 0$\\
+ $\exists N(\varepsilon),\: \forall n \geq N(\varepsilon)\, sup\{ |f_n - f_0| \mid x \in X\} \leq \varepsilon$.\\
+
+
+\textbf{Cледствие}: $n+1 = m$: $\forall \varepsilon > 0 \, \exists N(\varepsilon),\:$\\
+$\forall m \geq N,\, sup\{ |u_m(x)| \mid x \in X\} \leq \varepsilon$
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+ thr $\triangle$
+\eqref{4.39}]
+
+\phantom{42}
+\noindent
+1) По Коши:\\ $\left| \sum\limits_{ k=n+1 }^{ m } u_k \right| \leq \left| \sum\limits_{ k=n+1 }^{ m } |u_k| \right| \leq \sum\limits_{ k=n+1 }^{ m } a_k$;\\
+2) $a_k$ сх. по Коши c $N(\varepsilon)$ в к-ром $a_n \leadsto u_n$.
+
+\end{proof}
+
+
+\begin{proof}[
+ thr $\triangle$
+\eqref{4.40}]
+
+\phantom{42}
+\noindent
+
+1) For $x_0 \in X$ и $\varepsilon$: $|f_n - f| < \varepsilon$ на $X$;\\
+2) $U(x_0) \ni x_0$ тоже; там же: $|f(x)-f(x_0)|\leq$\\
+$\leq |f(x) - f_n(x)| + |f_n(x) - f_n(x_0)| +\\+ |f_n(x_0) - f(x_0)| < 3\varepsilon$.
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+
+\begin{minipage}[]{0.9\textwidth}
+\begin{proof}[
+ thr $\triangle$
+\eqref{4.41}]
+
+\phantom{42}
+\noindent
+
+1)Посл. функций ($\downarrow$), все непр. по формуле и опр. произв. в $x_0$. $\varphi \to g(x_0) $ при $n \to \infty$;\\
+\begin{equation*}
+\varphi_n(x) =
+\left\{
+	\begin{aligned}
+		&\frac{f_n(x) - f_n(x_0)}{x-x_0}, &x \neq x_0;\\
+		&f_n'(x_0), &x = x_0.
+	\end{aligned}
+\right.
+\end{equation*}
+2) Коши в др. точ-х: $|\varphi_n(x) - \varphi_m(x)|= \ldots = |f_n'(\xi) - f_m'(\xi)|$ для $\xi \in (x_0, x)$ по thr. Лагранжа;\\
+3) Получили: крит. Коши для р-ной сх-ти $f_n'$ приоводит к Коши для $\varphi_n$ для $N(\varepsilon)$;\\
+4) Тогда $\varphi_n(x) \rr \varphi(x)$, но т.к. $x-x_0$ огр $\leadsto:$ равню пред. в равенстве:\\
+$f_n(x) = f_n(x_0) + (x - x_0) \varphi_n (x) \leadsto f(x) = f_n(x_0) + (x - x_0) \varphi_n (x)$\\
+Откуда имеем $f'(x_0) = \varphi(x_0) = g(x_0)$ и $f' = g$.
+\end{proof}
+\end{minipage}

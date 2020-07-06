@@ -1,0 +1,156 @@
+\section*{Ряды с неотрицательными членами}
+
+\noindent
+\textbf{\textit{Критерий сходимости ряда с неотрицательными членами}}:
+$$
+\sum_{n=1}^{\infty} a_n \; \;(a_n \geqslant 0, n \in \mathbb{N})\text{ сходится }  \Leftrightarrow \exists M > 0 \colon \forall n \in \mathbb{N} \; \sum_{k=1}^n a_k \leqslant M.
+$$
+
+\noindent
+\textbf{\textit{Интегральный признак сходимости ряда}}:\\
+\begin{tabular}{rllll}
+Если $f(x)\, :$ & неотрицательна           & то&  $\sum_{n=1}^{\infty} f(n)$ 
+& \multirow{2}{*}{сходятся и расходятся одновременно.}\\
+                & убывает на $[1, +\infty)$&   &  $\int_{n=1}^{\infty} f(x) \, dx$
+& \\
+\end{tabular}
+
+\phantom{42}
+
+\noindent
+\textbf{\textit{Признак\footnote{
+    Пример для $\lambda=1$: $a_n = n^{-1}$ и $a_n = n^{-2}$, расходится и сходится соответсвенно.
+} Даламбера}}:
+\begin{equation*}
+        \text{Если } a_n > 0 \; (n \in \mathbb{N}) \text{\textbf{ и }} 
+\exists \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lambda, \text{ то } 
+        \left\{
+        \begin{aligned}
+            &{
+            \text{сходится}
+            }  ,&{  \text{при } 
+            \lambda < 1;
+            }\\
+            &{
+            \text{расходится}
+            }  ,&{ \text{при }
+            \lambda > 1.
+            }
+        \end{aligned}
+        \right.
+\end{equation*}
+
+\noindent
+\textbf{\textit{Признак Коши}}:
+\begin{equation*}
+        \text{Если } a_n > 0 \; (n \in \mathbb{N}) \text{\textbf{ и }} 
+\exists \lim_{n \to \infty} \sqrt[n]{a_n} = \lambda, \text{ то } 
+        \left\{
+        \begin{aligned}
+            &{
+            \text{сходится}
+            }  ,&{  \text{при } 
+            \lambda < 1;
+            }\\
+            &{
+            \text{расходится}
+            }  ,&{ \text{при }
+            \lambda > 1.
+            }
+        \end{aligned}
+        \right.
+\end{equation*}
+
+\noindent
+\textbf{\textit{Признак Раабе}}:
+\begin{equation*}
+        \text{Если } a_n > 0 \; (n \in \mathbb{N}) \text{\textbf{ и }} 
+\exists \lim_{n \to \infty} 
+n \lr{\frac{a_n}{a_{n+1}} - 1}
+= \lambda, \text{ то } 
+        \left\{
+        \begin{aligned}
+            &{
+            \text{сходится}
+            }  ,&{  \text{при } 
+            \lambda < 1;
+            }\\
+            &{
+            \text{расходится}
+            }  ,&{ \text{при }
+            \lambda > 1.
+            }
+        \end{aligned}
+        \right.
+\end{equation*}
+
+\noindent
+\textbf{\textit{Признак\footnote{
+    Поддразумевается $|\gamma_n| < c$, $\delta > 0$. Второй случай верен при $\alpha = 1$.
+} Гаусса}}:
+\begin{equation*}
+        \text{Если } \dots \text{\textbf{ и }} 
+\frac{a_n}{a_{n+1}} = \alpha + \frac{\beta}{n} + \frac{\gamma_n}{n^{1 + \delta}}, \text{ то } 
+        \left\{
+        \begin{aligned}
+            &{
+            \text{сход}
+            }  ,&{  \text{при } 
+            \alpha < 1;
+            }\\
+            &{
+            \text{расход}
+            }  ,&{ \text{при }
+            \alpha > 1.
+            }
+        \end{aligned}
+        \right.;
+        \left\{
+        \begin{aligned}
+            &{
+            \text{сход}
+            }  ,&{  \text{при } 
+            \beta > 1;
+            }\\
+            &{
+            \text{расход}
+            }  ,&{ \text{при }
+            \beta \leqslant 1.
+            }
+        \end{aligned}\right.
+\end{equation*}
+
+
+\section*{Знакопеременный ряд}
+
+\noindent
+\textbf{\textit{Признак Лейбница}}:
+
+Если ряд $(-1)^n|\dots|$ \textbf{и} члены ряда монотонно убывают $\lim\limits_{n\to \infty} |a_n| = 0$, то ряд сходится.
+
+
+
+
+
+\section*{Абсолютно и не абсолютно сходящиеся ряды}
+
+\noindent
+\textbf{\textit{Признак Дирихле}}:
+$$
+\sum_{n=1}^{\infty} a_n b_n \text{ сходится, если } 
+\exists M > 0 \; \; \forall n \in \mathbb{N} \colon 
+\bigg| \sum_{k=1}^n b_k \bigg| \leqslant M \text{ \textbf{и} }
+\lim_{n \to \infty} a_n = 0.
+$$
+
+\noindent
+\textbf{\textit{Признак Абеля}}:
+$$
+\sum_{n=1}^{\infty} a_n b_n \text{ сходится, если } 
+(a_n) \text{ монотонна и ограниченна \textbf{и} } 
+\sum_{n=1}^{\infty} b_n \text{ сходится.}
+$$
+
+\begin{to_thr}[теорема Римана]
+    Если ряд сходится условно, то $\forall A$ существует такая перестановка членов ряда, что сумма полученного ряда равна $A$.
+\end{to_thr}

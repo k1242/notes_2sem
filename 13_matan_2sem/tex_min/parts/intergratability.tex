@@ -1,0 +1,20 @@
+\section*{Свойства интегрируемости}
+
+\begin{to_thr}
+	Пусть $g \leq 0$, $g$ интегрируема по Лебегу на $X$. Если $|f| \geq g$ почти всюду на $X$ $\Rightarrow$ $f$ интегрируема на $X$:
+	$$\int_X f(x) \, \d \mu \leq \int_X g(x) \d \mu$$
+\end{to_thr}
+
+
+\begin{to_thr}
+	Пусть $\mu (X) < + \infty$, $f:X \rightarrow \mathbb{R}$ -- измерима и ограничена $\Rightarrow$ $f$ интегрируема на $X$.
+\end{to_thr}
+
+\begin{to_thr}
+	Пусть $f:X \rightarrow \mathbb{R}$ -- непрерывна на компакте $X$, $\Rightarrow$ $f$ интегрируема на $X$.
+\end{to_thr}
+
+\begin{to_thr}[Неравенство Чебышёва]
+	$f \colon X \rightarrow \mathbb{R}$ интегрируема по Лебегу. Тогда $\forall C \in \mathbb{R}$ $\exists$ измеримый $X_C = \{ x \in X \colon |f(x)|\geq C \}$, $f$ интегрируема на $X_C$. Выполняется неравенство:
+	$$ \int_X |f(x)| \d \mu \geq \int_{X_C} |f(x)| \d \mu \geq C \mu(X_C) $$
+\end{to_thr}

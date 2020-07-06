@@ -1,0 +1,46 @@
+\sbs{\small Предельный переход в интеграле Лебега по функциям}
+
+\begin{minipage}{0.9\textwidth}
+\begin{proof}[
+{thr} $\triangle$
+\eqref{5.84}]
+
+\phantom{42}
+
+\noindent
+1) \eqref{thr5.41} $\Rightarrow$ $f \in \L$; из абс $\Rightarrow$ $\lim_{k \to \infty} \int_X f_k \d x \leq \int_X f \d x$. Далее пусть $f_k \geq 0$, $f > 0$. \\
+4) Пусть $f(x)=+\infty$ на мн $\mu=0$. fix $\varepsilon > 0$. 
+$X_k = \{x \in X \mid f_k(x) \geq (1- \varepsilon) f(x)\}$ \\
+\eqref{thr5.41} $\Rightarrow$  $X = \bigcup_k X_k$ и $X_i \subset X_{i+1}$,
+НСН $k$ $\int_{X_k} f(x) \d x \geq \int_X f(x) \d x - \varepsilon$. \\
+5) $\int_X f_k (x) \d x \geq \int_{X_k} f_k (x) \d x \geq (1- \varepsilon) \int_{X_k} f(x) \d x \geq (1 - \varepsilon) \lr{\int_X f(x) \d x - \varepsilon} $. \\
+6) Пусть $f(x)=+\infty$ на мн $\mu \neq 0$. Тогда дост док $\int_X f_k \d x \to \infty$. $X_k = \{x \in X \mid f_k (x) \geq 1/ \varepsilon\}$. 
+\\ НСН $k$ $\mu(X_k) \geq 1/2 \mu(X)$ и 
+$\int_X f_k (x) \d x \geq \int_{X_k} f_k (x) \d x \geq \frac{1}{\varepsilon} \mu(X_k) \geq \frac{1}{2 \varepsilon} \mu(X)$.
+\end{proof}
+\end{minipage}
+
+\phantom{42}
+
+\begin{minipage}[]{0.9\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+{thr} $\triangle$
+\eqref{5.87}]
+
+\phantom{42}
+
+\noindent
+1) выкинем точки: $g = 0$ и $g = + \infty$. \\
+2) \eqref{thr5.41}, $|f| \leq g$, $f$ изм $\Rightarrow$ $f \in \L_c$. \\
+3) fix $\varepsilon > 0$, $X_k = \{ x \in X \mid \forall l \geq k, \; |f_l(x) - f(x)| \leq  g(x)\},$ из поточ сх $X = \bigcup_k X_k$. \\
+4) $\eqref{cont_L}$, $\int g$ непр, $\Rightarrow$ НСН $k$
+$\int_{X_k} g(x) \d x \geq \int_X g(x) \d x - \varepsilon \Rightarrow 
+\int_{X \setminus X_k} g(x) \d x \leq \varepsilon$. \\
+5) $\int_X |f_k - f| \d x \leq \int_{X_k} \varepsilon g \d x + \int_{X \setminus X_k} 2 g \d x \leq \varepsilon \int_X g \d x + 2 \varepsilon$.
+
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+

@@ -1,0 +1,70 @@
+\sbs{Примеры применения интеграла Лебега}
+
+\begin{to_thr}[Неравенство Коши-Буняковского]
+\label{5.89}
+    Пусть функции $f, g \colon X \to \mathbb{R}$ измеримы по Лебегу и их $|f|^2$, $|g|^2$ имеют конечные интегралы. Тогда
+    $$
+    \lr{\int_X f(x) g(x) \d x}^2 \leq 
+    \lr{\int_X |f(x)|^2 \d x} \cdot \lr{\int_X |g(x)|^2 \d x}.
+    $$
+\end{to_thr}
+
+\begin{to_thr}[Дифференцирование\footnote{
+    Функция $g \colon X \to \mathbb{R}^+$ и $g \in \L_c$
+} под знаком интеграла]
+\label{5.90}
+    \begin{equation*}
+    \begin{split}
+    \left.
+        \begin{aligned}
+            &f(x, y) \in \L^x_c \; \forall y \in (a, b) \\
+            &f \text{ дифференцируема по } y \\
+            &\forall x \in X, \forall y \in (a, b) |f'_y(x, y)| \leq g(x) \\
+            &g \geq 0 \colon X \to \mathbb{R}^+ \in L_c \text{ на } X
+        \end{aligned}
+    \right\} \hspace{1cm}
+    \Longrightarrow \hspace{1cm}
+    \frac{d}{dy} \int_X f(x, y) \d x = \int_X f'_y (x, y) \d x.
+    \end{split}
+    \end{equation*}
+    \end{to_thr}
+
+\begin{to_thr}[Теорема о среднем для интеграла]
+\label{5.91}
+    \begin{equation*}
+    \begin{split}
+    \left.
+        \begin{aligned}
+            &f \colon X \to \mathbb{R} \text{ непрерывна} \\
+            &f \text{ ограничена на связном } X\\
+            &g \geq 0 \colon X \to \mathbb{R}^+ \in L_c \text{ на } X
+        \end{aligned}
+    \right\} \hspace{1cm}
+    \Longrightarrow \hspace{1cm}
+    \exists \xi \in X \colon \;\; 
+    \int_X f(x) g(x) \d x = f(\xi) \int_X g(x) \d x.
+    \end{split}
+    \end{equation*}
+\end{to_thr}
+
+\begin{to_thr}[Вторая о среднем для интеграла]
+\label{5.92}
+    \begin{equation*}
+    \begin{split}
+    \left.
+        \begin{aligned}
+            &f \in \L_c \\
+            &g \text{ монотонна} \\
+            &g \text{ ограничена}
+        \end{aligned}
+    \right\} \hspace{0.5cm}
+    \Longrightarrow \hspace{0.5cm} \exists \vartheta \in [a, b] \colon
+    \int_a^b f(x) g(x) \d x = 
+    g(a + 0) \int_a^{\vartheta} f(x) \d x + 
+    g(b - 0) \int_{\vartheta}^b f(x) \d x.
+    \end{split}
+    \end{equation*}
+\end{to_thr}
+
+
+

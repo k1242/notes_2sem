@@ -1,0 +1,51 @@
+\sbs{Теорема Фубини и линейная замена переменных в интеграле}
+
+\begin{to_lem}
+\label{5.103}
+    Всякая измеримая неотрицательная $f \colon X \to \mathbb{R}$ является счётной суммой характеристических функций измеримых по Лебегу множеств с неотрицательными коэффициентами. Если $f$ борелевская, то и характеристические функции борелевские.
+\end{to_lem}
+
+\begin{to_thr}[Теорема Фубини]
+    \label{thr_fub} %104
+    Пусть функция $f \colon X \times Y \to \mathbb{R}$ интегрируема на произведении интегрируемых множеств. Тогда\footnote{
+        И, в частности, интеграл в скобках справа существует при $\forall x \in X$ и является измеримой функцией от $x \in X$.
+    }
+    $$
+    \int_{X \times Y} f(x, y) \d x \d y = \int_X \lr{
+    \int_Y f(x, y) \d y
+    } \d x.
+    $$
+\end{to_thr}
+
+% ДОКАЗАТЬ?.
+
+\begin{to_thr}
+\label{xyxy} %105
+    Если множество $X \subseteq \mathbb{R}^n$ измеримо и $Y \subseteq \mathbb{R}^m$ измеримо, то $X \times Y \subseteq \mathbb{R}^{n + m}$ тоже имеримо и 
+    $$
+        \mu(X \times Y) = \mu (X) \cdot \mu (Y).
+    $$
+\end{to_thr}
+
+% ВАЖНО
+\begin{to_thr}
+\label{order_hor} % 
+    Пусть функция $f \colon X \to \mathbb{R}$ неотрицательна и измерима. Обозначим
+    $$
+        g(y) = \mu\{
+        x \in X \mid f(x) \geq y
+        \}
+    $$
+    Тогда оказывается
+    $$
+    \int_X f(x) \d x = \int_0^{\infty} g(y) \d y.
+    $$
+\end{to_thr}
+
+\begin{to_thr}[\href{https://youtu.be/3P5iDswTCKM?t=2268}{Теорема о линейной замене переменных в интеграле Лебега}]
+\label{lin_var}
+    Для интегрируемой $f \colon \mathbb{R}^n \to \mathbb{R}$ и линейного преобразования $A \colon \mathbb{R}^n \to \mathbb{R}^n$
+    $$
+    \int_{\mathbb{R}^n} f(\vc{y}) \d \vc{y} = | \det A | \int_{\mathbb{R}^n} f(A\vc{x}) d\vc{x}.
+    $$
+\end{to_thr}

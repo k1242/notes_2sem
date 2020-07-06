@@ -1,0 +1,80 @@
+\sbs{\small Несобственный интеграл функции одной переменной}
+
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[ 
+thr $\triangle$ 
+\eqref{5.85}] (свой среди чужих)
+
+\phantom{42} 
+
+\noindent 
+1) $f_k = \sum_{l=1}^k u_l$ + \eqref{5.84}. 
+\end{proof}
+
+
+
+\begin{proof}[
+thr $\triangle$
+\eqref{5.97}]
+
+\phantom{42}
+\noindent
+
+1) в крит. Коши\eqref{5.97} II.thr.О среднем\eqref{5.92}:\\
+\begin{equation*}
+\begin{aligned}
+	\left|\int_\xi^\eta f(x) q(x) \d x \right| \leq |g(\xi)| \left|\int_\xi^\vartheta f(x) \d x \right| +\\
+	 + |g(\eta)| \left|\int_\vartheta^\eta f(x) \d x \right| \leq 2 M (|g(\xi)| + |g(\eta)|);
+\end{aligned}
+\end{equation*}
+2)$g(x) \overset{x \to b-0}{\to} 0 \leadsto \beta_0(\varepsilon) \in (a,b):$\\
+при $\xi, \eta \geq \beta_0(\varepsilon):\, 2 M (|g(\xi)| + |g(\eta)|) \leq 4 M \varepsilon $.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{5.96}]
+
+\phantom{42}
+\noindent
+
+1)$\forall \varepsilon > 0 \, \exists U(b) \, \forall \xi,\eta\in U(b)\cap(X\setminus\{a\})\Rightarrow$\\
+ $|\int_a^\xi f(x)\d x - \int_a^\eta f(x)|<\varepsilon\dots $
+\end{proof}
+
+
+\begin{proof}[
+ thr $\triangle$
+\eqref{5.98}]
+	
+\phantom{42}
+\noindent
+
+1)Пусть $|g(x)| \leq M$; Коши\eqref{5.97}, II.thr.О среднем\eqref{5.92} (как в proof/\ref{5.97}):\\
+\begin{equation*}
+\begin{aligned}
+	\left|\int_\xi^\eta f(x) q(x) \d x \right| \leq  M \left|\int_\xi^\vartheta f(x) \d x \right| + M \left| \int_\vartheta^\eta f(x) \d x \right|;
+\end{aligned}
+\end{equation*}
+2) Всё будет не более $2 M \varepsilon$.
+\end{proof}
+
+
+\begin{proof}[
+ thr $\triangle$
+\eqref{5.100}]
+	
+\phantom{42}
+\noindent
+
+1)$ X_i = [i, i+1)$; $h = \{ f(i) \mid x \in X_i \}$, $g = \{ f(i+1) \mid x \in X_i \}\,\leadsto$ $g\leq f \leq h$;\\
+2) инт-м $\leadsto$ требуемые выражения для сумм.
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}

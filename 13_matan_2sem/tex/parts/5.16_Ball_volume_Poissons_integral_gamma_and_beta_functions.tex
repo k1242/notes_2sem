@@ -1,0 +1,67 @@
+\sbs{Объём шара интеграл Пуассона гамма и бета функции}
+
+\begin{to_thr}[\hyperlink{V_ball}{Объем шара и интеграл Пуассона}]
+\label{Ball volume and Poisson integral}
+    Рассмотрим единичный шар
+    $$
+    B^n = \{x \in \mathbb{R}^n \mid ||x||^2 = x_1^2 + \dots + x_n^2 \leq 1\}.
+    $$
+    Тогда
+    $$
+    \pi^{n/2} = \int_{\mathbb{R}^n} e^{-||x||^2} \d x = \mu B_n \cdot \Gamma(n/2 + 1),
+    $$
+    где
+    $$
+    \text{Гамма-функция:} \hspace{1cm} \boxed{\Gamma(p) = \int_0^{+\infty} t^{p-1} e^{-t} \d t}.
+    $$
+\end{to_thr}
+
+\begin{to_thr}[\hyperlink{down_eq_link}{Формула понижения}]
+\label{down_eq}
+    $$
+    \text{Для $p > 0$ верно }
+    \Gamma(p+1) = p \Gamma (p).
+    $$
+\end{to_thr}
+
+\begin{to_thr}
+    $$
+    \text{Для $n \in \mathbb{Z}^+$ } \Gamma (n+1) = n!, \; \; \Gamma(n + 1/2) = \sqrt{\pi} \frac{(2n-1)!!}{2^n}
+    $$
+\end{to_thr}
+
+\begin{to_def}
+    $$
+    \text{\textit{Бета-функция} при $p, q > 0$:} \hspace{1cm} \boxed{B(p,q) = \int_0^1 t^{p-1} (1-t)^{q-1} \d t}.
+    $$
+\end{to_def}
+
+\begin{to_thr}
+\label{b_function}
+    $$
+    B(p, q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}
+    $$
+\end{to_thr}
+
+\begin{to_thr}[Формула Стирлинга]
+\label{stir_eq}
+    Для $x \to + \infty$ имеет место асимптотическая формула
+    $$
+    x! = \Gamma(x+1) = \int_0^{+\infty} t^x e^{-t} \d t = 
+    \sqrt{2 \pi x} \cdot x^x \cdot e^{-x} \cdot (1 + o(1))
+    $$
+\end{to_thr}
+
+\begin{to_thr}[Объём тела вращения]
+    Пусть функция $f \colon [a, b] \to \mathbb{R}^+$ измерима, а множество $X \subset \mathbb{R}^3$ задано условием $a \leq x \leq b$, $y^2 + z^2 \leq f(x)^2$. Тогда
+    $$
+    \mu(X) = \int_a^b \pi f(x)^2 \d x.
+    $$
+\end{to_thr}
+
+\begin{to_thr}[\href{https://youtu.be/3vr8B-xNqh0?t=1176}{Интеграл Гаусса}]
+    Пусть $Q \colon \mathbb{R}^n \to \mathbb{R}$ -- положительно определенная квадратичная форма. Тогда
+    $$
+    \int_{\mathbb{R}^n} e^{-Q(x)} \d x_1 \dots \d x_n = \pi^{n/2} \cdot (\det Q)^{-1/2}.
+    $$
+\end{to_thr}

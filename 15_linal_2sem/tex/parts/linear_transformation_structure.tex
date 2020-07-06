@@ -1,0 +1,354 @@
+\section{Структура линейного преобразования}
+
+\subsection{Алгебра линейный операторов}
+При $V = W$ элемент векторного пространства $\mathcal L (V)$ называют \textit{линейным оператором} или \textit{линейным преобразованием}. 
+
+Примерами являются: нулевой оператор $\mathcal O$ (переводит любой вектор $\vc{v} \in V$  в нулевой), оператор проектирования ($\mathcal P^2 = \mathcal P$), оператор подобия, дифференцирования, ...
+
+
+\subsection{Алгебра операторов}
+
+
+Отдельный интерес представляет \textbf{алгебра операторов}. Понятно, что $\mathcal L (V)$ -- векторное пространство размерности $\dim \mathcal L (V) = \left(\dim V\right)^2$. Можно по аксиомам проверить, что $\mathcal L (V)$ является одновременно  векторным пространством над $\mathbb{F}$.
+
+\begin{to_def} 
+    Кольцо $K$ является одновременно векторным пространством над $\mathbb{F}$ таким, что $\lambda(ab) = (\lambda a) b = a (\lambda b)$ для всех $\lambda \in \mathbb{F}, \; a,b \in K $, называется \textit{алгеброй} над $\mathbb{F}$. Размерность $K  $ как векторного пространства называется \textit{размерностью алгебры} $K $ над $\mathbb{F} $. Всякое векторное подпространство $L \subset K $, замкнутое относительно операции умножения в $K (L \cdot L \subseteq L)$, называется \textit{подалгеброй} алгебры $K $.
+\end{to_def}
+
+Нам интересна алгебра $\mathbb{F}[\mathcal A] $ -- наименьшая алгебра, содержащая $\mathcal A $. Какова её размерность? Далее докажем, что 
+$$
+    \dim \mathbb{F}[\mathcal A] \leq \dim V.
+$$
+
+\begin{to_def} 
+    Многочлен $f(t)$ \textit{аннулирует} линейный оператор $\mathcal A$, если $f(\mathcal A) = \mathcal O $. Нормализованный многочлен минимальной степени, аннулирующий $\mathcal A $, называется \textit{минимальным многочленом} оператора $\mathcal A $. 
+\end{to_def}
+
+
+\begin{to_thr} 
+    Для всякого линейного оператора $\mathcal A $ существует $\mu_{\mathcal A} (t) $. Оператор $\mathcal A $ обратим тогда, и только тогда, когда свободный член $\mu_m $ отличен от нуля. 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Эксплуатируем тот факт, что делители нуля необратимы.
+\end{proof}
+
+\begin{to_thr} 
+    Любой аннулирующий многочлен $f(t) $ оператора $\mathcal A $ делится без остатка на $\mu_{\mathcal A} (t) $. 
+\end{to_thr}
+
+\begin{to_def} 
+    Линейный оператор $\mathcal A $ называется \textit{нильпотентным}, если $\mathcal A^m = \mathcal O $ для некоторого $m > 0 $; наименьшее такое натуральное число $m $ называется \textit{индексом нильпотентности}. 
+\end{to_def}
+
+
+\subsection{Инвариантные подпространства и собственные векторы}
+
+
+\subsubsection{Проекторы}
+
+Пусть $V = W_1 \oplus \ldots \oplus W_m $, тогда $\vc{x} \in V $:
+$$
+    \vc{x} = \vc{x}_1 + \ldots + \vc{x}_m, \hspace{0.5cm} x_i \in W_i,
+$$
+а отображение $\mathcal P_i \colon \vc{x} \mapsto \vc{x}_i \in \mathcal L (V)$. Наконец,
+\begin{align*}
+     W_i = \mathcal P_i V = \{\vc{x} \in V \mid \mathcal P_i \vc{x} = \vc{x}\}, \\
+     K_i = \Ker \mathcal P_i = W_1 + \ldots + W_m
+\end{align*} 
+и $\mathcal P_i $ по сути оператор проектирования $V $ на $W_i $ вдоль $K_i $.
+
+\begin{to_thr} 
+% стр 74-75
+    $\mathcal P_1, \ldots, \mathcal P_m \colon V \to V $ -- конечное множество линейных операторов таких, что 
+$$
+    \sum_{i=1}^m \mathcal P_i = \mathcal E; \hspace{0.5cm} \mathcal P_i^2 = \mathcal P_i, \; 1 \leq i \leq m; \hspace{0.5cm} \mathcal P_i \mathcal P_j = \mathcal O, \; i \neq j.
+$$
+Тогда 
+$$
+    V = W_1 \oplus \ldots \oplus W_m, \text{ где } _i = \Im \mathcal P_i.
+$$
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Через разбиение $\forall \vc{x} \in V $ получим
+$$
+    \vc{x} = \mathcal E \vc{x} = \sum \mathcal P_i \vc{x} = \vc{x}_i + \ldots + \vc{x}_m, \hspace{0.5cm} \vc{x}_i \in W_i,
+$$
+тоесть $V = W_1 + \ldots + W_m$. Докажем, что сумма прямая. Пусть $\vc{x} \in W_j \cap \left(\sum_{i \neq j} W_i\right) $. Но, $\exists \vc{x}_1, \ldots, \vc{x}_m $:
+$$
+    x = \mathcal P_j (\vc{x}_j) = \sum_{i \neq j} \mathcal P_i (\vc{x}_i).
+$$
+Применим $\mathcal P_j $, получим
+$$
+    \vc{x} = \mathcal P_j^2 (\vc{x}_j) = \sum_{i \neq j} \mathcal P_j \mathcal P_i (\vc{x}_i) = \vc{0}.
+$$
+\end{proof}
+
+
+
+\subsubsection{Инвариантные подпространства}
+
+\begin{to_def} 
+    Подпространство $U \subset V $ \textit{инвариантно} относительно $\mathcal A \colon V \to V$, если $\mathcal A U \subset U $. 
+\end{to_def}
+
+\begin{to_thr} 
+    Пространство $V $ является прямой суммой двух подпространств $U, W $, инвариантных относительно $\mathcal A \colon V \to V $, тогда, и только тогда, когда $\exists $ базис такой, что $\mathcal A $ принимает блочно диагональный вид.
+\end{to_thr}
+
+
+\subsubsection{Собственные векторы. Характеристический многочлен.}
+
+\begin{to_def} 
+    Любой ненулевой вектор из одномерного подпространства, инвариантного относительно $\mathcal A $, называется \textit{собственным вектором} оператора $\mathcal A $. Если $\vc{x} $ -- собственный вектор, то $\mathcal A \vc{x} = \lambda \vc{x} $, $\lambda \in \mathbb{F} $ называется \textit{собственным значением} $\mathcal A $. 
+\end{to_def}
+
+Очевидная импликация
+$
+     \mathcal A \vc{x} = \lambda \vc{x}, \; \mathcal A \vc{y} = \lambda \vc{y} \Longrightarrow \mathcal A(\alpha \vc{x} + \beta \vc{y}) = \lambda(\alpha \vc{x} + \beta \vc{y})
+ $ 
+ даёт основание называть $V^{\lambda} $ \textit{собственным подпространством} оператора $\mathcal A $, ассоциированным с $\lambda $. Его размерность $\dim V^{\lambda} $ называется \textit{геометрической кратностью} $\lambda $.
+
+Уместно ввести понятие \textit{характеристического многочлена}, ассоциированного с 
+$\mathcal A $.  Кратность $\lambda $ как корня характеристического многочлена $\chi_{\mathcal A} (t)$ называется \textit{алгебраической кратностью} $\lambda $ оператора $\mathcal A $.
+
+\begin{to_thr} 
+     Геометрическая кратность $\lambda $ не превосходит его алгебраической кратности.
+\end{to_thr}
+ 
+\begin{proof}[$\triangle$]
+Действительно, пусть $\mathcal A' $ -- ограничение $\mathcal A $ на $V^{\lambda} $, тогда $\det (t \mathcal E' - \mathcal A') = (t - \lambda)^m $, причём $\chi_{\mathcal A} (t) = (t-\lambda)^m q(t)$. Пусть $\lambda $ -- корень кратности $k $ многочлена $q(t) $. Тогда алгебраической кратностью $\lambda $ будет $m+k $.
+\end{proof}
+
+
+\subsubsection{Критерий диагонализируемости}
+
+\begin{to_def} 
+    Множество всех собственных значений линейного оператора $\mathcal A $ называют \textit{спектром} -- $\Spec \mathcal A $. Еси все точки спектра простые, то и спектр называется \textit{простым}.
+\end{to_def}
+
+\begin{to_lem} 
+\label{lem_1}
+    Собственные векторы, принадлежащие к различным собственным значениям, линейно независимы. Сумма $\sum_{\lambda \in \Spec \mathcal A} V^{\lambda}$ прямая. 
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    По индукции докажем ЛНеЗ набора $e_i \in V^{\lambda_i}$ $\forall i $. 
+$$
+    \alpha_1 \vc{e}_1 + \ldots + \alpha \vc{e}_m = \vc{0} \hspace{0.5cm} \mapsto \hspace{0.5cm} \alpha_1 \lambda_1 \vc{e}_1 + \ldots + \alpha_m \lambda_m \vc{e}_m = 0.
+$$
+Умножая на $\lambda_m $ первое соотношение и вычитая из него второе, приходим к линейной зависимости первых $m-1 $ векторов:
+$$
+    \alpha_1 (\lambda_m - \lambda_1) \vc{e}_1 + \ldots 
+    + \alpha_{m-1} (\lambda_m - \lambda_{m-1}) \vc{e}_{m-1} = \vc{0}.
+$$
+Но $\alpha_1 (\lambda_m - \lambda_1) \neq 0$. По доказанному $V^{\lambda_i} \cap \sum_{j \neq i} V^{\lambda_j} = \vc{0} $.
+\end{proof}
+
+\begin{to_def} 
+    Линейный оператор $\mathcal A $ на $n $-мерном пространстве $V $ называют \textit{диагонализируемым}, если существует базис $(\vc{e}_i) $, относительно которого матрица оператора принимает диагональный вид. 
+\end{to_def}
+
+\begin{to_thr} 
+    Линейный оператор $\mathcal A $ с простым спектром диагонализируем.
+\end{to_thr}
+
+\begin{to_thr} 
+    Пусть $\mathcal A $ -- линейный оператор на конечномерном векторном пространстве $V $ над полем $\mathbb{F} $. Для диагонализируемости  $\mathcal A $ необходимо и достаточно, чтобы все корни $\chi_{\mathcal A} (t) $ лежат в $\mathbb{F} $  \textbf{и} геометрическая кратность каждого собственного значения $\lambda $ совпадает с его алгебраической кратностью.
+\end{to_thr}
+
+\begin{proof}[$\triangle_{\Leftarrow}$]
+Если $\lambda_{1}, \ldots, \lambda_m $ -- различные корни многочлена $\chi_{\mathcal A} (t)$, а $k_{1}, \ldots, k_m $ -- их кратности, то $\dim V^{\lambda_i} = k_i$ и $k_{1} + k_{2} + \ldots + k_m = n$. По лемме \ref{lem_1} любая совокупность $\vc{v}_i \in V^{\lambda_i}$ линейно независима, так что
+\begin{equation}
+\label{u_1}
+    V^{\lambda_i} \cap \left(V^{\lambda_{1}} + \ldots + \cancel{V^{\lambda_i}} + \ldots + V^{\lambda_m}\right) = \vc{0}.
+\end{equation}
+
+Значит сумма прямая. Взяв за базис объединение базисов в $V^{\lambda_i}$, мы придём к \textit{собственному базису}. 
+\end{proof}
+
+\begin{proof}[$\triangle_{\Rightarrow}$]
+    Пусть $\mathcal A$ диагонализируем. Положим $l_i = \dim V^{\lambda_i}$. Из \ref{u_1} верно, $V$ имеет собственный базис из элементов $V^{\lambda_i}$, соотвественно $V^{\lambda_1}, \ldots, V^{\lambda_m}$ порождают $V$. 
+    Из равенства для $\chi_{\mathcal A} (t)$ вытекает, что все корни многочлена принадлежат $\mathbb{F}$, т.е. выполнено первое условие. Также $l_i$ совпадает с алгебраической кратностью $\lambda_i$.
+\end{proof}
+
+\subsubsection{Существование инвариантных подпространств}
+
+\begin{to_thr} 
+    Всякий комплексный $\mathcal A$ имеет одномерное инвариантное подпространство. Всякий вещественный $\A$ имеет одномерное или двумерное инвариантное подпространство.
+\end{to_thr}
+
+
+\begin{proof}[$\triangle$]
+    Так как $\chi_{\A}$ имеет в $\mathbb{C}$ хотя бы один корень.
+
+    Для $\mathbb{R}$ рассмотрим $\mu_{\A}$. Его коэффициенты лежат в $\mathbb{R}$. Если $\mu_{\A}$ имеет вещественный корень, то
+    $$
+        \mu_{\A} = (t - \alpha) g(t), \hspace{0.5cm} g(t) \in \mathbb{R}[t].
+    $$
+    Так как $g(\A) \neq \mathcal O$ в силу минимальности $\mu_{\A}$, то $g(\A) \vc{u} \neq \vc{0}$ для некоторого $\vc{u} \in V$. Но
+    $$
+        (\A - \alpha \mathcal E) = (\A - \alpha \mathcal E) g(\A) \vc{u} = \mu_{\A} (\A) \vc{u} = \vc{0},
+    $$
+    откуда $\A \vc{v} = \alpha \vc{v}$, т.е. $\vc{v}$ -- собственный вектор.
+
+    Если у $\A$ нет собственных векторов, то у $\mu_{\A}$ нет вещественных корней. Однако
+    $$
+        \mu_{\A} (t) = (t^{2} - \alpha t - \beta t) h(t), \hspace{0.5cm}   \alpha, \beta \in \mathbb{R}, \hspace{0.5cm} h(t) \in \mathbb{R}[t].
+    $$
+    Снова $\vc{v} = h(\A) \vc{u} \neq 0$ для некоторого $\vc{u} \in V$и 
+    $$
+        \A^2 \vc{v} - \alpha \A \vc{v} - \beta \vc{v} = \vc{0}
+    $$
+    Получается, что $\A^2 \vc{v} = \alpha \A \vc{v} + \beta \vc{v}$. Так как $\A \vc{v} \neq \lambda \vc{v}$, то $L = \langle \vc{v}, \A \vc{v}\rangle$ -- двумерное инвариантное подпространство.
+\end{proof}
+
+\subsubsection{Сопряженный линейный оператор}
+
+Посмотрим на связь оператора и сопряженного пространства. При любом фиксированном элементе $f \in V^*$ отображение $x \mapsto (f, \A \vc{x}) := f(\A \vc{x})$ снова является элементом из $V^*$,  т.е. линейной функцией. Раз это так, то можем положить 
+\begin{equation}
+\label{14n}
+    (\A^* f, x) := (f, \A \vc{x}).
+\end{equation} 
+
+\begin{to_def} 
+    Линейный оператор $\A^*$ на $V^*$, заданный соотношением \eqref{14n}, называют оператором, \textit{сопряженным} к $\mathcal A \in \mathcal L (V)$. 
+\end{to_def}
+
+\begin{to_thr} 
+    Если в базисе $(\vc{e}_i)$ пространства $V$ линейный оператор $\A$ имеет матрицу $A = (a_{ij})$, то в дуальном базисе $(e^i)$ пространства $V^*$ сопряженный к $\A$ оператор $\A^*$ имеет транспонированную матрицу $A\T \colon A^* = (a_{ij}^*) = A\T$.
+\end{to_thr}
+
+Одновременное рассмотрение пар $(V, \mathcal A)$ и $(V^*, \A^*)$ часто приводит к практическим результатам. Одним из содержательных примеров является доказательство следующей теоремы.
+
+\begin{to_thr} 
+    Всякий комплексный линейный оператор на $V$ обладает инвариантной гиперплоскостью. 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Пусть $\dim V =n$. Как мы знаем, $\dim \Ker f = n - 1$ для любой линейной функции $f \neq 0$ на $V$. Возьмём в качетсве $f$ собственный вектор линейного оператора $\A^*$ на $V^*$. Тогда $\vc{x} \in \Ker f \Rightarrow 0 = \lambda(f, \vc{x}) = (\lambda f, \vc{x}) = (\A^* f, \vc{x}) = (f, \A \vc{x}) \Rightarrow \A \vc{x} \in \Ker f$. Собственно, $\Ker f$ -- искомая гиперплоскость.
+\end{proof}
+
+
+\subsubsection{Фактороператор}
+
+Пусть $L$ -- подпространство, инвариантное относительно линейного оператора $\A$, действующего на $V$. Считая $V$ и $L$ фиксированными, будем обозначать факторпространство $V/L$, символом $\overline{V}$, а любой его элемент $\vc{x} + L$ через $\overline{\vc{x}}$.
+
+\textbf{факторпространство -- это ..?}
+
+\begin{to_def} 
+    Соотношением $\overline{\A} \cdot \overline{\vc{x}} = \overline{\A \vc{x}}$ на $\overline{V}$ \textit{фактороператор}. Другими словами, $\overline{\mathcal A} (\vc{x} + L) = \A \vc{x} + L$.
+\end{to_def}
+
+
+
+\subsection{Жорданова нормальная форма}
+
+\subsubsection{Теорема Гамильтона-Кэли}
+\begin{to_thr} 
+    Матрицу линейного оператора $\mathcal A$ всегда можно привести (в смысле подобия) к треугольному виду. 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Выберем $n-1$-мерную инвариантную гиперплоскость. По индукции придём к верхнетреугольному виду.
+\end{proof}
+
+\begin{to_thr}[теорема Гамильтона-Кэли]
+     Линейный оператор $\mathcal A$ и соответсвующая ему матрица $A$ аннулируются своим характеричтическим многочленом $\chi_{\mathcal A} (t)$, т.е.
+     $$
+         \chi_{\mathcal A} (\mathcal A) = \mathcal O.
+     $$
+\end{to_thr}
+
+
+\subsubsection{ЖНФ: формулировка и следствие}
+\begin{to_thr} 
+    Каждая квадратная матрица $A$ порядка $n$ над алгебраически замкнутым полем $\mathbb{F}$ (достаточно, чтобы $\chi_{A}$ раскладывался на линейные сомножители) приводится к жордановой нормальной форме. Именно, $\exists C (\det C \neq 0) \colon C^{-1} A C = J(A) = J$. С точностью до перестановки клеток жорданова нормальная форма матрицы единственна. 
+\end{to_thr}
+
+  \begin{proof}[$\triangle$]
+      \koz \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} (в принципе, всё понятно) \hspace{1cm} \koz \hspace{1cm} \koz \hspace{1cm} \koz
+  \end{proof}
+
+% \subsubsection{Корневые подпространства}
+% ...
+
+\subsubsection{Случай нильпотентного оператора}
+
+Далее, положив $\N = \A - \lambda \mathcal E$ , мы получим нильпотентный оператор индекса нильпотентности $m$ с нильпотентной матрицей $N$.
+
+\begin{to_def} 
+    Линейная оболочка 
+$$
+    \mathbb{F}[\N] \vc{v} = \langle \vc{v}, \N \vc{v}, \ldots, \N^{m'-1} \vc{v}\rangle
+$$
+называется \textit{циклическим подпространством}, ассоциированным с оператором $\N$ индекса нильпотентности $m$ и вектором $\vc{v}$. Предполагается, что $m` \leq m$ -- наименьшее натуральное число, для которого $\N^{m`} \vc{v} = \vc{0}$.
+\end{to_def}
+
+\begin{to_thr} 
+    ЖНФ нильпотентной матрицы $N$ существует (над произвольным $\mathbb{F}$).
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Достаточно показать, что $V$ , на котором действует оператор $\N$, разлагается в прямую сумму циклических подпространств.
+
+    По теореме \red{1} матрица $N$ приводится к верхнему треугольному виду с 0 по диагонали. Это значит, что линейная оболочка $U$ первых $n-1$ базисных векторов инвариантна относительно $\N$. По определению $\N V \subset U$ ,  а по предположению индукции а $U$ можно выбрать жорданов базис для $\N$ , или, что то же самое,
+    \begin{align*}
+        U &= \mathbb{F}[\N] \vc{e}_1 \oplus \ldots \oplus \mathbb{F}[\N]\vc{e}_s, \\
+        \mathbb{F} [\N] \vc{e}_i &= \langle \vc{e}_i, \N \vc{e}_i, \ldots, \N^{m_i - 1} \vc{e}_i \rangle, \hspace{0.5cm}  B^{m_i} \vc{e}_i = \vc{0}.
+    \end{align*}
+
+    Далее, $V = \langle \vc{v}, U \rangle, \; \N \vc{v} \in U$ для любого вектора $\vc{v}$, не содержащегося в $U$ , так что $\N \vc{v} = \sum_i \alpha \vc{e}_i + \N \vc{v}, \vc{u} \in U$. Заменяя $\vc{v}$ на $\vc{v}' = \vc{v} - \vc{u}$, будем иметь
+    $$
+        V = \langle \vc{v}', U\rangle, \hspace{0.5cm} \N \vc{v}' = \sum_{i=1}^{s} \alpha_i \vc{e}_i.
+    $$
+
+    Если $\alpha_i = 0, 1 \leq i \leq s$, то к клеткам Жордана добавится $J_1 (0)$ , отвечающее циклическому подпространству $\langle \vc{v}'\rangle$ , т.е. 
+    $$
+        N \sim J(N) = \diag \left(
+            J_{m_{1}} (0), \ldots, J_{m_s} (0), J_{1} (0)
+        \right)
+    $$
+
+    Остаётся рассмотреть случай, когда
+    $$
+        \alpha_{1} = \ldots = \alpha_{r-1} = 0, \hspace{0.5cm}  \N \vc{v}' = \sum_{i=r}^s \alpha_i \vc{e}_i, \hspace{0.5cm} \alpha_r \neq 0
+    $$
+    для некоторого $r \geq 1$. Положим
+    $$
+        \vc{e}_i' = \vc{e}_i, \hspace{0.5cm}  
+        i \neq r, \hspace{0.5cm}   
+        \vc{e}'_r = \frac{1}{\alpha_r} \vc{v}', \hspace{0.5cm} 
+        \beta_i = \frac{\alpha_i}{\alpha_r}.
+    $$
+    Тогда
+    $$
+        \N \vc{e}_r' = \vc{e}_r + \sum_{i=r+q}^s \beta_i \vc{e}_i := \vc{f}_r
+    $$
+    Считая $m_{1} \geq \ldots \geq m_n$: $\N^{m_r} \vc{f}_r = \vc{0}$. Верно, что $\N^{m_{r-1}} \vc{f}_r \neq \vc{0}$, $\forall \beta$. Кроме того, сумма
+    $$
+        \sum_{i \neq r} \mathbb{F}[\N] \vc{e}_i' + \mathbb{F}[\N] \vc{f}_r
+    $$
+    также является прямой и совпадает с $U$ .
+
+    Но $\mathbb{F} [\N] \vc{f}_r$ расширяется за счёт вектора $\vc{e}'_r \not \in U \colon \mathbb{F}[\N] \vc{f}_r \subset \mathbb{F}[\N] \vc{e}'_r$, и получается прямая сумма
+    $$
+        V = \bigoplus_{i=1}^s \mathbb{F} [\N] \vc{e}_i',
+    $$
+    отвечающую набору индексов $m_{1}', \ldots, m'_s$, где $m_i' = m_i, \, i \neq r, \, m'_r = m_r + 1$. Тогда
+    $$
+        B \sim \diag \left(J_{m_{1}}' (0), \ldots, J_{m_s'} (0)\right).
+    $$
+    Таким образом, существование базиса для нильпотентного $\N$ доказано.
+\end{proof}
+
+
+
+% \subsubsection{Единственность}
+% ...
+
+% \subsubsection{Другие подходы к ЖНФ}
+
+
+% \subsubsection{Другие нормальные формы}

@@ -1,0 +1,87 @@
+\noindent
+\textbf{Закон Эйнштейна-Смолуховского}
+\begin{equation}
+\label{EI_S}
+    \begin{split}
+        1\text{D:}\\
+        2\text{D:}\\
+        3\text{D:}
+    \end{split} \hspace{1cm}
+    \begin{split}
+        \overline{\vc{r}^2} = r_0^2 + 2 Dt \\
+        \overline{\vc{r}^2} = r_0^2 + 4 Dt \\
+        \overline{\vc{r}^2} = r_0^2 + 6 Dt 
+    \end{split}
+\end{equation}
+
+\begin{proof}[$\triangle$]
+\com{
+1) Сила торможения $\vc{F}_{\T{тр}} = \vc{v}/B$, где $B$ -- \textit{подвижность частицы}. В частном случае шариков: $B = 1/(6 \pi R \eta )$. }
+
+\com{
+2) Флуктуационная сила $\vc{X}$ со стороны молекул среды: $\overline{\vc{X}} = 0$.
+}
+
+\com{
+Тогда уравнение\footnote{
+    Уравнение, учитывающее детерминированные и случайные силы называется \textit{уравнение Ланжевена}. 
+} движения частицы:
+$$
+m \frac{d^2 r}{dt^2} = \vc{X} - \frac{1}{B} \frac{d \vc{r}}{dt}.
+$$
+Умножая почленно на $\vc{r}$ и усредняя, получим\footnote{
+    Учтём, что 
+    $\vc{r} \dfrac{d^2 \vc{r}}{dt^2} = 
+    \dfrac{1}{2} \dfrac{d^2 (\vc{r})^2}{dt^2} - 
+    \lr{\dfrac{d \vc{r}}{dt}}^2$.
+}:
+$$
+\frac{m}{2} \frac{d^2}{dt^2} \overline{\vc{r}^2} +
+\frac{1}{2B} \frac{d}{dt} \overline{\vc{r}^2} =
+\overline{m \vc{v}^2} + 
+\overline{\vc{rX}}.
+$$
+Далее учтём, что $\overline{\vc{rX}} = 0$, $\overline{mv^2}/2 = 3kT/2$ (другой множитель для другой размерности!). Таким образом:
+$$
+\lr{\frac{m}{2} \frac{d^2}{dt^2} + \frac{1}{2B}\frac{d}{dt}} \overline{\vc{r}^2} = 3kT,
+$$
+решение которого 
+$$
+\overline{\vc{r}^2} = r_0^2 + 6kTBt + C \exp \lr{-\frac{t}{mB}}.
+$$
+При достаточно больших $t \gg mB$, получим \eqref{EI_S}.
+}
+\end{proof}
+
+\noindent
+\textbf{Связь подвижности и коэффициента диффузии (формула Эйнштейна):}
+\begin{equation}
+\label{eq_E}
+    D = kTB
+\end{equation}
+\begin{proof}[$\triangle$]
+\com{
+Из определения подвижности $\vc{u} = B \cdot \vc{F}$. Под действитем $\vc{F}$ возник поток: $j_x^(F) = n u_x = n B F_x$. Пусть $\vc{F}$ -- пот. сила, тогда по распределению Больцмана
+$$
+n(\vc{r}) = n_0 \exp \lr{-\frac{U(\vc{r})}{kT}}.
+$$
+Тогда $x$-компонента диффузионного потока равна (по закону Фика)
+$$
+j_x^{(D)} = - D \ptdv{n}{x} = \frac{D}{kT} n_0 \exp \lr{-\frac{U}{kT}} \ptdv{U}{x} = 
+- n \frac{D}{kT} F_x.
+$$
+В равновесии $j_x^{(D)}+j_x^{(F)} = 0$. Получаем \textit{формулу Эйнштейна} \eqref{eq_E}. 
+}
+\end{proof}
+
+\noindent
+\textbf{Броуновское движение, как случайные блуждания:}
+\begin{equation}
+    \boxed{\dots}
+\end{equation}
+
+\noindent
+\textbf{Скорость диффузии и теплопроводности:}
+\begin{equation}
+    L \sim \sqrt{Dt}, \hspace{1cm} L \sim \sqrt{at}
+\end{equation}

@@ -1,0 +1,90 @@
+% 
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} 
+\usepackage{amsmath} 
+\usepackage{
+amssymb,textcomp, esvect,esint}
+\usepackage{geometry}
+\usepackage{titling} 
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{indentfirst} 
+\usepackage{xcolor} 
+\usepackage{enumitem}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{cancel}
+\usepackage{ulem}
+
+\usepackage{caption} % высокоуровневые подписи
+\usepackage{listings}
+\usepackage{tikz} % рисовать картинки
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+
+\usepackage{lastpage}
+
+
+\geometry{margin=2cm, footskip=35pt}
+
+
+\renewcommand{\sec}[1]{\section{\textcolor{darkblue}{#1}}}
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\sign}{\text{sign}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\com}[1]{\textcolor{red}{#1}}
+\newcommand{\const}{\text{const}}
+\newcommand{\lr}[1]{\left(#1\right)}
+\newcommand{\oo}{\mathop{\mathrm{o}}\nolimits}
+\newcommand{\OO}{\mathop{\mathrm{O}}\nolimits}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\sbs}[1]{\subsection*{\textcolor{darkblue}{#1}}}
+\renewcommand{\sec}[1]{\section*{\textcolor{darkblue}{#1}}}
+\newcommand{\ptdv}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ptdr}[3]{\left(\dfrac{\partial {#1}}{\partial {#2}} \right)_{#3}}
+\newcommand{\Kn}{\text{Kn}}
+\newcommand{\ptdrsq}[3]{\left(\dfrac{\partial^2 {#1}}{\partial {#2}^2} \right)_{#3}}
+\newcommand{\av}[1]{\langle #1 \rangle}
+
+
+\newtheorem{to_thr}{thr}[section]
+\newtheorem{to_suj}{suj}[section]
+\newtheorem{to_lem}{lem}[section]
+\newtheorem{to_com}{com}[section]
+\newtheorem{to_con}{con}[section]
+\theoremstyle{definition}
+\newtheorem{law}{def}[section]
+\newtheorem{to_def}{def}[section]
+
+\definecolor{darkblue}{HTML}{000099}
+\definecolor{grey}{HTML}{666666}
+\definecolor{linkcolor}{HTML}{0000CC}
+\definecolor{urlcolor}{HTML}{006600}
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+% add page header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyfoot[LE, RO]{\fbox{Ф\raisebox{-1.5pt}{и}х\TeX}}
+\fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
+\fancyhead[LE,RO]{Общая Физика}
+\fancyhead[CO,CE]{\leftmark}
+% \fancyhead[CO,CE]{\rightmark}
+% \fancyhead[CE,CO]{\tiny \leftmark}
+% \fancyfoot[LE,RO]{\textsc{\thepage}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

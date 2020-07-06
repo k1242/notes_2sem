@@ -1,0 +1,98 @@
+\sbs{\small Интегрируемость по Риману разных функций}
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{4.109}]
+
+\phantom{42}
+
+\noindent
+1) $\tau \vdash [a, b]$, $\Omega(f, \tau) < \varepsilon$. \\
+2) $\omega(f, \Delta) = \sup\{|f(x')-f(x'')| \mid x', x'' \in \Delta\}$, \\
+3) $||A|-|B|| \leq |A-B|$ $\leadsto$ $\omega(|f|, \Delta) \leq \omega(f, \Delta)$. \\
+4) $\Omega(|f|, \tau) \leq \Omega(f, \tau) < \varepsilon$ $\Rightarrow$ $|f| \in \mathcal{R}$.\\
+5) Пусть $f, g \leq M$. If $\Omega(f, \tau) < \varepsilon, \Omega(g, \tau) < \varepsilon,$ то $|AB-CD|\leq|B| \cdot |A-C| + |C| \cdot |B-D|$ $\Rightarrow$ $\Omega(fg, \tau) \leq M \Omega(f, \tau) + M \Omega(g, \tau) \leq 2M \varepsilon$.
+\end{proof}
+
+\begin{proof}[
+thr $\triangle$
+\eqref{4.113} ф-ла Н-Л]
+
+\phantom{42}
+
+\noindent
+1) Пусть $\tau:$ $a=x_0 < x_1 < \ldots < x_N = b$; \\
+2) по thr Лагранжа: \\
+$F(b) - F(a) = \sum_{k=1}^N F(x_{k}) - F(x_{k-1})=$\\
+$= \sum_{k=1}^N f(\xi_k) (x_k - x_{k-1}) = \sum_{k=1}^N f(\xi) |\Delta_k|$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+\red{thr} $\triangle$
+\eqref{4.112}]
+
+\phantom{42}
+
+\noindent
+1) Для ступ. Пусть $|h| \leq M$ и $\exists N$ ступ. \\
+2) По адд $\int$ $\forall \tau$: \\
+$\int_a^b h(x) \d x = \sum_{\Delta \in \tau} \int_{\Delta} h(x) \d x$, \\
+$\int_a^b h \d x - \sigma(h, \tau, \xi) = \sum_{\Delta \in \tau} \int_{\Delta} (h(x) - h(\xi(\Delta))) \d x$. \\
+3) При $|\tau| < \delta$ слаг $< 2 M \delta$. $\Rightarrow$ \\
+откл не более $2 M N \delta$ $\forall \xi$. 
+$MN \equiv MN(h) \neq (\Delta)$, то для ступ Q.E.D. \\
+4) $f \sim g \leq f$ и $\int_a^b g \d x \geq \int_a^b f \d x - \varepsilon/2$. \\
+5) Пусть $g \leq M_g$ и имеет $N_g$ разрывов. \\
+при $|\tau| < \frac{\varepsilon}{M_g N_g}$ в силу мон $\sigma$:\\
+$\sigma(f, \tau, \xi) \geq \sigma(g, \tau, \xi) > \int_a^b g \d x - \varepsilon/2 \geq \int_a^b f \d x - \varepsilon$. 
+Аналогично для $h \geq f$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+
+\phantom{42}
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{4.113} int -- первообразная]
+
+\phantom{42}
+
+\noindent
+1) $\Omega(f, \tau) = \sum_{\Delta \in \tau} \omega(f, \Delta) |\Delta| \leq \omega_f (|\tau|) \sum_{\Delta \in \tau} |\Delta| = \omega_f(|\tau|)(b-a)$. \\
+2) $\omega_f(|\tau|) \to 0$ при $|\tau| \to 0$ по равн непр. \\
+3) адд, лин $\leadsto$ \\
+$F(x + u)  - F(x)  = \int_x^{x+u} f(t) \d t = f(x) u + \int_x^{x+u} (f(t) - f(x))\d t.$ \\
+4) $|f(t) - f(x)| \leq \omega_f(|u|)$ $\Rightarrow$ \\
+$\big| \int_x^{x+u} f(t) - f(x) \d t
+\big| \leq 
+\big| \int_x^{x+u} \omega_f (|u|) \d t
+\big| \leq \omega_f(|u|)|u| \to 0. 
+$
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{4.113}мон $\to$ $\in \mathcal{R}$]
+
+\phantom{42}
+
+\noindent
+1) $f \leq M$, \\
+2) $\sum_{\Delta \in \tau} \omega(f, \Delta) \leq \omega(f, [a, b]) = |f(b) - f(a)|.$ \\
+3) $\Omega(f, \tau) = \sum_{\Delta \in \tau} \omega(f, \Delta) |\Delta| \leq |\tau| \sum_{\Delta \in \tau} \omega(f, \Delta) \leq |\tau| \cdot |f(b) - f(a)| \to 0$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}

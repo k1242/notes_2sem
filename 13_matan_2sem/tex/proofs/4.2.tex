@@ -1,0 +1,62 @@
+\sbs{\small Суммирование абсолютно сходящихся рядов}
+
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+lem $\triangle$
+\eqref{4.17}]
+
+\phantom{42}
+\noindent
+
+1)$\sum\nolimits_{ n = 1 }^{ \infty } a_n = \sup\left\{\sum\nolimits_{ n = 1 }^{ k } a_n \mid k \in \mathbb{N} \right\}$;\\
+2) возьмём в произв местах эл-ты, макс № - $n$;\\
+3) $\sum\nolimits_{ k = 1 }^{ n } <\sum$(взятых) $\Rightarrow$ $\sup \leq \sum\nolimits_{ k= 1 }^{ n } $, обратное нер-во трив.
+\end{proof}
+
+\begin{proof}[
+thr $\triangle$
+\eqref{4.22}]
+
+\phantom{42}
+\noindent
+
+1) $\left( \sum\limits_{ n=1 }^{ \infty } |a_n| \right) \cdot \left( \sum\limits_{ m=1 }^{ \infty } |b_m| \right) = \lim\limits_{N \to \infty} \lr{\sum\limits_{ n=1 }^{ N } |a_n|} \cdot \lr{\sum\limits_{ m=1 }^{ N } |b_m|} = \sum\limits_{ n,m =1 }^{ \infty } |a_n b_m| < +\infty$;\\
+2) Значит тут суммирование абсолютное:\\
+$\lr{\sum\limits_{ n=1 }^{ \infty } a_n} \cdot \lr{\sum\limits_{ m=1 }^{ \infty } b_m} = \sum\limits_{ n,m=1 }^{ \infty } a_n b_m$;\\
+3) а также мы можем суммировать в любом порядке...
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+ lem $\triangle$
+\eqref{4.21}]
+
+\phantom{42}
+\noindent
+
+1) Д-м: $\sum\nolimits_{ (n,m)\in \mathbb{N}^2 } x_{n,m} \leq \sum\nolimits_{ n=1 }^{ \infty } \sum\nolimits_{ m = 1 }^{ \infty } x_{n,m} $;\\
+2) Let F - finite $\subset \{1, \dots, N \} \times\{1, \dots, N \}$;\\
+3) $x_{n,m}\geq 0$: $\sum\limits_{ (n,m)\in F }^{  } x_{n,m}  \leq \sum\limits_{ n = 1 }^{ N } \sum\limits_{ m=1 }^{ N } x_{n,m}$;\\
+4) теперь $\geq$: $\sum\limits_{ (n,m)\in F }^{  } x_{n,m}  \geq \sum\limits_{ n = 1 }^{ \infty } \sum\limits_{ m=1 }^{ \infty } x_{n,m}$;\\
+5) Достаточно $\sum\nolimits_{ n = 1 }^{ N }\dots $: fix N, \\then $\sum\nolimits_{ m = 1 }^{ \infty } = \lim_{m\to \infty} \sum\nolimits_{ m=1 }^{ M } $;\\
+6) $\forall M:$ $\sum\nolimits_{ n=1 }^{ N } \sum\nolimits_{ m=1 }^{ M } x_{n,m} \leq \sum\nolimits_{ (n,m)\in \mathbb{N}^2 }^{ \infty } x_{n,\mu} .$
+
+\end{proof}
+
+\begin{proof}[
+thr $\triangle$
+\eqref{4.25}]
+
+\phantom{42}
+\noindent
+
+1) Сходимость и абсолютная сходимость ряда не меняется при отбрасывании конечного числа членов в начале ряда;\\
+2)$|a_n| \leq C |b_n| \leadsto$ $\sum\limits_{ n=N }^{ \infty } |a_n| \leq C \cdot \sum\limits_{ n+n }^{ \infty } |b_n| < +\infty$.
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}

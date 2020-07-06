@@ -1,0 +1,78 @@
+\sbs{\small Интеграл Римана на отрезке и элементарно ступенчатые функции}
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+lem $\triangle$
+\eqref{4.97}]
+
+\phantom{42}
+\noindent
+
+1) Получ.разб.мельче: $\Delta = \Delta' \sqcup \Delta''$;\\
+2) $\inf\{f(x) \mid x \in \Delta' \} \geq \inf \{ f(x) \mid x \in \Delta \}$\\
+3) $\sup\{f(x) \mid x \in \Delta' \} \leq \sup \{ f(x) \mid x \in \Delta \}$\\
+4) same для $\Delta''$, $|\Delta| = |\Delta'| + |\Delta''| \Rightarrow...$
+\end{proof}
+
+
+\begin{proof}[
+ lem $\triangle$
+\eqref{4.98}]
+
+\phantom{42}
+\noindent
+1) из \eqref{4.97}:\\ $s(f,\tau) \leq s(f,\tau \vee \sigma) \leq S(f,\tau \vee \sigma) \leq S(f,\sigma).$
+\end{proof}
+
+
+\begin{proof}[
+ lem $\triangle$
+\eqref{4.108}]
+
+\phantom{42}
+\noindent
+
+1) По опр. инт. Римана: оценим на $[a,b]$ с $\varepsilon$:\\$g\leq f\leq h$ и $\int_a^b (h - g) \d x < \varepsilon$;\\
+2) но тогда, $\int_c^d (h - g) \d x < \varepsilon$, что и озн. 
+
+\end{proof}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+ def $\triangle$
+\eqref{RIMAN}]
+
+\phantom{42}
+\noindent
+
+Ступ. функ:\\
+\textbf{I)} Монотонность:\\
+1)$f, g$ ступ. на $\tau, \sigma$, тогда они ступ. на $\varphi = \tau \vee \sigma$; 
+2) Из адд. длины промежутка: инт. не изменится при измельчении.\\
+\textbf{II)} Линейность:
+1) опять $\varphi$, а на одном разбиении лин. очевидна.\\
+
+Инт. Римана:\\
+\textbf{I)} Монотонность: по опр. сумм Дарбу.\\
+\textbf{II)} Линейность:\\
+1) $h_f \leq f \leq H_f$, $h_g \leq g \leq H_g$, где $\int H-g < \varepsilon$;\\
+2) $\int_a^b ((A H_f + B H_g) - (A h_f + B h_g)) \leq (A+B) \varepsilon$;\\
+3) тогда огранив $A f + B g$ ступ, и проинт, получим схождение.
+
+\textbf{III)} Аддитивность по отр.\\
+1) Пусть на $[a,b]:$ $g_1 \leq f \leq h_1$;\\
+2) на $[b,c]:$ $g_2 \leq f \leq h_2$: $\int_b^c (h_2-g_2)\ d x < \varepsilon$;\\
+3) конкат: $g_1 + g_2 = g$, $h... \leadsto$ $g\leq f \leq h$;\\
+4) $\int_a^c (h - g) \d x < 2 \varepsilon$, зажимающие $f$...
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}

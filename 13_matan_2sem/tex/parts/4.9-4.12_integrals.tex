@@ -1,0 +1,150 @@
+\sbs{Интегрирование непрерывных функций через приближения}
+
+\begin{to_thr}
+	У всякой непрерывной на отрезке функции есть первообразная.
+	\label{4.88}
+\end{to_thr}
+
+\begin{to_def}[Формула Ньютона-Лейбница]
+	$\int_a^b f(x) \d x = F(b) - F(a)$.
+
+	Свойства: линейность, монотонность, аддитивность.
+	\label{4.89}
+\end{to_def}
+
+\begin{to_def}
+	Интеграл непрерывной на компакте $f \colon \mathbb{R}^n \to \mathbb{R}$ определим с помощью повторного интегрирования по всем переменным.
+\end{to_def}
+
+\begin{to_thr}
+	Определения интеграла непрерывной функции нескольких переменных с компактным носителем не зависит от порядка интегрирования, линейность, монотонность.
+	\label{4.92}
+\end{to_thr}
+
+\begin{to_con}
+	$\forall g \colon \mathbb{R}^n \to \mathbb{R}$ с компактным носителем и непр $\frac{\partial g}{\partial x_i}$: $\int_{\mathbb{R}^n} \frac{\partial g}{\partial x_i}(x_1, \dots, x_n) \d x_1 \dots \d x_n = 0$.
+\end{to_con}
+
+
+
+\sbs{Интеграл Римана}
+
+\begin{to_def}[Суммы Дарбу]
+	Для $f \colon [a,b] \to \mathbb{R}$ и $\tau \vdash [a,b]$ определим:
+	\begin{equation*}
+	\begin{split}
+		s(f,\tau) &= \sum\limits_{\Delta \in \tau} \inf {f(x) \mid x \in \Delta} |\Delta|, \\
+		S(f,\tau) &= \sum\limits_{\Delta \in \tau} \sup {f(x) \mid x \in \Delta} |\Delta|.
+	\end{split}
+	\end{equation*}
+\end{to_def}
+
+\begin{to_lem}
+	Если $\tau \preccurlyeq \sigma$, то: $s(f,\tau) \geq s(f,\sigma)$, а $S(f,\tau) \leq S(f,\sigma)$.
+	\label{4.97}
+\end{to_lem}
+
+\begin{to_lem}
+	Для двух разбиений $[a,b]$ имеет место: $s(f,\tau) \leq S(f,\sigma)$.
+	\label{4.98}
+\end{to_lem}
+
+\begin{to_def}[Верхний и нижний интегралы Римана]
+\begin{equation*}
+\begin{split}
+\overline{\int_a^b} f(x) \d x &= \inf \{S(f,\tau) \mid \tau \vdash [a,b,]\}, \\
+\underline{\int_a^b} f(x) \d x &= \sup \{s(f,\tau) \mid \tau \vdash [a,b]\}.
+\end{split}
+\end{equation*}
+
+\end{to_def}
+
+\begin{to_def}
+	$h \colon [a,b] \to \mathbb{R}$ --- \textit{элементарно ступенчатой}, если $\exists \tau \vdash [a,b]$ такое, что $\forall \Delta \in \tau$ $h \big|_\Delta \equiv \const$.
+\end{to_def}
+
+\begin{to_def}
+	Интеграл ступенчатой функции: $\int\limits_a^b h(x) \d x = \sum\limits_{\Delta \in \tau} f(\Delta) |\Delta| $.
+
+	Oпределение верхнего и нижнего интеграла Римана:\\
+	\begin{equation*}
+	\begin{split}
+		\overline{\int_a^b} f(x) \d x &= \inf \left\{ \int_a^b h(x) \d x \mid \text{по ступ.} h\geq f \right\}, \\
+		\underline{\int_a^b} f(x) \d x &= \sup \left\{ \int_a^b h(x) \d x \mid \text{по ступ.} h\leq f \right\}.
+	\end{split}
+	\end{equation*}
+
+	Проверить монотонность, линейность интеграла ступенчатой функции; монотонность, линейность, аддитивность интеграла Римана.
+	\label{RIMAN}
+\end{to_def}
+
+\begin{to_thr}
+	Если $f$ интегрируема по Риману на $[a,b]$, то она  интегрируема на $\forall [c,d] \subseteq [a,b].$
+	\label{4.108}
+\end{to_thr}
+
+\sbs{Интегрируемость по Риману разных функций}
+
+\begin{to_def}
+	\textit{Взвешенная сумма колебаний}: $\Omega = S(f,\tau) - s(f,\tau) = \sum\limits_{\Delta \in \tau} \omega(f,\Delta)|\Delta|$, где $\omega(f, X) = \sup f(X) - \inf f(X)$ --- колебание функции на $X$.
+\end{to_def}
+
+\begin{to_thr}
+	$f,g \colon [a,b] \to \mathbb{R}$ интегрируемы по Риману, \textbf{то} интегрируемы их модули и их произведение.
+	\label{4.109}
+\end{to_thr}
+
+\begin{to_def}
+	\textit{Мелкостью разбиения} $\tau \vdash [a,b]$ называется $|\tau| = \max |\Delta|$ по $\Delta \in \tau$.
+\end{to_def}
+
+\begin{to_def}
+	\textit{Суммой Римана} для $f \colon [a,b] \to \mathbb{R}$, разбиения $\tau \vdash [a,b]$ и системы представителей $\xi = \{\xi(\Delta) \in \Delta\} \mid \Delta \in \tau \}$ называется: $\sigma(f, \tau, \xi) = \sum\limits_{\Delta \in \tau} f(\xi(\Delta))|\Delta|$.
+\end{to_def}
+
+\begin{to_thr}
+	Если $f \colon [a,b] \to \mathbb{R}$ интегрируема по Риману, то $\forall \varepsilon >0 \, \exists \delta >0$ такая, что $\forall \tau \vdash [a,b],\, |\tau| <\delta,$ и $\forall \xi$ соответствующей $\tau$ $\leadsto |\sigma (f,\tau,\xi) - \int\limits_a^b|<\varepsilon$.  
+	\label{4.112}
+\end{to_thr}
+
+
+\begin{to_thr}[Формула Ньютона-Лейбница для интеграла Римана] Непрерывная функция интегрируема по Риману, кроме того существует первообразная. Монотонная тоже. Если $f\colon [a, b] \to \mathbb{R} \in \mathcal{R}$ и $\exists F$ на $(a, b)$ \red{непрерывная на концах} $[a, b]$, то:
+	$$ \int_a^b f(x) \d x = F(b) - F(a).$$	
+	\label{4.113}
+\end{to_thr}
+
+
+\sbs{Приёмы интегрирования}
+
+\begin{to_thr}[Интегрирование по частям]
+		\begin{equation*}
+			\left.
+			\begin{aligned}
+				f, g &\text{ непрерывны на } &[a,b]\\
+				f, g &\text{ дифференцируемы на } &(a,b)\\
+				f', g' &\text{ интегрируемы на } &([a,b])\\
+			\end{aligned}
+			\right\}
+			\Longrightarrow
+			\int_a^b f(x) g'(x) \d x = f(x) g(x) \big|_a^b - \int_a^b f'(x) g(x) \d x.
+		\end{equation*}
+		\label{4.121}
+\end{to_thr}
+
+\begin{to_thr}[Замена переменной] Для непрерывно дифференцируемой $\varphi \colon [a,b] \to [\varphi(a), \varphi(b)]$ и непрерывной $f$ на $[\varphi(a), \varphi(b)]$, выполняется: $\int_{\varphi(a)}^{\varphi(b)} f(y) \d y = \int_a^b f(\varphi(x)) \varphi'(x) \d x$.
+\label{4.122}
+\end{to_thr}
+
+\begin{to_thr}[Формула Тейлора  с остаточным членом в интегральной форме]
+	\begin{equation*}
+		\left.
+		\begin{aligned}
+			&f \text{ $n$-раз дифференцируема в }(U \ni x_0)\\
+			&f^{(n)}(x) \text{ интегрируема по Риману}
+		\end{aligned}
+		\right\}
+		\Longrightarrow
+		\forall x \in U\, \, f(x) = \sum\limits_{ k=0 }^{ n-1 } \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k + \int_{x_0}^x \frac{1}{(n-1)!} f{(n)}(t)(x-t)^{n-1} \d t
+	\end{equation*}
+\label{4.123}
+\end{to_thr}

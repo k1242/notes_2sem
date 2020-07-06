@@ -1,0 +1,58 @@
+\section*{Примеры}
+
+\subsection*{Ступенчатый ответ}
+\begin{minipage}[]{0.3\textwidth}
+Пусть $f$ и $g$ интегрируемы на отрезке $[1, a]$
+для любого числа $a > 1$. Обозначим \\
+\phantom{42} \hspace{1cm} $I_1 = \int_1^{\infty} f(x) dx$, \\
+\phantom{42} \hspace{1cm} $I_2 = \int_1^{\infty} g(x) dx$, \\
+\phantom{42} \hspace{1cm} $I_3 = \int_1^{\infty} g(x) f(x) dx$. \\
+\textbf{Возможно, что}:
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.3\textwidth}
+\begin{equation*}
+\begin{split}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Delta_n &= \left[n, n + \frac{1}{n^4} \right]; \; \; \Delta = \bigcup_{n=1}^{\infty} ; \\
+f(x) &= \left\{
+    \begin{aligned}
+        &n^2, &x \in \Delta_n; \\
+        &0, &x \in R \setminus \Delta;
+    \end{aligned}
+    \right. \\
+g(x) &= \left\{
+    \begin{aligned}
+        &(-1)^n n, &x \in \Delta_n ;\\
+        &0, &x \in R \setminus \Delta;
+    \end{aligned}
+    \right.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{split}
+\end{equation*}
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.2\textwidth}
+\begin{equation*}
+\begin{split}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\checkmark I_1 &= \sum_{n=1}^{\infty} \frac{1}{n^2}; \\
+\checkmark I_2 &= \sum_{n=1}^{\infty} \frac{(-1)^n}{n^3}; \\
+\checkmark_{\text{\xmark}} I_3 &= \sum_{n=1}^{\infty} \frac{(-1)^n}{n}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{split}
+\end{equation*}
+\end{minipage}
+
+
+\phantom{42}
+
+
+\noindent
+Бонус:
+\begin{equation*}
+    \frac{\sin x}{x} \checkmark_{\text{\xmark}} \hspace{1cm}
+    \frac{\sin x}{\sqrt{x}} \checkmark_{\text{\xmark}} \hspace{1cm}
+    \frac{\cos x}{\sqrt x} \checkmark_{\text{\xmark}} \hspace{1cm}
+    x^3 \sin(x^5) \checkmark_{\text{\xmark}}
+\end{equation*}

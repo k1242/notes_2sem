@@ -1,0 +1,79 @@
+\sbs{\small Объём шара интеграл Пуассона гамма и бета функции}
+
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[
+thr \hypertarget{V_ball}{$\triangle$} 
+\eqref{Ball volume and Poisson integral}]
+
+\phantom{42}
+
+    \noindent
+    1) $f_n(x) = \exp{\lr{-||x||^2}}, x \in \mathbb{R}^n$ \\
+    2) \eqref{thr_fub} $\Rightarrow$ $\int_{\mathbb{R}^n} f_n \d \mu = \lr{\int_{\mathbb{R}} f \d \mu}^n$  \\
+    3) \eqref{order_hor} $\Rightarrow$ $I_n = \int_0^1 \mu\{ ||x||^2 \leq - \ln y \} \d y$ \\
+    4) \eqref{lin_var} $\Rightarrow$ $I_n = \mu B^n \int_0^1 (-\ln y)^{n/2} \d y$ \\
+    5) \eqref{cont_L} $\Rightarrow$ $-\ln y = t$ $\Rightarrow$ $I_n = \mu B^n \Gamma(n/2+1)$ \\
+    6) \eqref{down_eq} $\Rightarrow$ $\mu B^2 = \pi$ $\Rightarrow$ $I = \sqrt{\pi}$
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr \hypertarget{down_eq_link}{$\triangle$} 
+\eqref{down_eq}]
+
+\phantom{42}
+
+\noindent
+1) $\frac{1}{p} \Gamma(P+1) = \int_0^{+\infty} \frac{1}{p} t^p e^{-t} \d t$ \\
+2) $\frac{t^p}{p} = \int_0^t u^{p-1} \d u$  \\
+3) $\frac{1}{p} \Gamma(P+1) = \int_0^{+\infty} u^{p-1} \lr{\int_u^{+\infty} e^{-t} \d t} \d u$\\
+4) $\int_0^{+\infty} u^{p-1} e^{-u} \d u = \Gamma (p)$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}      
+
+\phantom{42}
+
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{b_function}]
+
+\phantom{42}
+
+1) \eqref{thr_fub}, \eqref{lin_var} $\Rightarrow$  $\int_{x, y \geq 0} \dots \d x \d y$ \\
+2) $(x, y) \to (x, s=x+y)$ $\leadsto$ $\Gamma(p) \Gamma (q) = \int_0^{+\infty} \lr{\int_0^s x^{p-1} (s-x)^{q-1} \d x} e^{-s} \d s$. \\
+3) $x = ts, 0 \leq t \leq 1$ \\
+4) \eqref{thr_fub} $\Rightarrow$ $\Gamma(p) \Gamma(q) = B(p, q) \Gamma(p+q)$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{stir_eq}]
+
+\phantom{42}
+
+1) $t = sx$, $x! = x^{x+1} e^{-x} \int_0^{+\infty} e^{-x \varphi(s)} \d s$ \\
+2) $\varphi(s) = s - \ln s - 1 = 0 + \lr{\frac{1}{2} \varphi''(1)+o(1)} (s-1)^2 $, при $s \to 1$. \\
+3) На $[0, a], [b, 2]$ -- $ \varphi > \const$ \\
+4) На $[2, +\infty)$ $\varphi(s) \geq 1 - \ln 2 + (s-2)/2$ \\
+5) \eqref{Ball volume and Poisson integral} $\Rightarrow$ $I(x) \in 
+\left[
+\sqrt{\frac{2\pi}{x(1+2 \varepsilon)}}, \sqrt{\frac{2\pi}{x(1-2 \varepsilon)}}
+\right]
+$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}

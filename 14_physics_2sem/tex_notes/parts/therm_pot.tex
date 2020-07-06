@@ -1,0 +1,93 @@
+\section{Термодинамические потенциалы}
+
+\subsection{Уравнение Майера}
+\begin{equation}
+\label{cp-cv}
+    C_P - C_V = T \ptdr{P}{T}{V} \ptdr{V}{T}{P} = - T \frac{\ptdr{V}{T}{P}^2}{\ptdr{V}{P}{T}}
+\end{equation}
+Стоит заметить, что 
+\begin{equation}
+    C_P > C_V > 0.
+\end{equation}
+
+\begin{proof}
+Распишем $U(T, V)$. 
+    \begin{equation*}
+    C dT = dU + PdV = \ptdr{U}{T}{V}dT + \left(
+    \ptdr{U}{V}{T} + P
+    \right) dV.
+\end{equation*}
+Учитывая, что
+\begin{equation}
+\label{derU}
+    \ptdr{U}{V}{T} = T \ptdr{S}{V}{T} - P = T \ptdr{P}{T}{V} - P,
+\end{equation}
+получим, Q.E.D.
+\end{proof}
+
+\input{img_and_tables/therm_pot_table}
+
+\subsection{Условия термодинамической устойчивости}
+Рассмотрим систему тело $\left(P, T, V \right)$ $+$ термостат $\left( P_0, V_0, T_0 \right)$. Из неравенства Клаузиуса:
+$$
+0 = dU + \delta A - \delta Q = dU + P_0 dV - \delta Q  \geqslant dU + P_0 dV - T_0 dS \equiv dZ,
+$$
+где введено обозначение $Z = Z(V, S) = U + P_0 V - T_0 S$.
+
+\phantom{42}
+
+\noindent
+\textbf{Экстремальность}:  Частные производные по $V$ и $S$ ноль. Считая процесс квазистатическим находим, что $P=P_0$, $T = T_0$. 
+
+\phantom{42}
+
+\noindent
+\textbf{Минимальность}: Зная, что $d^2 Z \geqslant 0$, получаем $d^2 U \geqslant 0$, что доводит до:
+\begin{align}
+\label{a}
+    \left( \frac{ 
+    \partial^2 U
+    }{
+    \partial S^2
+    } \right)_{V} &> 0 \\
+    X \equiv
+    \label{b}
+    \left( \frac{ 
+    \partial^2 U
+    }{
+    \partial S^2
+    } \right)_{V}
+    \left( \frac{ 
+    \partial^2 U
+    }{
+    \partial V^2
+    } \right)_{S} -
+    \left( \frac{ 
+    \partial^2 U
+    }{
+    \partial S \partial V
+    } \right)^2 &> 0.
+\end{align}
+
+Из (\ref{a}), получим:
+\begin{equation*}
+    \left( \frac{ 
+    \partial^2 U
+    }{
+    \partial S^2
+    } \right)_{V} = \ptdr{T}{S}{V} =  \frac{T}{C_V} > 0, \text{ т. е. } 
+    \boxed{C_V > 0}.
+\end{equation*}
+
+Из (\ref{b}), получим:
+\begin{align*}
+    X = - \ptdr{T}{S}{V} \ptdr{P}{V}{S} + \ptdr{T}{V}{S} \ptdr{P}{S}{V} > 0, \\
+    \text{далее рассмотрим $P \equiv P\left(V, T\right)$} \\
+    \ptdr{P}{V}{S} = \ptdr{P}{V}{T} + \ptdr{P}{T}{V} \ptdr{T}{V}{S}. \\
+    \text{Из последних двух уравнений получим:} \\
+    \boxed{X = - \frac{T}{C_V} \ptdr{P}{V}{T} > 0}.
+\end{align*}
+
+Уже зная, что $C_V > 0,$ получаем, что $\boxed{\ptdr{P}{V}{T}<0}$. Пожинаем плоды:  $\beta_T > 0$, ${C_P > C_V}$, $\gamma > 1$.
+
+

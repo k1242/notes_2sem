@@ -1,0 +1,90 @@
+\sbs{Интеграл Лебега для ступенчатых и произвольных функций}
+
+\begin{to_def}
+    Функция $f \colon X \to \mathbb{R}$ называется \textbf{счётно ступенчатой}\footnote{
+        Далее просто ступенчатая.
+    }, если $X$ разбивается в счётное объединение измеримых множеств $X = \bigsqcup_i X_i$ и на каждом $X_i$ функция равна константе $c_i$.
+\end{to_def}
+
+% \noindent \textbf{Вопрос:} всякая ли ступенчатая функция измерима по Лебегу?
+
+\begin{to_def}
+    Для ступенчатой функции положим
+    $$
+    \int_X f(x) dx = \sum_i c_i \mu(X_i),
+    $$
+    считая $0 \cdot (+\infty) = 0$ и требуя, чтобы сумма абсолютно сходилась.
+\end{to_def}
+
+\begin{to_lem}
+    Определение интеграла от ступенчатой функции корректно, а именно, если
+функция является ступенчатой относительно двух разных разбиений области определения
+на основания ступенек, $X = \bigsqcup_i X'_i = \bigsqcup_j X''_j$ ,то значение интеграла будет одним и тем же для обоих разбиений.
+\label{5.58}
+\end{to_lem}
+
+\begin{to_lem}
+    Для любой измеримой по Лебегу функции $f \colon X \to \mathbb{R}$ и любого $\varepsilon > 0 \; \exists$ ступенчатые $g, h \colon X \to \mathbb{R}$, такие что $g \leq f \leq h$ и 
+    $$
+    \int_X (h - g) \d x < \varepsilon.
+    $$
+    \label{5.59}
+\end{to_lem}
+
+
+\begin{to_def}
+    Для измеримой по Лебегу функции $f \colon X \to \mathbb{R}$ определим \textbf{нижний интеграл Лебега} как
+    $$
+    \underline{\int_X} f(x) \d x = \sup \int_X g(x) \d x
+    $$
+    по интегрируемым ступенчатым $g \leq f$. Определим \textbf{верхний интеграл Лебега} как 
+    $$
+    \overline{\int_X} f(x) \d x = \inf \int_X h(x) \d x
+    $$
+    по интегрируемым ступенчатым $h \geq f$.
+\end{to_def}
+
+\begin{to_def}
+    Функция $f \colon X \to \mathbb{R}$ \textbf{интегрируема по Лебегу с конечным интегралом}, если её нижний и верхний интеграл Лебега конечны и равны между собой.
+\end{to_def}
+
+\begin{to_lem}
+    Если измеримая функция $f \colon X \to \mathbb{R}$ может быть оценена снизу и сверху, $g_0 \leq f \leq h_0$ ступенчатыми с конечным интегралом, то она сама имеет конечный интеграл Лебега.
+    \label{5.62}
+\end{to_lem}
+
+\begin{to_def}
+    Для неотрицатеьной измеримой функции $f \colon X \to \mathbb{R}^+$ будем писать $\int_X f(x) \d x = + \infty$, если её нижний интеграл Лебега бесконечен.
+\end{to_def}
+
+\begin{to_lem}
+    Если неотрицательная измеримая $f \colon X \to \mathbb{R}^+$ имеет конечный нижний интеграл Лебега, то её верхний интеграл Лебега равен нижнему.
+    \label{5.65}
+\end{to_lem}
+
+\begin{to_thr}
+    Для измеримой $f \colon X \to \mathbb{R}$ положим
+    \begin{equation*}
+    \begin{split}
+        f_+(x) = \left\{
+        \begin{aligned}
+            &f(x), &f(x) \geq 0; \\
+            &0, &f(x) \leq 0; 
+        \end{aligned}
+        \right. \\
+        f_-(x) = \left\{
+        \begin{aligned}
+            &f(x), &f(x) \leq 0; \\
+            &0, &f(x) \geq 0.
+        \end{aligned}
+        \right. \\
+    \end{split}
+    \end{equation*}
+    Интеграл $\int_X f(x) \d x$ определен и конечен тогда, и только тогда, когда интегралы $\int_X f_+ (x) \d x$ и $\int_X f_- (x) \d x$ определены и конечны.
+    \label{5.66}
+\end{to_thr}
+
+\begin{to_thr}
+    $f \colon [a,b] \to \mathbb{R}$ интегрируема по Риману $\Longleftrightarrow$ $f$ ограничена и $\mu(\{ \cdot \text{разрыва}\}) = 0$;
+    \label{5.69}
+\end{to_thr}

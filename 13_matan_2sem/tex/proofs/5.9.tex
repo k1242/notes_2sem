@@ -1,0 +1,54 @@
+\sbs{\small Линейность и монотонность интеграла Лебега}
+
+\begin{minipage}[t]{0.45\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+thr $\triangle$
+\eqref{5.70}]
+
+\phantom{42}
+
+\noindent
+1) $g_1 \leq f_1 \leq h_1$, $g_2 \leq f_2 \leq h_2$, при $A, B \geq 0$ \\
+2) $A \int g_1 \d x + B \int g_2 \d x \overset{*\downarrow}{\leq}
+A \int h_1 \d x + B \int h_2 \d x $ \\
+3) $* = \int(Af_1 + B f_2) \d x = A\int f_1 \d x + B \int f_2 \d x$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[
+ $\triangle$
+thr \eqref{5.71}]
+
+\phantom{42}
+
+\noindent
+1) $g(x) \equiv 0 \colon g \leq f$. \\
+2) Пусть $X_{+} = \{x \in X \mid f(x) > 0\} \colon \mu(X_+) > 0$. \\
+$X_n = \{x \mid f(x) > 1/n\}$ $\Rightarrow$ $\exists X_n \colon \mu(X_n) > 0$. \\
+$\int_X f(x) \d x \geq \int_X \frac{1}{n} \chi_{X_n} (x) \d x = \frac{\mu(X_n)}{n} > 0$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}
+
+
+\begin{minipage}[t]{0.9\textwidth}
+\begin{proof}[
+    thr $\triangle$
+    \eqref{5.72}]
+
+    \phantom{42}
+
+    \noindent
+    1) $\exists g_n \leq f$, $h_n \geq f$: $\int_X h_n \d x \to \int_X f \d x$ и $\int_X g_n \d x \to \int_X f \d x$. \\
+    2) $g(x) = \sup\{ g_n(x) \mid n \in \mathbb{N}\}$, 
+    $h(x) = \inf\{h_n(x) \mid n \in \mathbb{N}\}$  
+    и $g_n \leq g \leq f \leq h \leq h_n$ $\leadsto \int \dots$ \\
+    3) При $n \to \infty$ $\int g \d x = \int h \d x$ $\Rightarrow$
+    $h = g$ на $Y \subset X \colon \mu(X \setminus Y) = 0$. \\
+    на $Y$ $g=f=h$ $\Rightarrow$ f измерима.
+\end{proof}
+\end{minipage}

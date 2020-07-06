@@ -1,0 +1,67 @@
+\section*{Ряд Тейлора}
+
+\begin{table}[h]
+	\centering
+	\caption{Формулы Маклорена для элементарных функций}
+
+	\begin{tabular}{c|c}
+	\phantom{$\dfrac{42}{42}$} $e^x$ & $1 + x + \frac{x^2}{2 !} + \ldots + \frac{x^n}{n !} + \oo (x^n)$ \\
+
+	\phantom{$\dfrac{42}{42}$}$\sin x$ & $x - \frac{x^3}{3!} + \frac{x^5}{5 !} + \ldots + \frac{(-1)^n x^{2n+1}}{(2n + 1) !} + \oo(x^{2n+2})$ \\
+ 	
+ 	\phantom{$\dfrac{42}{42}$}$\cos x$ & $1 - \frac{x^2}{2 !} + \frac{x^4}{4 !} + \ldots + \frac{(-1)^n x^{2n}}{(2n)!} + \oo(x^{2n+1})$ \\
+
+ 	\phantom{$\dfrac{42}{42}$}$\tg x$& $x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17 x^7}{315} + \ldots$ \\
+
+	\phantom{$\dfrac{42}{42}$} $\ctg x$& $\frac{1}{x} - \frac{x}{3} - \frac{x^3}{45} - \frac{2x^5}{945} - \ldots$ \\ 	
+	
+	\phantom{$\dfrac{42}{42}$}$\sh x$ & $x + \frac{x^3}{3 !} + \frac{x^5}{5 !} + \ldots + \frac{x^{2n+1}}{(2n + 1) !} + \oo(x^{2n+2})$ \\
+ 	
+ 	\phantom{$\dfrac{42}{42}$}$\ch x$ & $1 + \frac{x^2}{2 !} + \frac{x^4}{4 !} + \ldots + \frac{x^{2n}}{(2n)!} + \oo(x^{2n+1})$\\
+
+ 	\phantom{$\dfrac{42}{42}$} $\arcsin x$ & $x + \frac{x^3}{2 \cdot 3} + \frac{1 \cdot 3 x^5}{2 \cdot 4 \cdot 5} + \ldots + \frac{1 \cdot 3 \cdot 5 \ldots (2n -1) x^{2n+1}}{2 \cdot 4 \ldots (2n)(2n+1)} + \oo(x^{2n+2})$ \\
+
+ 	\phantom{$\dfrac{42}{42}$}$\arctg x$ & $x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \ldots + \frac{(-1)^n x^{2n+1}}{2n+1} + \oo (x^{2n+2})$ \\
+ 	
+ 	\phantom{$\dfrac{42}{42}$}$(1 + x)^\alpha$ & $1 + \alpha x + \frac{\alpha (\alpha - 1) }{2 !}x^2 + \ldots + \frac{\alpha (\alpha - 1) \ldots (\alpha - (n-1))}{n!}x^n + \oo(x^n)$ \\
+
+ 	\phantom{$\dfrac{42}{42}$}$ln(1 + x)$ & $x - \frac{x^2}{2} + \frac{x^3}{3 !} + \ldots + \frac{(-1)^{n-1} x^n}{n} + \oo(x^n)$ \\
+	\end{tabular}
+\end{table}
+
+\noindent
+\textbf{\textit{Формула Коши-Адамара}}:
+$$
+\frac{1}{R} = \varlimsup_{n \to \infty} |a_n|^{1/n}, \hspace{1cm} 
+\lr{R = \lim_{n \to \infty} \frac{a_n}{a_{n+1}} \; \; \text{если существует}}
+$$
+
+
+\noindent
+\textbf{\textit{Формула Тейлора для $f(x, y)$}}:
+$$
+f(x, y) = \sum_{k=0}^m \frac{1}{k!} \sum_{i=0}^k \frac{k!}{(k-i)!i!} \frac{\partial^k f(x_0, y_0)}{\partial x^{k-i} \partial y^i} (x - x_0)^{k-i} (y - y_0)^i + \oo(\rho^m),
+$$
+где 
+$$
+\rho = \sqrt{(x-x_0)^2 + (y-y_0)^2}, \; \; x \to x_0, \; \; y \to y_0.
+$$
+В частности:
+$$
+f(x, y) = f + f'_x x + f'_y y + \frac{1}{2} \lr{f''_{xx} x^2  + 2 f''_{xy} xy + f''_{yy} }
+$$
+
+
+\subsection*{Бонус}
+
+\noindent
+\textbf{\textit{Интеграл неразложимой рациональной функции}}:
+$$
+\int \frac{Ax + B}{x^2 + 2px + q} \d x = \frac{A}{2} \ln{\lr{x^2 + 2px + q}} + \frac{B - Ap}{\sqrt{q - p^2}} \arctg{\frac{x + p}{q - p^2}}
+$$
+
+\noindent
+\textbf{\textit{Неравенство с логарифмом}}:
+$$
+\frac{x}{1 + x} \leq \ln\lr{1+x} \leq x.
+$$
