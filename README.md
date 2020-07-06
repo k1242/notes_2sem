@@ -9,5 +9,5 @@
 
 * **общей физике** 
 ([*заметки*](https://github.com/k1242/notes_2sem/blob/master/14_physics_2sem/tex_notes/physics_2sem.pdf),
-*вопрос по выбору*: [заметки](), [презентация](https://github.com/k1242/notes_2sem/blob/master/14_physics_2sem/tex_present/vpv_2sem_present.pdf)
+*вопрос по выбору*: [заметки](https://github.com/k1242/notes_2sem/blob/master/14_physics_2sem/tex_vpv/vpv_2sem.pdf), [презентация](https://github.com/k1242/notes_2sem/blob/master/14_physics_2sem/tex_present/vpv_2sem_present.pdf)
 ).
